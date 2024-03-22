@@ -9,7 +9,10 @@ import {MostrarRestaurantes,
         Mostrarproductosdanielita,
         Filtroproductos,
         MostrarDW,
-        FiltroproductosDW} from "../index";
+        FiltroproductosDW,
+        MostarPedido,
+        AgregarPedido,
+        BorrarPedido} from "../index";
 export const ViewRestaurantes = create((set,get)=>({
     pedidos:[],
     restaurantes: [],
@@ -19,6 +22,7 @@ export const ViewRestaurantes = create((set,get)=>({
     parametros:{},
     donitas:[],
     cheescake:[],
+    pedidosDonnas: [],
     idUsuario: 0,
     tipo: "Domicilio",
     cod: "D",
@@ -97,5 +101,10 @@ export const ViewRestaurantes = create((set,get)=>({
         return show4;
       }
 
+    },
+    showPedidoDonnas: async()=>{
+     const response =  await MostarPedido();
+     set({pedidosDonnas:response});
+     return response;
     }
 }));

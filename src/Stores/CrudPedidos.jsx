@@ -32,7 +32,7 @@ export const BorrarPedido = async(p)=>{
                 
             })
         }
-    } catch (error) {
+    } catch (error) { 
         
     }
 }

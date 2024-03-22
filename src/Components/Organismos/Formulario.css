@@ -1,0 +1,29 @@
+.formulario {
+    max-width: 82rem;
+    width: 40rem;
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in;
+    opacity: 0;
+    left: 30%;
+    top:25%;
+    position: relative;
+    background-color: white;
+    border-radius: 15px;
+    height: 420px;
+    color:black;
+  }
+
+
+  .formulario.animar {
+    position: relative;
+    opacity: 1;
+    left: 30%;
+    top:25%;
+}
+
+.modal .formulario.cerrar {
+    opacity: 0;
+    left: 30%;
+    top:25%;
+}

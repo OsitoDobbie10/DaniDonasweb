@@ -1,0 +1,21 @@
+.contentLeft{
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+
+.contentRight{
+background-color: red;
+color: white;
+font-weight: bold;
+height: 100%;
+width: 100%;
+display: flex;
+align-items: center;
+padding: 4px;
+}

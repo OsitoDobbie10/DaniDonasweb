@@ -10,9 +10,7 @@ import {MostrarRestaurantes,
         Filtroproductos,
         MostrarDW,
         FiltroproductosDW,
-        MostarPedido,
-        AgregarPedido,
-        BorrarPedido} from "../index";
+        MostarPedido} from "../index";
 export const ViewRestaurantes = create((set,get)=>({
     pedidos:[],
     restaurantes: [],

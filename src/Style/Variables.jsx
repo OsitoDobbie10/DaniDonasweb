@@ -42,6 +42,8 @@ import { BiArrowFromLeft } from "react-icons/bi";
 import { BiMap } from "react-icons/bi";
 import { BiArrowBack } from "react-icons/bi";
 import { BiLogoShopify } from "react-icons/bi";
+import { BiFork } from "react-icons/bi";
+import Caminante from "../Assets/caminante.png"
 export const v = {
   sidebarWidth: `300px`,
   sidebarWidthInitial: `10vw`,
@@ -113,7 +115,8 @@ export const v = {
   Fechadireccion: BiArrowFromLeft,
   IconoMpa:BiMap,
   Atras:BiArrowBack,
-  compra:BiLogoShopify
+  compra:BiLogoShopify,
+  caminante:Caminante
   };
 
   

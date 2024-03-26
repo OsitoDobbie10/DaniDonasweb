@@ -1,5 +1,6 @@
 export * from './Api/Supabaseconnect';
 export { default as App } from './App';
+export { default as Icono } from './Components/Atomos/Icono';
 export { default as Pedido } from './Components/Atomos/Pedido';
 export { default as BotomPedido } from './Components/Moleculas/BotomPedido';
 export { default as BotonHome } from './Components/Moleculas/BotonHome';
@@ -7,7 +8,7 @@ export { default as BotonMenuView } from './Components/Moleculas/BotonMenuView';
 export { default as BotonPedidoEnviar } from './Components/Moleculas/BotonPedidoEnviar';
 export { default as Botondireccion } from './Components/Moleculas/Botondireccion';
 export { default as Encargar } from './Components/Moleculas/Encargar';
-export { default as ItemList } from './Components/Moleculas/ItemList'; 
+export { default as ItemList } from './Components/Moleculas/ItemList';
 export { default as ItemRestaurante } from './Components/Moleculas/ItemRestaurante';
 export { default as Recoger } from './Components/Moleculas/Recoger';
 export { default as Spinner2 } from './Components/Moleculas/Spinner2';

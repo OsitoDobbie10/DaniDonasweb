@@ -12,10 +12,6 @@ const Pedidos = () => {
   return (
     <Container>
     <HeaderDonna icono={<v.Atras/>}texto="Mis Pedidos" icono2={<v.compra/>} ruta="/"/>
-    <div className="botonesparapedir">
-    <button className="botones">Todos</button>
-    <button className="botones">Historial</button>
-    </div>
     <div className="arregloPedidos">
     {
       pedidosDonnas.map((data)=>{
@@ -51,6 +47,7 @@ const Pedidos = () => {
 const Container = styled.div`
 width: 100%;
 height: 100%;
+background-color: aliceblue;
 .botonesparapedir{
   width: 90%;
   width: 200px;
@@ -79,37 +76,68 @@ height: 100%;
   margin:20px auto;
   display: flex;
   flex-direction: column;
+  gap:10px;
 
   .pedidoindiviual{
     width:100%;
     display: flex;
     height: 200px;
     justify-content: space-between;
+    border: 1px solid black;
+    align-items: center;
+    border-radius: 20px;
+    &:hover{
+      cursor: pointer;
+      opacity: 0.6;
+    }
     .ladoizquierdo{
       display: flex;
       gap:10px;
       align-items: center;
+      position: relative;
+      left: 20px;
+
       .imagen{
         width: 100px;
         height:100px;
-        border-radius: 10px;
         img{
           width: 100%;
           height: 100%;
+          border-radius: 10px;
         }
       }
 
-    }
-
-
-  }
-  .datosgenerales{
+    .datosgenerales{
     display: flex;
     flex-direction: column;
     justify-content: left;
-    
+    .pedido{
+      color: orange;
+      font-weight: bold;
+      font-size: medium;
+    }
   }
+    }
 
+   .ladoderecho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .icono1{
+      position: relative;
+      right: 20px;
+    }
+    .Precio{
+      position: relative;
+      right: 20px;
+      font-size: 20px;
+      color: red;
+      font-weight: bold;
+    }
+  
+  }
+  }
+ 
 }
 
 

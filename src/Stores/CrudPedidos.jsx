@@ -26,12 +26,12 @@ export const AgregarPedido = async(p)=>{
 
 export const BorrarPedido = async(p)=>{
     try {
-        const {error} = await supabase.from("pedido").delete().eq("id",p.id);
-        if(error){
+        const {data} = await supabase.from("pedido").delete().eq("IdPedidoCliente",p.IdPedidoCliente).eq("id",p.id);
+        if(data){
             Swal.fire({
                 position:"top-end",
-                icon: "warning",
-                title: "Pedido no borrdo",
+                icon: "success",
+                title: "Pedido Borrado",
                 showConfirmButton: false,
                 timer: 1500,
             })

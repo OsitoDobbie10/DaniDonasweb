@@ -18,7 +18,7 @@ const PedidoIndividual = ({data}) => {
       <span>Borrar pedido de tu lista de pedidos.</span>
       </div>
     ),
-    action: () => EliminarTodasDireccion({id:id,IdPedidoCliente:IdPedidoCliente})
+    action: () => EliminarPedido({id:id,IdPedidoCliente:IdPedidoCliente})
   });
   return (
     <SwipeableList>

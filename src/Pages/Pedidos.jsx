@@ -1,4 +1,4 @@
-import {ViewRestaurantes} from "../index";
+import {ViewRestaurantes,PedidoIndividual} from "../index";
 import styled from "styled-components";
 import {v,HeaderDonna} from "../index"
 import { useQuery } from '@tanstack/react-query';
@@ -11,7 +11,7 @@ const Pedidos = () => {
     <div className="arregloPedidos">
     {
       pedidosDonnas.map((data)=>{
-        return  
+        return  <PedidoIndividual data={data} key={data.id}/>
       })
     }
     </div>

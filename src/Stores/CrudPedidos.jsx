@@ -26,8 +26,11 @@ export const AgregarPedido = async(p)=>{
 
 export const BorrarPedido = async(p)=>{
     try {
-        const {data} = await supabase.from("pedido").delete().eq("IdPedidoCliente",p.IdPedidoCliente).eq("id",p.id);
-        if(data){
+        const {error} = await supabase.from("pedido").delete().eq("id",p.id);
+        if(error){
+        alert("error al eliminar",error);
+        }
+        else{
             Swal.fire({
                 position:"top-end",
                 icon: "success",
@@ -36,6 +39,7 @@ export const BorrarPedido = async(p)=>{
                 timer: 1500,
             })
         }
+            
     } catch (error) { 
         alert(error.error_description || error.message + "eliminar pedido")   
     }

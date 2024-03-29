@@ -30,6 +30,7 @@ export { default as MenuHambur2 } from './Components/Organismos/MenuHambur2';
 export { default as Modal } from './Components/Organismos/Modal';
 export { default as ModalMenu } from './Components/Organismos/ModalMenu';
 export { default as NavbarMenu } from './Components/Organismos/NavbarMenu';
+export { default as PedidoIndividual } from './Components/Organismos/PedidoIndividual';
 export { default as SpinnerError } from './Components/Organismos/SpinnerError';
 export { default as SpinnerIntro } from './Components/Organismos/SpinnerIntro';
 export { default as Succes } from './Components/Organismos/Succes';

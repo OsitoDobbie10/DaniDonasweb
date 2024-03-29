@@ -6,7 +6,7 @@ import '@sandstreamdev/react-swipeable-list/dist/styles.css';
 import "../Organismos/Targeta.css"
 import "../Organismos/PedidoIndividual.css"
 const PedidoIndividual = ({data}) => {
-  const {id,imagen,precio,IdPedido,IdPedidoCliente} = data;
+  const {id,imagen,precio,IdPedido,IdPedidoCliente,nombre} = data;
   const {view} = UseGlobal();
   const {tipo} = view;
   const EliminarPedido = async(p)=>{
@@ -18,7 +18,7 @@ const PedidoIndividual = ({data}) => {
       <span>Borrar pedido de tu lista de pedidos.</span>
       </div>
     ),
-    action: () => EliminarPedido({id:id,IdPedidoCliente:IdPedidoCliente})
+    action: () => EliminarPedido({id:id})
   });
   return (
     <SwipeableList>

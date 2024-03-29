@@ -1,21 +1,38 @@
 import {ViewRestaurantes} from "../index";
 import styled from "styled-components";
-import {v,UseGlobal,Icono,HeaderDonna} from "../index"
+import {v,UseGlobal,Icono,HeaderDonna,BorrarPedido} from "../index"
 import { useQuery } from '@tanstack/react-query';
 import Domicio from "../Assets/Domicilio.png"
 import Caminante from "../Assets/caminante.png"
+import { SwipeableList, SwipeableListItem} from '@sandstreamdev/react-swipeable-list';
+import '@sandstreamdev/react-swipeable-list/dist/styles.css';
+import Swal from "sweetalert2";
+import "../Components/Organismos/Targeta.css"
 const Pedidos = () => {
   const {pedidosDonnas,showPedidoDonnas} = ViewRestaurantes();
   useQuery({queryKey:['Pedido'],queryFn:()=>showPedidoDonnas()});
   const {view} = UseGlobal();
   const {tipo} = view;
+  const EliminarPedido = async(p)=>{
+
+  }
+  const swipeRigthDataSimple = ()=>({
+    content: (
+      <div className="contentRight">
+      <span>Borrar pedido de tu lista de pedidos.</span>
+      </div>
+    ),
+    action: () => alert("Borrado")
+  });
   return (
     <Container>
     <HeaderDonna icono={<v.Atras/>}texto="Mis Pedidos" icono2={<v.compra/>} ruta="/"/>
     <div className="arregloPedidos">
     {
       pedidosDonnas.map((data)=>{
-        return <div className="pedidoindiviual">
+        return  <SwipeableList>
+                <SwipeableListItem swipeRight={swipeRigthDataSimple()}>
+                <div className="pedidoindiviual" key={data.id}>
                 <div className="ladoizquierdo">
                 <div className="imagen">
                 <img src={data.imagen} alt={data.nombre} />
@@ -38,6 +55,9 @@ const Pedidos = () => {
                 </div>
                 </div>
                </div>
+               </SwipeableListItem>
+               </SwipeableList>
+               
       })
     }
     </div>

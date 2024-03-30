@@ -123,6 +123,12 @@ const Global = ({children}) => {
     M2:"",
     D:""
   })
+  const [datosform6,setDatosform6] = useState({
+    ReEx: "",
+    FruEx:"",
+    MoreEx:"",
+    Dedicatoria:""
+  })
   const obtenerForm1 = (e)=>{
     if(e.target.checked){
       setDatosForm1({
@@ -194,6 +200,20 @@ const Global = ({children}) => {
       })
     }
   };
+  const obtenerform6 = (e)=>{
+    if(e.target.checked){
+      setDatosform6({
+        ...datosform6,
+        [e.target.name]: e.target.value
+      })
+    }
+    else{
+      setDatosform6({
+        ...datosform6,
+        [e.target.name]: ""
+      })
+    }
+  };
   const [abrirvista,setAbrirvista] = useState(false);
   const openabrirvista = ()=>{
     setAbrirvista(!abrirvista);
@@ -241,7 +261,7 @@ const Global = ({children}) => {
         estadoDW,setEstadoDW,
         getencargar,getRecoger,obtenerRecoger,obtenerEncargar,
         datosform1,datosform2,datosform3,datosform4,obtenerForm1,obtenerForm2,obtenerForm3,obtenerForm4,
-        datosform5,obtenerForm5,
+        datosform5,obtenerForm5,obtenerform6,datosform6,
         abrirvista,openabrirvista
     }}> 
       {children} 

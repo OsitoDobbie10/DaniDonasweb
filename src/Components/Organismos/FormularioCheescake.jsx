@@ -10,7 +10,7 @@ const FormularioCheescake = ({funcion1,funcion2,arreglo1,datos1}) => {
     {
       arreglo1.map((data)=>{
         return <div key={data.id} className="Coberturacake">
-               <input type="checkbox" name={data.value} id={data.id} value={data.name}/>
+               <input type="checkbox" name={data.value} id={data.id} value={data.name} onChange={funcion1}/>
                <span className="valor1cake">{data.name}</span>
                <span className="precio3cake">L.{data.valor}.00</span>
               </div>

@@ -8,8 +8,8 @@ const ViewProducto = ({Precio1,Precio2}) => {
      animate={{ opacity: 1, scale: 1 }}
      transition={{ duration: 1 }}>
     <span className="pedidpoRe">Resumen Pedido</span>
-    <span className="adicional">L.{Precio1}.00</span>
-    <span className="Precio">L.{Precio2}00</span>
+    <span className="adicional1">L.{Precio1}.0</span>
+    <span className="Precio1">L.{Precio2}.0</span>
     </motion.div>
   )
 }

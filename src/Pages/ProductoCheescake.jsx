@@ -14,7 +14,7 @@ const ProductoCheescake = () => {
   };
   const pedido = getPedicake(parseInt(CheesParams.id))
   const {nombre,precio,descp,imagenes} = pedido;
-  const {datosform5,obtenerform6,datosform6,openabrirvista,abrirvista} = UseGlobal();
+  const {obtenerform6,datosform6,openabrirvista,abrirvista} = UseGlobal();
   const subir = async(p)=>{
     await AgregarPedido(p);
   }
@@ -33,7 +33,7 @@ const ProductoCheescake = () => {
       denyButtonText: `No`
       }).then((result)=>{
         if(result.isConfirmed){
-          const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform5;
+          const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform6;
           const p = { 
             nombre:nombre,
             precio:precio,

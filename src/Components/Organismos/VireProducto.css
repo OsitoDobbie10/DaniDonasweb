@@ -10,23 +10,26 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   gap:5px;
+   text-align: center;
 }
 .contenidoVista>.pedidpoRe{
-    font-weight: 29px;
+    font-size: 18px;
     font-weight: bold;
     color: black;
     text-shadow: 2px 2px 2px white;
 }
-.contenidoVista>.adicional{
-    font-weight: 26px;
+.contenidoVista>.adicional1{
+    font-size: 15px;
     font-weight: bold;
     color: black;
     text-shadow: 2px 2px 2px white;
 }
 
-.contenidoVista>.Precio{
-    font-weight: 26px;
+.contenidoVista>.Precio1{
+    font-size: 15px;
     font-weight: bold;
     color: black;
     text-shadow: 2px 2px 2px white;
+    
 }

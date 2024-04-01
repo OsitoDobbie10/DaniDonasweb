@@ -16,7 +16,7 @@ const BotonPedidoEnviar = ({precio,funcion,funcion2}) => {
     <Container>
     {
         showScrollTopButton && <div className="container" onClick={funcion}>
-                               <span className="corazon">{<v.FAVORITO/>}</span>
+                               <span className="corazon" onClick={funcion2}>{<v.FAVORITO/>}</span>
                                <button className="data" >
                                <span className="Ordenar">Ordenar</span>
                                <span className="precio">L.{precio}.00</span>

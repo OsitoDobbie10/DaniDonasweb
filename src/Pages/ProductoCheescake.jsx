@@ -53,6 +53,50 @@ const ProductoCheescake = () => {
         }
       })
    }
+  const subirfavs = async()=>{
+    Swal.fire({
+      title: "Quieres agregar al carrito de compras?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Si",
+      denyButtonText: `No`
+      }).then((result)=>{
+        if(result.isConfirmed){
+          const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform6;
+          const objetoadicional = {
+            ReEx:`${ReEx}-100`,
+            FruEx:`${FruEx}-100`,
+            MoreEx:`${MoreEx}-50`,
+            Dedicatoria:`${Dedicatoria}-50`
+          };
+          const condicional = (texto)=>{
+            let coincidente = " ";
+            let divido = texto.split('-');
+            if (divido[0] === coincidente) {
+              console.log("No hay texto");
+          } else {
+              console.log("Si hay texto");
+          }
+          }
+         const adicional = `
+         
+         `;
+
+      }})
+  }
+  const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform6;
+  let text = `${ReEx}-100`;
+  console.log(text);
+  const condicional = (texto)=>{
+    let coincidente = "";
+    let divido = texto.split('-');
+    if (divido[0] === coincidente){
+       let resouesta = "No hay texto"
+       return resouesta;} 
+    else {
+      let resouesta = "Si hay texto";
+      return resouesta;}}
+  console.log(condicional(text));
   return (
     <Container>
     <BotonMenuView abrir={openabrirvista}/>

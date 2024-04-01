@@ -1,19 +1,22 @@
 import {ViewRestaurantes,PedidoIndividual} from "../index";
 import styled from "styled-components";
-import {v,HeaderDonna} from "../index"
+import {v,HeaderDonna,NavbarMenu} from "../index"
 import { useQuery } from '@tanstack/react-query';
 const Pedidos = () => {
   const {pedidosDonnas,showPedidoDonnas} = ViewRestaurantes();
   useQuery({queryKey:['Pedido'],queryFn:()=>showPedidoDonnas()});
   return (
     <Container>
-    <HeaderDonna icono={<v.Atras/>}texto="Mis Pedidos" icono2={<v.compra/>} ruta="/"/>
+    <HeaderDonna icono={<v.Atras/>} texto="Mis Pedidos" icono2={<v.compra/>} ruta="/"/>
     <div className="arregloPedidos">
     {
       pedidosDonnas.map((data)=>{
         return  <PedidoIndividual data={data} key={data.id}/>
       })
     }
+    </div>
+    <div className="footer">
+    <NavbarMenu/>
     </div>
     </Container>
   )
@@ -28,6 +31,11 @@ background-color: aliceblue;
   display: flex;
   flex-direction: column;
   gap:10px;
+}
+
+.footer{
+  width: 100%;
+
 }
 
 

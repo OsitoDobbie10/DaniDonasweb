@@ -92,6 +92,7 @@ export * from './StaticData/ArreglodatosFormDonnas';
 export * from './StaticData/FormularioDatos';
 export * from './Stores/CrudChessk';
 export * from './Stores/CrudDonnas';
+export * from './Stores/CrudFavoritos';
 export * from './Stores/CrudPedidos';
 export * from './Stores/CrudUsuarios';
 export * from './Stores/Cruddireccion';

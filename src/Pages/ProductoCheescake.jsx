@@ -84,19 +84,34 @@ const ProductoCheescake = () => {
 
       }})
   }
-  const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform6;
-  let text = `${ReEx}-100`;
-  console.log(text);
   const condicional = (texto)=>{
     let coincidente = "";
     let divido = texto.split('-');
     if (divido[0] === coincidente){
-       let resouesta = "No hay texto"
-       return resouesta;} 
+       let answer = false;
+       return answer;} 
     else {
-      let resouesta = "Si hay texto";
-      return resouesta;}}
-  console.log(condicional(text));
+      let answer2 = true;
+      return answer2;}}
+  const subirFavorito = async()=>{
+  const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform6;
+  const indicador = {
+    ReEx:`${ReEx}-100`,
+    FruEx:`${FruEx}-100`,
+    MoreEx:`${MoreEx}-50`,
+    Dedicatoria:`${Dedicatoria}-50`
+  };
+  const dato = condicional(indicador.ReEx) ? `${ReEx} adicional con un costo de ${indicador.ReEx.split('-')[1]}` : ``;
+  const dato2 = condicional(indicador.FruEx) ? `${FruEx} adicional con un costo de ${indicador.FruEx.split('-')[1]}` : ``;
+  const dato3 = condicional(indicador.MoreEx) ? `${MoreEx} adicional con un costo de ${indicador.MoreEx.split('-')[1]}` : ``;
+  const dato4 = condicional(indicador.Dedicatoria) ? `${Dedicatoria} adicional con un costo de ${Dedicatoria.ReEx.split('-')[1]}` : ``;
+  const p = {
+    
+  }
+  }
+  
+
+  
   return (
     <Container>
     <BotonMenuView abrir={openabrirvista}/>

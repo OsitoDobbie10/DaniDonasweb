@@ -23,6 +23,7 @@ export const AgregarFav = async(p)=>{
               });
         }
     } catch (error) {
+        alert(error.error_description || error.message + "Agregar Fav") 
     }
 }
 

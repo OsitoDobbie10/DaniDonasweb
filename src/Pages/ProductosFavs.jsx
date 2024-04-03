@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import {NavbarMenu,v,HeaderDonna,ViewRestaurantes} from "../index";
+import {NavbarMenu,v,HeaderDonna,ViewRestaurantes,FavoritoIndivual} from "../index";
 import { useQuery } from '@tanstack/react-query';
 const ProductosFavs = () => {
-  const {favoritos,MostarFav} = ViewRestaurantes();
-  useQuery({queryKey:['favorito'],queryFn:()=>MostarFav()});
+  const {favoritos,showfavs} = ViewRestaurantes();
+  useQuery({queryKey:['favorito'],queryFn:()=>showfavs()});
+  console.log(favoritos);
   return (
     <Container>
     <div className="area1">
@@ -14,7 +15,13 @@ const ProductosFavs = () => {
                  ruta="/"/>
     </div>
     <div className="area2">
-    
+    <div className="favoritositems">
+    {
+      favoritos.map((fav)=>{
+        return <FavoritoIndivual data={fav} key={fav.id}/>
+      })
+    }
+    </div>
     </div>
     <div className="footer">
     <NavbarMenu/> 

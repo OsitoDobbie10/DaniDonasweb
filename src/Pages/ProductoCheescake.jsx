@@ -1,7 +1,7 @@
 import React from 'react'
 import {v,TempletedProducto,ViewRestaurantes,HeaderDonna,
         ContenidoProducto,FormularioCheescake,arreglocake1,
-        BotonPedidoEnviar,UseGlobal,AgregarPedido,BotonMenuView,ViewProducto} from "../index";
+        BotonPedidoEnviar,UseGlobal,AgregarPedido,BotonMenuView,ViewProducto,AgregarFav} from "../index";
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Swal from "sweetalert2";
@@ -17,6 +17,9 @@ const ProductoCheescake = () => {
   const {obtenerform6,datosform6,openabrirvista,abrirvista} = UseGlobal();
   const subir = async(p)=>{
     await AgregarPedido(p);
+  }
+  const subir2 = async(p)=>{
+    await AgregarFav(p);
   }
   function generarIDUnico() {
     var timestamp = Date.now();
@@ -53,37 +56,6 @@ const ProductoCheescake = () => {
         }
       })
    }
-  const subirfavs = async()=>{
-    Swal.fire({
-      title: "Quieres agregar al carrito de compras?",
-      showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: "Si",
-      denyButtonText: `No`
-      }).then((result)=>{
-        if(result.isConfirmed){
-          const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform6;
-          const objetoadicional = {
-            ReEx:`${ReEx}-100`,
-            FruEx:`${FruEx}-100`,
-            MoreEx:`${MoreEx}-50`,
-            Dedicatoria:`${Dedicatoria}-50`
-          };
-          const condicional = (texto)=>{
-            let coincidente = " ";
-            let divido = texto.split('-');
-            if (divido[0] === coincidente) {
-              console.log("No hay texto");
-          } else {
-              console.log("Si hay texto");
-          }
-          }
-         const adicional = `
-         
-         `;
-
-      }})
-  }
   const condicional = (texto)=>{
     let coincidente = "";
     let divido = texto.split('-');
@@ -93,6 +65,7 @@ const ProductoCheescake = () => {
     else {
       let answer2 = true;
       return answer2;}}
+  
   const subirFavorito = async()=>{
   const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform6;
   const indicador = {
@@ -104,24 +77,26 @@ const ProductoCheescake = () => {
   const dato = condicional(indicador.ReEx) ? `${ReEx} adicional con un costo de ${indicador.ReEx.split('-')[1]}` : ``;
   const dato2 = condicional(indicador.FruEx) ? `${FruEx} adicional con un costo de ${indicador.FruEx.split('-')[1]}` : ``;
   const dato3 = condicional(indicador.MoreEx) ? `${MoreEx} adicional con un costo de ${indicador.MoreEx.split('-')[1]}` : ``;
-  const dato4 = condicional(indicador.Dedicatoria) ? `${Dedicatoria} adicional con un costo de ${Dedicatoria.ReEx.split('-')[1]}` : ``;
+  const dato4 = condicional(indicador.Dedicatoria) ? `${Dedicatoria} adicional con un costo de ${indicador.Dedicatoria.split('-')[1]}` : ``;
   const p = {
-    
+    nombre:nombre,
+    precio:precio,
+    descp:descp,
+    adicional:`Adicional a la orden: ${dato} ,${dato2}, ${dato3}, ${dato4}`,
+    imagen:imagenes
+  };
+  subir2(p);
   }
-  }
-  
-
-  
   return (
     <Container>
     <BotonMenuView abrir={openabrirvista}/>
     {
       abrirvista && <ViewProducto Precio1="0" Precio2="0"/>
     }
-    <BotonPedidoEnviar precio={precio} funcion={SubirCarrito}/>
+    <BotonPedidoEnviar precio={precio} funcion={SubirCarrito} funcion2={subirFavorito}/>
     <TempletedProducto 
     header={<HeaderDonna icono={<v.Atras/>} icono2={<v.compra/>} ruta="/WD"/>}
-    contenido={<ContenidoProducto imagen={imagenes} nombre={nombre} precio={precio} descp={descp} />}
+    contenido={<ContenidoProducto imagen={imagenes} nombre={nombre} precio={precio} descp={descp}/>}
     formulario={<FormularioCheescake 
                  datos1="Selecciona tu + de ingredientes"
                 arreglo1={arreglocake1}

@@ -16,6 +16,7 @@ export { default as ContenidoProducto } from './Components/Organismos/ContenidoP
 export { default as DatosCheescake } from './Components/Organismos/DatosCheescake';
 export { default as DatosDonna } from './Components/Organismos/DatosDonna';
 export { default as ErrorSinup } from './Components/Organismos/ErrorSinup';
+export { default as FavoritoIndivual } from './Components/Organismos/FavoritoIndivual';
 export { default as FiltrosTempleted } from './Components/Organismos/FiltrosTempleted';
 export { default as FormularioAnticipo } from './Components/Organismos/FormularioAnticipo';
 export { default as FormularioCheescake } from './Components/Organismos/FormularioCheescake';

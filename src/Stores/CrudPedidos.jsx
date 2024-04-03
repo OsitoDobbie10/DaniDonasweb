@@ -21,6 +21,7 @@ export const AgregarPedido = async(p)=>{
               });
         }
     } catch (error) {
+        alert(error.error_description || error.message + "Agregar Fav") 
     }
 }
 

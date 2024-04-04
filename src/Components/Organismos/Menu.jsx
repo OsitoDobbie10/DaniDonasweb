@@ -23,7 +23,7 @@ const Menu = ({boton}) => {
     <nav>
       <NavLink to="/" style={{ animationDelay: "0.8s" }}><span className='link'>Inicio</span></NavLink>
       <NavLink to="/Pedidos" style={{ animationDelay: "0.9s" }}><span className='link'>Mis pedidos</span></NavLink>
-      <NavLink to="/Productos" style={{ animationDelay: "1s" }}><span className='link'>Productos Favoritos</span></NavLink>
+      <NavLink to="/Favoritos" style={{ animationDelay: "1s" }}><span className='link'>Productos Favoritos</span></NavLink>
       <NavLink to="/Chats" style={{ animationDelay: "1s" }}><span className='link'>Chat</span></NavLink>
     </nav>
   </div>,

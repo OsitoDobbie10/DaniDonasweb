@@ -57,6 +57,7 @@ export { default as SignUp } from './Components/Templetes/SignUp';
 export { default as Slidebar } from './Components/Templetes/Slidebar';
 export { default as Templeted } from './Components/Templetes/Templeted';
 export { default as TempletedProducto } from './Components/Templetes/TempletedProducto';
+export { default as TempletedUnico } from './Components/Templetes/TempletedUnico';
 export { default as Vista1Home } from './Components/Templetes/Vista1Home';
 export { default as Global } from './Contextos/Global';
 export { default as UseGlobal } from './Contextos/UseGlobal';

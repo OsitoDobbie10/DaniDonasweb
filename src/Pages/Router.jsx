@@ -66,8 +66,8 @@ export const Router = () => {
         {path:"/Chats",
          element:<Chats/>},
          {
-          path:"/Productos",
-          element:token ? <Productos/> : <ErrorNoRegistro valor="Productos"/>
+          path:"/Carrito",
+          element:token ? <Productos/> : <ErrorNoRegistro valor="Carrito"/>
          },
          {
           path:"/AtencionCliente",

@@ -12,7 +12,7 @@ const ProductosFavs = () => {
     <HeaderDonna icono={<v.Atras/>} 
                  texto="Mis productos favoritos"
                  icono2={<v.compra/>}
-                 ruta="/"/>
+                 ruta="/" ruta2="/Carrito"/>
     </div>
     <div className="area2">
     <div className="favoritositems">

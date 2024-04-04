@@ -37,6 +37,5 @@ grid-template: "header" 100px
 .formulario{
     grid-area: formulario;
 }
-
 `
 export default TempletedProducto

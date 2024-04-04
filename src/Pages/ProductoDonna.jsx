@@ -157,7 +157,7 @@ function generarIDUnico() {
         imagen:imagen
       };
       subir2(p);
-      }
+      };
   return (
     <Container>
     <BotonMenuView abrir={openabrirvista}/>
@@ -166,7 +166,7 @@ function generarIDUnico() {
       abrirvista && <ViewProducto Precio1="0" Precio2="0"/>
     }
     <TempletedProducto 
-    header={<HeaderDonna icono={<v.Atras/>} icono2={<v.compra/>} ruta="/DD"/>}
+    header={<HeaderDonna icono={<v.Atras/>} icono2={<v.compra/>} ruta="/DD" ruta2="/Carrito"/>}
     contenido={<ContenidoProducto imagen={imagen} nombre={nombre} precio={precio} descp={descp}/>}
     formulario={<FormularioProducto 
                   estado = {recibirvalor}

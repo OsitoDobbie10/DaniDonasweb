@@ -95,7 +95,7 @@ const ProductoCheescake = () => {
     }
     <BotonPedidoEnviar precio={precio} funcion={SubirCarrito} funcion2={subirFavorito}/>
     <TempletedProducto 
-    header={<HeaderDonna icono={<v.Atras/>} icono2={<v.compra/>} ruta="/WD"/>}
+    header={<HeaderDonna icono={<v.Atras/>} icono2={<v.compra/>} ruta="/WD" ruta2="/Carrito"/>}
     contenido={<ContenidoProducto imagen={imagenes} nombre={nombre} precio={precio} descp={descp}/>}
     formulario={<FormularioCheescake 
                  datos1="Selecciona tu + de ingredientes"

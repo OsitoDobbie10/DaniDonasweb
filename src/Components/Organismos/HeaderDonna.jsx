@@ -1,13 +1,15 @@
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom";
-const HeaderDonna = ({icono,texto,icono2,funcion,ruta}) => {
+const HeaderDonna = ({icono,texto,icono2,funcion,ruta,ruta2}) => {
     const backhome = useNavigate();
+    const getpedidos = useNavigate();
   return (
     <Container>
     <span className="back" 
     onClick={()=>{backhome(ruta)}}>{icono}</span>
     <span className="textocenter">{texto}</span>
-    <span className="carrito">{icono2}</span>
+    <span  className="carrito"
+     onClick={()=>{getpedidos(ruta2)}}>{icono2}</span> 
     </Container>
   )
 }

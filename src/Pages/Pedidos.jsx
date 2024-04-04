@@ -7,7 +7,7 @@ const Pedidos = () => {
   useQuery({queryKey:['Pedido'],queryFn:()=>showPedidoDonnas()});
   return (
     <Container>
-    <HeaderDonna icono={<v.Atras/>} texto="Mis Pedidos" icono2={<v.compra/>} ruta="/"/>
+    <HeaderDonna icono={<v.Atras/>} texto="Mis Pedidos" icono2={<v.compra/>} ruta="/" ruta2="/Carrito"/>
     <div className="arregloPedidos">
     {
       pedidosDonnas.map((data)=>{

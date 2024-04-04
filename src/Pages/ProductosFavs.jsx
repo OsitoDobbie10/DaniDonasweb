@@ -41,6 +41,13 @@ grid-template: "area1" 200px
 }
 .area2{
     grid-area:area2;
+    .favoritositems{
+      width: 90%;
+      margin:auto;
+      display: flex;
+      flex-direction: column;
+      gap:20px;
+    }
     
 }
 .footer{

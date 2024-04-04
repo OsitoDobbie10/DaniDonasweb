@@ -82,7 +82,7 @@ const ProductoCheescake = () => {
     nombre:nombre,
     precio:precio,
     descp:descp,
-    adicional:`Adicional a la orden: ${dato} ,${dato2}, ${dato3}, ${dato4}`,
+    adicional:`Ingredientes adicionales: ${dato} ${dato2} ${dato3} ${dato4}`,
     imagen:imagenes
   };
   subir2(p);

@@ -5,6 +5,7 @@ import { SwipeableList, SwipeableListItem} from '@sandstreamdev/react-swipeable-
 import '@sandstreamdev/react-swipeable-list/dist/styles.css';
 import "../Organismos/Targeta.css"
 import "../Organismos/PedidoIndividual.css"
+import Corazon from "../../Assets/corazon.png"
 const FavoritoIndivual = ({data}) => {
     const {id,nombre,precio,descp,adicional,imagen} = data;
     const Eliminarfav = async(p)=>{
@@ -28,12 +29,12 @@ const FavoritoIndivual = ({data}) => {
      </div>
      <div className="datosgenerales">
      <span className="pedido">Producto:{nombre}</span>
-     <span>Adicional: {adicional}</span>
+     <span>{adicional}</span>
      </div>
      </div>
      <div className="ladoderecho">
      <div className="icono1">
-     <Icono icono={<v.FAVORITO/>}/>
+     <Icono icono={Corazon}/>
      </div>
      <div className="Precio">
      <span className="preciofinal">

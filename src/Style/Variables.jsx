@@ -43,7 +43,8 @@ import { BiMap } from "react-icons/bi";
 import { BiArrowBack } from "react-icons/bi";
 import { BiLogoShopify } from "react-icons/bi";
 import { BiFork } from "react-icons/bi";
-import Caminante from "../Assets/caminante.png"
+import Caminante from "../Assets/caminante.png";
+import { BiBookmarkHeart } from "react-icons/bi";
 export const v = {
   sidebarWidth: `300px`,
   sidebarWidthInitial: `10vw`,
@@ -116,7 +117,8 @@ export const v = {
   IconoMpa:BiMap,
   Atras:BiArrowBack,
   compra:BiLogoShopify,
-  caminante:Caminante
+  caminante:Caminante,
+  favorito:BiBookmarkHeart
   };
 
   

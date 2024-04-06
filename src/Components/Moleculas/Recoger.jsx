@@ -54,7 +54,6 @@ gap:15px;
 }
 
 .input1{
-  width: 50%;
   margin: 5px auto;
 }
 

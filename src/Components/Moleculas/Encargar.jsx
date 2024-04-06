@@ -15,7 +15,7 @@ const Encargar = ({title, funcion}) => {
      <span className='Fecha'>Nombre de la persona que encarga un producto</span>
      <input type='text' name="nombre" className='input1' onChange={funcion}/>
      <span className='Fecha'>Escribe tu direccion de entrega</span>
-     <input type='text' name="dir" className='input1' onChange={funcion}/>
+     <textarea name="dir"  className='input1' id="" cols="15" rows="5" onChange={funcion}></textarea>
      <span className='hora'>Hora para dejarte tu pedido</span>
      <input type="time" name="hora" className='input2' onChange={funcion}/>
      <input type="submit" value="Continuar" className='guardar' />
@@ -28,7 +28,7 @@ flex-direction: column;
 justify-content: center;
 width: 100%;
 height: 100%;
-gap:10px;
+gap:8px;
 .Titulo{
   font-size: 22px;
   color: red;

@@ -3,7 +3,7 @@ import {ViewRestaurantes,HeaderDonna,v,
         TempletedProducto,ContenidoProducto,
         FormularioProducto,arreglodatos1,arreglodatos2,arreglodatos3,arreglodatos4,
         BotonPedidoEnviar,UseGlobal,FuncionesModal,
-        ViewProducto,BotonMenuView,AgregarPedido,AgregarFav} from "../index";
+        ViewProducto,BotonMenuView,AgregarPedido,AgregarFav,ViewRestaurantesList} from "../index";
 import { useNavigate, useParams } from 'react-router-dom'
 import Swal from "sweetalert2";
 const ProductoDonna = () => {
@@ -17,6 +17,9 @@ const ProductoDonna = () => {
   };
   const pedido = getPedidoDonna(parseInt(DonitasParams.id))
   const {nombre,precio,descp,imagen} = pedido;
+  const {idUsuario} = ViewRestaurantes();
+  const {FM,LB,CC} = datosform2;
+  
   const recibirvalor = (precio,estado,estado2) =>{
     switch(estado,estado2){
       case estado === "Fresco de Mora" || estado === true:
@@ -68,6 +71,7 @@ function generarIDUnico() {
             const {MP,MM,G,GO,CCO,FT,Kt,S,AP} = datosform3;
             const {Aven,JL,G1,P1} = datosform4;
             const p = {
+              Idusuario:idUsuario,
               nombre:nombre,
               precio:precio,
               descp:descp,
@@ -150,6 +154,7 @@ function generarIDUnico() {
       const dato15 = condicional(indicador.MP) ? `${MP} adicional con un costo de ${indicador.MP.split('-')[1]}` : ``;
       const dato16 = condicional(indicador.S) ? `${S} adicional con un costo de ${indicador.S.split('-')[1]}` : ``;
       const p = {
+        Idusuario:idUsuario,
         nombre:nombre,
         precio:precio,
         descp:descp,
@@ -163,7 +168,7 @@ function generarIDUnico() {
     <BotonMenuView abrir={openabrirvista}/>
     <BotonPedidoEnviar precio={precio} funcion={SubirCarrito} funcion2={subirFavorito2}/>
     {
-      abrirvista && <ViewProducto Precio1="0" Precio2="0"/>
+      abrirvista && <ViewProducto Precio1={precio} Precio2="0"/>
     }
     <TempletedProducto 
     header={<HeaderDonna icono={<v.Atras/>} icono2={<v.compra/>} ruta="/DD" ruta2="/Carrito"/>}

@@ -79,7 +79,7 @@ export const Router = () => {
          },
          {
           path:"/Mapa",
-          element: <Mapa/>
+          element: <Mapa/> 
          },
          {
           path:"/Direccion",

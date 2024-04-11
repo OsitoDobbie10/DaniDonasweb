@@ -5,7 +5,7 @@ const Formlario1 = ({c,n,valor}) => {
   const {latitud,longitud,get,direccionGet,view} = UseGlobal();
   const {ciudad,colonias,Direccion,Referencia} = get;
   const nav = useNavigate();
-  const subirdireccion = async(e)=>{
+  const subirdireccion = async(e)=>{ 
     e.preventDefault();
     const p = {
       idCliente:valor.id,

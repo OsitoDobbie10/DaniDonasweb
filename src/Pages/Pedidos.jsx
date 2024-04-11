@@ -31,6 +31,7 @@ background-color: aliceblue;
   display: flex;
   flex-direction: column;
   gap:10px;
+  height: 900px;
 }
 
 .footer{

@@ -4,7 +4,7 @@ import Caminante from "../../Assets/caminante.png";
 import { SwipeableList, SwipeableListItem} from '@sandstreamdev/react-swipeable-list';
 import '@sandstreamdev/react-swipeable-list/dist/styles.css';
 import "../Organismos/Targeta.css"
-import "../Organismos/PedidoIndividual.css"
+import "../Organismos/PedidoIndividual.css" 
 const PedidoIndividual = ({data}) => {
   const {id,imagen,precio,IdPedido,IdPedidoCliente,nombre} = data;
   const {view} = UseGlobal();

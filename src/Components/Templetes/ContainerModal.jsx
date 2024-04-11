@@ -3,7 +3,7 @@ import BTNCerrar from "../../Assets/cerrar.svg"
 import {city,colo,Formlario1} from "../../index"
 const ContainerModal = ({animacion,cerrar,valor}) => {
   return (
-    <Container>
+    <Container> 
       <div className="cerrar-modal">
             <img src={BTNCerrar}
                  alt="CerrarBTN"

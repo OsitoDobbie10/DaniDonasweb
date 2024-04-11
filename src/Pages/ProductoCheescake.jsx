@@ -1,7 +1,7 @@
 import React from 'react'
 import {v,TempletedProducto,ViewRestaurantes,HeaderDonna,
         ContenidoProducto,FormularioCheescake,arreglocake1,
-        BotonPedidoEnviar,UseGlobal,AgregarPedido,BotonMenuView,ViewProducto,AgregarFav} from "../index";
+        BotonPedidoEnviar,UseGlobal,AgregarPedido,BotonMenuView,ViewProducto,AgregarFav,ViewRestaurantesList} from "../index";
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Swal from "sweetalert2";
@@ -15,6 +15,7 @@ const ProductoCheescake = () => {
   const pedido = getPedicake(parseInt(CheesParams.id))
   const {nombre,precio,descp,imagenes} = pedido;
   const {obtenerform6,datosform6,openabrirvista,abrirvista} = UseGlobal();
+  const {idUsuario} = ViewRestaurantes();
   const subir = async(p)=>{
     await AgregarPedido(p);
   }
@@ -38,6 +39,7 @@ const ProductoCheescake = () => {
         if(result.isConfirmed){
           const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform6;
           const p = { 
+            Idusuario:idUsuario,
             nombre:nombre,
             precio:precio,
             descp:descp,
@@ -79,6 +81,7 @@ const ProductoCheescake = () => {
   const dato3 = condicional(indicador.MoreEx) ? `${MoreEx} adicional con un costo de ${indicador.MoreEx.split('-')[1]}` : ``;
   const dato4 = condicional(indicador.Dedicatoria) ? `${Dedicatoria} adicional con un costo de ${indicador.Dedicatoria.split('-')[1]}` : ``;
   const p = {
+    Idusuario:idUsuario,
     nombre:nombre,
     precio:precio,
     descp:descp,

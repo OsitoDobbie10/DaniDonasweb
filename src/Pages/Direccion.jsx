@@ -7,7 +7,7 @@ const Direccion = ({user}) => {
   const {showusuario,usuario} = ViewRestaurantes();
   useQuery({queryKey:["UsuarioParaDato"],queryFn:()=>showusuario()});
   let backend = useNavigate();
-  const back = ()=>{
+  const back = ()=>{ 
     backend("/")
   }
   return (

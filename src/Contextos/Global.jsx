@@ -68,8 +68,8 @@ const Global = ({children}) => {
   const [arreglobotones2,setArreglobotones2] = useState([{id:1,name:"Grande"},{id:2,name:"Mediano"},{id:3,name:"Todos"}]);
   const [estadoDW,setEstadoDW] = useState({id:1,name:"Grande"})
   const [getRecoger,setGetRecoger] = useState({
-    Fecha:"",
-    hora: ""});
+    fecharecoger:"",
+    horarecoger: ""});
   const [getencargar,setGetencargar] = useState({
     nombre:"",
     dir:"",

@@ -6,7 +6,11 @@ const Encargar = ({title, funcion}) => {
   const {closeDireccion} = FuncionesModal();
   const subirEncargar = (e)=>{
     e.preventDefault();
-    closeDireccion();
+    const {nombre,dir,hora} = getencargar;
+    const p = {
+      
+    }
+    
     
   }
   return (

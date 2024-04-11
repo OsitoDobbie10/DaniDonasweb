@@ -2,7 +2,7 @@ import styled from "styled-components"
 import {v,FuncionesModal,Targeta} from "../../index"
 const FormularioEntragar = ({direcciones}) => {
   const {abrirDireccion} = FuncionesModal();
-  return (
+  return ( 
     <>
     <div className="add">
     <span className='Icono1' onClick={abrirDireccion}>{<v.agregar/>}</span>

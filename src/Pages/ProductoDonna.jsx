@@ -18,7 +18,33 @@ const ProductoDonna = () => {
   const pedido = getPedidoDonna(parseInt(DonitasParams.id))
   const {nombre,precio,descp,imagen} = pedido;
   const {idUsuario} = ViewRestaurantes();
-  const {FM,LB,CC} = datosform2;
+
+  const {FM,LB,Cc,CC} = datosform2;
+  const {MP,MM,G,GO,CCO,FT,Kt,S,AP} = datosform3;
+  const {Aven,JL,G1,P1} = datosform4;
+  const changevalue = ()=>{
+    let val = {
+      FM:`${FM}-12`,
+              LB:`${LB}-25`,
+              Cc:`${Cc}-15`,
+              CC:`${CC}-15`,
+              MM:`${MM}-15`,
+              G:`${G}-10`,
+              GO:`${GO}-10`,
+              CCO:`${CCO}-10`,
+              FT:`${FT}-10`,
+              Kt:`${Kt}-10`,
+              AP:`${AP}-10`,
+              Aven:`${Aven}-`,
+              JL:`${JL}-55`,
+              P1:`${P1}-55`,
+              Cantidad:0,
+              G1:`${G1}-45`,
+              MP:`${MP}-45`,
+              S:`${S}-5`
+    };
+
+  }
   
   const recibirvalor = (precio,estado,estado2) =>{
     switch(estado,estado2){
@@ -57,7 +83,7 @@ function generarIDUnico() {
   else {
     let answer2 = true;
     return answer2;}}
-    const SubirCarrito = async()=>{
+  const SubirCarrito = async()=>{
       Swal.fire({
         title: "Quieres agregar al carrito de compras?",
         showDenyButton: true,

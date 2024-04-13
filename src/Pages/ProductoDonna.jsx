@@ -8,44 +8,69 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Swal from "sweetalert2";
 const ProductoDonna = () => {
   const {obtenerForm1,obtenerForm2,obtenerForm3,abrirvista,openabrirvista} = UseGlobal();
-  const {donitas,} = ViewRestaurantes();
+  const {donitas} = ViewRestaurantes();
   const DonitasParams = useParams();
   const Regresar = useNavigate();
-  const {PedirPedido,datosform1,datosform2,datosform3,datosform4} = FuncionesModal();
+  const {datosform1,datosform2,datosform3,datosform4} = FuncionesModal();
   const getPedidoDonna = (id)=>{
     return donitas.find((value)=>value.id === id);
   };
   const pedido = getPedidoDonna(parseInt(DonitasParams.id))
   const {nombre,precio,descp,imagen} = pedido;
   const {idUsuario} = ViewRestaurantes();
-
+  const condicional = (texto)=>{
+    let coincidente = "";
+    let divido = texto.split('-');
+    if (divido[0] === coincidente){
+       let answer = false;
+       return answer;} 
+    else {
+      let answer2 = true;
+      return answer2;}}
+  const condicional2 = (texto)=>{
+    let divido = texto.split('-')[1]
+    return divido;}
   const {FM,LB,Cc,CC} = datosform2;
   const {MP,MM,G,GO,CCO,FT,Kt,S,AP} = datosform3;
-  const {Aven,JL,G1,P1} = datosform4;
-  const changevalue = ()=>{
+  const changevalue = (num)=>{
     let val = {
-      FM:`${FM}-12`,
+              FM:`${FM}-12`,
               LB:`${LB}-25`,
               Cc:`${Cc}-15`,
               CC:`${CC}-15`,
-              MM:`${MM}-15`,
+              MP:`${MP}-5`,
+              MM:`${MM}-10`,
               G:`${G}-10`,
               GO:`${GO}-10`,
               CCO:`${CCO}-10`,
               FT:`${FT}-10`,
               Kt:`${Kt}-10`,
-              AP:`${AP}-10`,
-              Aven:`${Aven}-`,
-              JL:`${JL}-55`,
-              P1:`${P1}-55`,
-              Cantidad:0,
-              G1:`${G1}-45`,
-              MP:`${MP}-45`,
-              S:`${S}-5`
-    };
-
+              S:`${S}-10`,
+              AP:`${AP}-5`
+              };
+       //Bebidas 
+       let FrescoMora = parseInt(condicional2(val.FM));
+       let LicuadoBanano = parseInt(condicional2(val.LB));
+       let ChocoateCaliente = parseInt(condicional2(val.Cc));
+       let Cocacola = parseInt(condicional2(val.CC));
+       //Ingredientes 
+       let ManiPicado = parseInt(condicional2(val.MP));
+       let MeansManny = parseInt(condicional2(val.MM));
+       let Gomitas = parseInt(condicional2(val.G));
+       let GalletaOreo = parseInt(condicional2(val.GO));
+       let FresasTrocitos = parseInt(condicional2(val.FT));
+       let KiwiTrocitos = parseInt(condicional2(val.Kt));
+       let Sprinkles = parseInt(condicional2(val.S));
+       let AzucarPolvo = parseInt(condicional2(val.AP));
+       //sumarvalor 
+      const arreglo = [FrescoMora,LicuadoBanano,ChocoateCaliente,Cocacola,ManiPicado,
+                       MeansManny,Gomitas,GalletaOreo,FresasTrocitos,KiwiTrocitos,Sprinkles,AzucarPolvo];
+      const initialValue = 0;
+      const arraySuma = arreglo.reduce((accumulator,currentValue)=> accumulator + currentValue, initialValue);
+      const sum = num + arraySuma;
+      return sum
   }
-  
+  console.log(changevalue(precio));
   const recibirvalor = (precio,estado,estado2) =>{
     switch(estado,estado2){
       case estado === "Fresco de Mora" || estado === true:
@@ -74,15 +99,6 @@ function generarIDUnico() {
   var idUnico = timestamp.toString() + numeroAleatorio.toString();
   return idUnico;
 }
- const condicional = (texto)=>{
-  let coincidente = "";
-  let divido = texto.split('-');
-  if (divido[0] === coincidente){
-     let answer = false;
-     return answer;} 
-  else {
-    let answer2 = true;
-    return answer2;}}
   const SubirCarrito = async()=>{
       Swal.fire({
         title: "Quieres agregar al carrito de compras?",

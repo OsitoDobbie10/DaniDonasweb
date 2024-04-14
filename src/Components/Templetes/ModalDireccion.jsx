@@ -62,7 +62,9 @@ z-index: 1000;
     background-color: white;
     border-radius: 15px;
     height: 420px;
+    overflow:scroll;
     color:black;
+    border-radius:12px;
 
 
   }

@@ -21,7 +21,7 @@ const DaniDonas = () => {
       modal6 && <ModalMenu data={arreglobotones} cerrar={closemodaldonnas} animacion={animandoModal6} funcionsubmit={cambiar}/>
     }
     <Menucomidastempleted
-    header={<HeaderDonna icono={<v.Atras/>} texto="Danni Donnas" icono2={<v.compra/>} ruta="/"/>}
+    header={<HeaderDonna icono={<v.Atras/>} texto="Danni Donnas" icono2={<v.compra/>} ruta="/" ruta2="/Carrito"/>}
     filtros={<FiltrosTempleted data={arreglobotones} abrirmenu={openmodaldonnas} filter={showdanielita2}/>} 
     arreglo={<DatosDonna titulo={estadodonnas.name} datos={donitas} tipo={view.tipo}/>}
     />

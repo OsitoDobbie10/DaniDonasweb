@@ -26,7 +26,7 @@ const DV_Cheescake = () => {
                icono={<v.Atras/>}
                 texto="W&D Cheescake"
                 icono2={<v.compra/>} 
-                 ruta="/"/>}
+                 ruta="/" ruta2="/Carrito"/>}
         filtros={<FilterDWCheescake 
                   data={arreglobotones2} 
                   abrir={openmodalDW} filter={showDWcheescake2}/>

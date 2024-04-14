@@ -9,7 +9,7 @@ const ViewProducto = ({Precio1,Precio2}) => {
      transition={{ duration: 1 }}>
     <span className="pedidpoRe">Resumen Pedido</span>
     <span className="adicional1">L.{Precio1}.0</span>
-    <span className="Precio1">L.{Precio2}.0</span>
+    <span className="Precio1">Adicional: L.{Precio2}.0</span>
     </motion.div>
   )
 }

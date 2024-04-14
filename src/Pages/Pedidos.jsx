@@ -30,8 +30,7 @@ background-color: aliceblue;
   margin:20px auto;
   display: flex;
   flex-direction: column;
-  gap:10px;
-  height: 900px;
+  gap:20px; 
 }
 
 .footer{

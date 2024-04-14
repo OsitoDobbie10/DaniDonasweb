@@ -28,6 +28,58 @@ const ProductoCheescake = () => {
     var idUnico = timestamp.toString() + numeroAleatorio.toString();
     return idUnico;
   }
+   const cambiar = (texto)=>{
+    let divido = texto.split('-')[1]
+    return divido;}
+  const condicional = (texto)=>{
+    let coincidente = "";
+    let divido = texto.split('-');
+    if (divido[0] === coincidente){
+       let answer = false;
+       return answer;} 
+    else {
+      let answer2 = true;
+      return answer2;}}
+  const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform6;
+  const changevalue = (num)=>{
+    let val = {
+      ReEx:`${ReEx}-100`,
+      FruEx:`${FruEx}-100`,
+      MoreEx:`${MoreEx}-50`,
+      Dedicatoria:`${Dedicatoria}-50`
+    };
+     //Ingredientes 
+     let RellenoExtra = condicional(val.ReEx) ? parseInt(cambiar(val.ReEx)) : 0;
+     let FrutaExtra = condicional(val.FruEx) ? parseInt(cambiar(val.FruEx)) : 0;
+     let MasPedazos = condicional(val.MoreEx) ? parseInt(cambiar(val.MoreEx)) : 0;
+     let Dedi = condicional(val.Dedicatoria) ? parseInt(cambiar(val.Dedicatoria)) : 0;
+     const arreglo = [
+      RellenoExtra,FrutaExtra,MasPedazos,Dedi];
+     const initialValue = 0;
+     const arraySuma = arreglo.reduce((accumulator,currentValue)=> accumulator + currentValue, initialValue);
+     const sum = num + arraySuma;
+    return sum
+  }
+  const InitialValue = ()=>{
+    let val = {
+      ReEx:`${ReEx}-100`,
+      FruEx:`${FruEx}-100`,
+      MoreEx:`${MoreEx}-50`,
+      Dedi:`${Dedicatoria}-50`
+    };
+     //Ingredientes 
+     let RellenoExtra = condicional(val.ReEx) ? parseInt(cambiar(val.ReEx)) : 0;
+     let FrutaExtra = condicional(val.FruEx) ? parseInt(cambiar(val.FruEx)) : 0;
+     let MasPedazos = condicional(val.MoreEx) ? parseInt(cambiar(val.MoreEx)) : 0;
+     let Dedio = condicional(val.Dedi) ? parseInt(cambiar(val.Dedi)) : 0;
+     const arreglo = [
+      RellenoExtra,FrutaExtra,MasPedazos,Dedio];
+     const initialValue = 0;
+     const arraySuma = arreglo.reduce((accumulator,currentValue)=> accumulator + currentValue, initialValue);
+     return arraySuma;
+  }
+  let precio2 = changevalue(precio);
+  let precioinicial = InitialValue();
   const SubirCarrito = async()=>{
     Swal.fire({
       title: "Quieres agregar al carrito de compras?",
@@ -38,10 +90,11 @@ const ProductoCheescake = () => {
       }).then((result)=>{
         if(result.isConfirmed){
           const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform6;
+          const preciocarrito = changevalue(precio);
           const p = { 
             Idusuario:idUsuario,
             nombre:nombre,
-            precio:precio,
+            precio:preciocarrito,
             descp:descp,
             imagen:imagenes,
             Cantidad:0,
@@ -58,16 +111,6 @@ const ProductoCheescake = () => {
         }
       })
    }
-  const condicional = (texto)=>{
-    let coincidente = "";
-    let divido = texto.split('-');
-    if (divido[0] === coincidente){
-       let answer = false;
-       return answer;} 
-    else {
-      let answer2 = true;
-      return answer2;}}
-  
   const subirFavorito = async()=>{
   const {ReEx,FruEx,MoreEx,Dedicatoria} = datosform6;
   const indicador = {
@@ -80,10 +123,11 @@ const ProductoCheescake = () => {
   const dato2 = condicional(indicador.FruEx) ? `${FruEx} adicional con un costo de ${indicador.FruEx.split('-')[1]}` : ``;
   const dato3 = condicional(indicador.MoreEx) ? `${MoreEx} adicional con un costo de ${indicador.MoreEx.split('-')[1]}` : ``;
   const dato4 = condicional(indicador.Dedicatoria) ? `${Dedicatoria} adicional con un costo de ${indicador.Dedicatoria.split('-')[1]}` : ``;
+  const preciofav = changevalue(precio);
   const p = {
     Idusuario:idUsuario,
     nombre:nombre,
-    precio:precio,
+    precio:preciofav,
     descp:descp,
     adicional:`Ingredientes adicionales: ${dato} ${dato2} ${dato3} ${dato4}`,
     imagen:imagenes
@@ -94,9 +138,9 @@ const ProductoCheescake = () => {
     <Container>
     <BotonMenuView abrir={openabrirvista}/>
     {
-      abrirvista && <ViewProducto Precio1="0" Precio2="0"/>
+      abrirvista && <ViewProducto Precio1={precio} Precio2={precioinicial}/>
     }
-    <BotonPedidoEnviar precio={precio} funcion={SubirCarrito} funcion2={subirFavorito}/>
+    <BotonPedidoEnviar precio={precio2} funcion={SubirCarrito} funcion2={subirFavorito}/>
     <TempletedProducto 
     header={<HeaderDonna icono={<v.Atras/>} icono2={<v.compra/>} ruta="/WD" ruta2="/Carrito"/>}
     contenido={<ContenidoProducto imagen={imagenes} nombre={nombre} precio={precio} descp={descp}/>}

@@ -27,7 +27,7 @@ const ProductoDonna = () => {
     else {
       let answer2 = true;
       return answer2;}}
-  const condicional2 = (texto)=>{
+  const cambiar = (texto)=>{
     let divido = texto.split('-')[1]
     return divido;}
   const {FM,LB,Cc,CC} = datosform2;
@@ -49,19 +49,19 @@ const ProductoDonna = () => {
               AP:`${AP}-5`
               };
        //Bebidas 
-       let FrescoMora = parseInt(condicional2(val.FM));
-       let LicuadoBanano = parseInt(condicional2(val.LB));
-       let ChocoateCaliente = parseInt(condicional2(val.Cc));
-       let Cocacola = parseInt(condicional2(val.CC));
+       let FrescoMora = condicional(val.FM) ? parseInt(cambiar(val.FM)) : 0;
+       let LicuadoBanano = condicional(val.LB) ? parseInt(cambiar(val.LB)) : 0;
+       let ChocoateCaliente = condicional(val.Cc) ? parseInt(cambiar(val.Cc)) : 0;
+       let Cocacola = condicional(val.CC) ? parseInt(cambiar(val.CC)) : 0;
        //Ingredientes 
-       let ManiPicado = parseInt(condicional2(val.MP));
-       let MeansManny = parseInt(condicional2(val.MM));
-       let Gomitas = parseInt(condicional2(val.G));
-       let GalletaOreo = parseInt(condicional2(val.GO));
-       let FresasTrocitos = parseInt(condicional2(val.FT));
-       let KiwiTrocitos = parseInt(condicional2(val.Kt));
-       let Sprinkles = parseInt(condicional2(val.S));
-       let AzucarPolvo = parseInt(condicional2(val.AP));
+       let ManiPicado = condicional(val.MP) ? parseInt(cambiar(val.MP)) : 0;
+       let MeansManny = condicional(val.MM) ? parseInt(cambiar(val.MM)) : 0;
+       let Gomitas = condicional(val.G) ? parseInt(cambiar(val.G)) : 0;
+       let GalletaOreo = condicional(val.GO) ? parseInt(cambiar(val.GO)) : 0;
+       let FresasTrocitos = condicional(val.FT) ? parseInt(cambiar(val.FT)) : 0;
+       let KiwiTrocitos = condicional(val.Kt) ? parseInt(cambiar(val.Kt)) : 0;
+       let Sprinkles = condicional(val.S) ? parseInt(cambiar(val.S)) : 0;
+       let AzucarPolvo = condicional(val.AP) ? parseInt(cambiar(val.AP)) : 0;
        //sumarvalor 
       const arreglo = [FrescoMora,LicuadoBanano,ChocoateCaliente,Cocacola,ManiPicado,
                        MeansManny,Gomitas,GalletaOreo,FresasTrocitos,KiwiTrocitos,Sprinkles,AzucarPolvo];
@@ -70,7 +70,45 @@ const ProductoDonna = () => {
       const sum = num + arraySuma;
       return sum
   }
-  console.log(changevalue(precio));
+  const InicialValue = ()=>{
+    let val = {
+      FM:`${FM}-12`,
+      LB:`${LB}-25`,
+      Cc:`${Cc}-15`,
+      CC:`${CC}-15`,
+      MP:`${MP}-5`,
+      MM:`${MM}-10`,
+      G:`${G}-10`,
+      GO:`${GO}-10`,
+      CCO:`${CCO}-10`,
+      FT:`${FT}-10`,
+      Kt:`${Kt}-10`,
+      S:`${S}-10`,
+      AP:`${AP}-5`
+      };
+//Bebidas 
+let FrescoMora = condicional(val.FM) ? parseInt(cambiar(val.FM)) : 0;
+let LicuadoBanano = condicional(val.LB) ? parseInt(cambiar(val.LB)) : 0;
+let ChocoateCaliente = condicional(val.Cc) ? parseInt(cambiar(val.Cc)) : 0;
+let Cocacola = condicional(val.CC) ? parseInt(cambiar(val.CC)) : 0;
+//Ingredientes 
+let ManiPicado = condicional(val.MP) ? parseInt(cambiar(val.MP)) : 0;
+let MeansManny = condicional(val.MM) ? parseInt(cambiar(val.MM)) : 0;
+let Gomitas = condicional(val.G) ? parseInt(cambiar(val.G)) : 0;
+let GalletaOreo = condicional(val.GO) ? parseInt(cambiar(val.GO)) : 0;
+let FresasTrocitos = condicional(val.FT) ? parseInt(cambiar(val.FT)) : 0;
+let KiwiTrocitos = condicional(val.Kt) ? parseInt(cambiar(val.Kt)) : 0;
+let Sprinkles = condicional(val.S) ? parseInt(cambiar(val.S)) : 0;
+let AzucarPolvo = condicional(val.AP) ? parseInt(cambiar(val.AP)) : 0;
+//sumarvalor 
+const arreglo = [FrescoMora,LicuadoBanano,ChocoateCaliente,Cocacola,ManiPicado,
+               MeansManny,Gomitas,GalletaOreo,FresasTrocitos,KiwiTrocitos,Sprinkles,AzucarPolvo];
+const initialValue = 0;
+const arraySuma = arreglo.reduce((accumulator,currentValue)=> accumulator + currentValue, initialValue);
+return arraySuma;
+  }
+  let precioacumulado = changevalue(precio);
+  let valueInitial = InicialValue();
   const recibirvalor = (precio,estado,estado2) =>{
     switch(estado,estado2){
       case estado === "Fresco de Mora" || estado === true:
@@ -85,8 +123,8 @@ const ProductoDonna = () => {
       case estado === "Coca cola" || estado === true:
         precio += 15
       break
-    }
-  }
+    }}
+
 const subir = async(p)=>{
   await AgregarPedido(p);
 }
@@ -112,10 +150,11 @@ function generarIDUnico() {
             const {FM,LB,Cc,CC} = datosform2;
             const {MP,MM,G,GO,CCO,FT,Kt,S,AP} = datosform3;
             const {Aven,JL,G1,P1} = datosform4;
+            const preciocarrito = changevalue(precio);
             const p = {
               Idusuario:idUsuario,
               nombre:nombre,
-              precio:precio,
+              precio:preciocarrito,
               descp:descp,
               imagen:imagen,
               N:N,
@@ -195,10 +234,11 @@ function generarIDUnico() {
       const dato14 = condicional(indicador.G1) ? `${G1} adicional con un costo de ${indicador.G1.split('-')[1]}` : ``;
       const dato15 = condicional(indicador.MP) ? `${MP} adicional con un costo de ${indicador.MP.split('-')[1]}` : ``;
       const dato16 = condicional(indicador.S) ? `${S} adicional con un costo de ${indicador.S.split('-')[1]}` : ``;
+      let preciofav = changevalue(precio)
       const p = {
         Idusuario:idUsuario,
         nombre:nombre,
-        precio:precio,
+        precio:preciofav,
         descp:descp,
         adicional:`Ingredientes adicionales: ${dato} ${dato2} ${dato3} ${dato4} ${dato5} ${dato6} ${dato7} ${dato8} ${dato9} ${dato10} ${dato11} ${dato12} ${dato13} ${dato14} ${dato15} ${dato16}`,
         imagen:imagen
@@ -208,9 +248,9 @@ function generarIDUnico() {
   return (
     <Container>
     <BotonMenuView abrir={openabrirvista}/>
-    <BotonPedidoEnviar precio={precio} funcion={SubirCarrito} funcion2={subirFavorito2}/>
+    <BotonPedidoEnviar precio={precioacumulado} funcion={SubirCarrito} funcion2={subirFavorito2}/>
     {
-      abrirvista && <ViewProducto Precio1={precio} Precio2="0"/>
+      abrirvista && <ViewProducto Precio1={precio} Precio2={valueInitial}/>
     }
     <TempletedProducto 
     header={<HeaderDonna icono={<v.Atras/>} icono2={<v.compra/>} ruta="/DD" ruta2="/Carrito"/>}

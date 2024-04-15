@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Swal from "sweetalert2";
 const ProductoCheescake = () => {
-  const {cheescake} = ViewRestaurantes();
+  const {cheescake,idUsuario} = ViewRestaurantes();
   const CheesParams = useParams();
   const Regresar = useNavigate();
   const getPedicake = (id)=>{
@@ -15,7 +15,6 @@ const ProductoCheescake = () => {
   const pedido = getPedicake(parseInt(CheesParams.id))
   const {nombre,precio,descp,imagenes} = pedido;
   const {obtenerform6,datosform6,openabrirvista,abrirvista} = UseGlobal();
-  const {idUsuario} = ViewRestaurantes();
   const subir = async(p)=>{
     await AgregarPedido(p);
   }

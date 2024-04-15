@@ -1,6 +1,9 @@
 import styled from "styled-components"
-import {HeaderDonna,NavbarMenu,TempletedUnico,v} from "../index";
+import {HeaderDonna,NavbarMenu,TempletedUnico,v,ViewRestaurantes} from "../index";
+import { useQuery } from '@tanstack/react-query';
 const Productos = () => {
+  const {pedidosDonnas,showPedidoDonnas} = ViewRestaurantes
+  useQuery({queryKey:['CarritoCompra'],queryFn:()=>showfavs()});
   return (
     <Container>
     <TempletedUnico header={<HeaderDonna icono={<v.Atras/>} 
@@ -8,6 +11,7 @@ const Productos = () => {
                                           ruta="/"
                                           ruta2="/Carrito"
                                           icono2={<v.compra/>}/>}
+                   
                     footer={<NavbarMenu/>}            
                     />
     </Container>

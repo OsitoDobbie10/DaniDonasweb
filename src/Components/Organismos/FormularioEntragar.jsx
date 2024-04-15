@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import {v,FuncionesModal,Targeta} from "../../index"
+
 const FormularioEntragar = ({direcciones}) => {
   const {abrirDireccion} = FuncionesModal();
   return ( 

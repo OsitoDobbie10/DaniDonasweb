@@ -1,20 +1,29 @@
 import styled from 'styled-components'
-import {UseGlobal,FuncionesModal} from "../../index"
+import {UseGlobal,FuncionesModal,Insertrecoger,ViewRestaurantes} from "../../index"
 const Recoger = ({title,funcion}) => {
 const {getRecoger} = UseGlobal();
+const {fecharecoger,horarecoger} = getRecoger;
+const {idUsuario} = ViewRestaurantes();
 const {closeDireccion} = FuncionesModal();
-const obtenerRecoger = (e)=>{
+const obtenerRecoger = async(e)=>{
   e.preventDefault();
+  const p = {
+    fecharecoger:fecharecoger,
+    horarecoger:horarecoger,
+    Idcliente:idUsuario
+  };
+  await Insertrecoger(p);
   closeDireccion();
 }
+
   return (
     <Container onSubmit={obtenerRecoger}>
      <span className='Titulo'>{title}</span>
      <span className='Info'>LLenar formulario para tu pedido</span>
      <span className='Fecha'>Fecha para recoger tu pedido</span>
-     <input type='date' name="Fecha" className='input1' onChange={funcion}/>
+     <input type='date' name="fecharecoger" className='input1' onChange={funcion}/>
      <span className='hora'>Hora para recoger tu pedido</span>
-     <input type="time" name="hora" className='input2' onChange={funcion}/>
+     <input type="time" name="horarecoger" className='input2' onChange={funcion}/>
      <input type="submit" value="Continuar" className='guardar'/>
     </Container>
   )

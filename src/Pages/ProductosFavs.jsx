@@ -5,7 +5,6 @@ import { useQuery } from '@tanstack/react-query';
 const ProductosFavs = () => {
   const {favoritos,showfavs} = ViewRestaurantes();
   useQuery({queryKey:['favorito'],queryFn:()=>showfavs()});
-  console.log(favoritos);
   return (
     <Container>
     <div className="area1">
@@ -32,15 +31,13 @@ const ProductosFavs = () => {
 const Container = styled.div`
 min-height: 100vh;
 width: 100%;
-display:grid;
-grid-template: "area1" 200px
-                "area2" 800px
-                "footer" 100px;
 .area1{
-    grid-area:area1;
+    width:100%;
+    margin-bottom: 20px;
 }
 .area2{
-    grid-area:area2;
+    width: 100%;
+    margin-bottom: 50px;
     .favoritositems{
       width: 90%;
       margin:auto;

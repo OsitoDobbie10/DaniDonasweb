@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {ObjetoCarritoCompra} from "../../index"
 const TempletedUnico = ({header,datos,footer}) => {
   return (
     <Container>
@@ -7,7 +8,10 @@ const TempletedUnico = ({header,datos,footer}) => {
     </div>
     <div className="contenido">
     <div className="pedidos">
-    {datos}
+    {datos.map((data)=>{
+      return <ObjetoCarritoCompra/>
+    })
+    }
     </div>
     </div>
     <div className="footer">
@@ -23,7 +27,7 @@ margin:auto;
 display: grid;
 height: 100%;
 grid-template: "header" 100px
-                "contenido" 700px
+                "contenido" 1000px
                 "footer" 100px;
 .header{grid-area: header;}
 .contenido{

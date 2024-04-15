@@ -1,18 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import {UseGlobal,FuncionesModal} from "../../index"
+import {UseGlobal,FuncionesModal,ViewRestaurantes,Insertencargo} from "../../index"
 const Encargar = ({title, funcion}) => {
   const {getencargar} = UseGlobal();
+  const {nombre,dir,hora} = getencargar;
+  const {idUsuario} = ViewRestaurantes();
   const {closeDireccion} = FuncionesModal();
-  const subirEncargar = (e)=>{
+  const subirEncargar = async(e)=>{
     e.preventDefault();
-    const {nombre,dir,hora} = getencargar;
     const p = {
-      
-    }
-    
-    
-  }
+      nombre:nombre,
+      dir:dir,
+      hora:hora,
+      idcliente:idUsuario
+    };
+    await Insertencargo(p);
+    closeDireccion();
+  };
   return (
     <Container onSubmit={subirEncargar}>
      <span className='Titulo'>{title}</span>

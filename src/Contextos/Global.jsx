@@ -74,7 +74,6 @@ const Global = ({children}) => {
     nombre:"",
     dir:"",
     hora:""});
-
   const obtenerRecoger = (e)=>{
     setGetRecoger({
       ...getRecoger,
@@ -129,6 +128,7 @@ const Global = ({children}) => {
     MoreEx:"",
     Dedicatoria:""
   })
+
   const obtenerForm1 = (e)=>{
     if(e.target.checked){
       setDatosForm1({

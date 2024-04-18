@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {ObjetoCarritoCompra} from "../../index"
-const TempletedUnico = ({header,datos,footer}) => {
+const TempletedUnico = ({header,datos,footer,direcciones}) => {
+  const {ciudad,colonia,referencia,direccion,Latitude,Longitud} = direcciones;
   return (
     <Container>
      <div className="header">
@@ -9,7 +10,7 @@ const TempletedUnico = ({header,datos,footer}) => {
     <div className="contenido">
     <div className="pedidos">
     {datos.map((data)=>{
-      return <ObjetoCarritoCompra/>
+      return <ObjetoCarritoCompra key={data.id} data={data}/>
     })
     }
     </div>

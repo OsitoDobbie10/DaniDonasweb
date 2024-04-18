@@ -74,6 +74,13 @@ const Global = ({children}) => {
     nombre:"",
     dir:"",
     hora:""});
+  const [obtenerencargar,setObtenerencargar] = useState({
+      nombre:"",
+      dir:"",
+      hora:""});
+  const [obtenerecoger,setObteneRecoger] = useState({
+        fecharecoger:"",
+        horarecoger: ""});
   const obtenerRecoger = (e)=>{
     setGetRecoger({
       ...getRecoger,
@@ -262,7 +269,9 @@ const Global = ({children}) => {
         getencargar,getRecoger,obtenerRecoger,obtenerEncargar,
         datosform1,datosform2,datosform3,datosform4,obtenerForm1,obtenerForm2,obtenerForm3,obtenerForm4,
         datosform5,obtenerForm5,obtenerform6,datosform6,
-        abrirvista,openabrirvista
+        abrirvista,openabrirvista,
+        obtenerencargar,setObtenerencargar,
+        obtenerecoger,setObteneRecoger
     }}> 
       {children} 
     </Stade.Provider>

@@ -5,6 +5,8 @@ import { useQuery } from '@tanstack/react-query';
 const ProductosFavs = () => {
   const {favoritos,showfavs} = ViewRestaurantes();
   useQuery({queryKey:['favorito'],queryFn:()=>showfavs()});
+  let longitud = favoritos.length;
+  let viewlong = longitud > 0 ? true: false;
   return (
     <Container>
     <div className="area1">
@@ -13,15 +15,23 @@ const ProductosFavs = () => {
                  icono2={<v.compra/>}
                  ruta="/" ruta2="/Carrito"/>
     </div>
-    <div className="area2">
-    <div className="favoritositems">
     {
-      favoritos.map((fav)=>{
-        return <FavoritoIndivual data={fav} key={fav.id}/>
-      })
+      viewlong ? 
+      <div className="favoritositems">
+      {
+        favoritos.map((fav)=>{
+          return <FavoritoIndivual data={fav} key={fav.id}/>
+        })
+      }
+      </div> :
+       <div className="favoritositems">
+       {
+         favoritos.map((fav)=>{
+           return <FavoritoIndivual data={fav} key={fav.id}/>
+         })
+       }
+       </div>
     }
-    </div>
-    </div>
     <div className="footer">
     <NavbarMenu/> 
     </div>
@@ -31,25 +41,17 @@ const ProductosFavs = () => {
 const Container = styled.div`
 min-height: 100vh;
 width: 100%;
-.area1{
-    width:100%;
-    margin-bottom: 20px;
-}
-.area2{
-    width: 100%;
-    margin-bottom: 50px;
     .favoritositems{
       width: 90%;
-      margin:auto;
+      margin: 10px auto;
       display: flex;
       flex-direction: column;
       gap:20px;
     }
-    
-}
-.footer{
-  grid-area: footer;
 
+.footer{
+ width:100%;
+ height: 100px;
 }
 `
 export default ProductosFavs

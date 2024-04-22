@@ -1,13 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
-import {v} from "../../index"
+import {v,DomicilioCarrito} from "../../index"
 import Torta from "../../Assets/tarta-de-queso.png";
 import Donas from "../../Assets/donas.png";
-const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar}) => {
+const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => {
   const {ciudad,colonia,referencia,direccion,Latitude,Longitud} = direcciones;
   const {IdPedido,fecha,nombre,precio,descp,imagen,TipoProducto} = data;
   const imagenIcono = TipoProducto === "Donnas" ? true : false;
-  const fechaformateada = fecha.split('T')[0];
+  const fechaformateada = fecha.split('T')[0]; 
+  const {fecharecoger,horarecoger} = recoger;
+  const {nombre:personaencarga,dir,hora} = encargar;
+  const TipoPedidoValor = (tipo)=>{
+    switch(tipo){
+      case "Domicilio":
+      return <DomicilioCarrito ciudad={ciudad} colonia={colonia}/>
+      break;
+      case "Encargar":
+      return 
+      break;
+      case "Recoger":
+      return 
+      break
+    }
+  }
   return (
     <Container>
     <div className="columna1">
@@ -33,8 +48,7 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar}) => {
     <span className='messuretxt'>--Total</span> 
     </div>
     </div>
-    <div className="columna2">
-    </div>
+    {TipoPedidoValor(TipoPedido)}
     <div className="columna3">
     </div>
     </Container>

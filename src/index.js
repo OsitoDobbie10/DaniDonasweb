@@ -16,6 +16,7 @@ export { default as ContenedorObjetoCarrito } from './Components/Organismos/Cont
 export { default as ContenidoProducto } from './Components/Organismos/ContenidoProducto';
 export { default as DatosCheescake } from './Components/Organismos/DatosCheescake';
 export { default as DatosDonna } from './Components/Organismos/DatosDonna';
+export { default as DomicilioCarrito } from './Components/Organismos/DomicilioCarrito';
 export { default as ErrorSinup } from './Components/Organismos/ErrorSinup';
 export { default as FavoritoIndivual } from './Components/Organismos/FavoritoIndivual';
 export { default as FiltrosTempleted } from './Components/Organismos/FiltrosTempleted';

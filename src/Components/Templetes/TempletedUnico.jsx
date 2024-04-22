@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import {ObjetoCarritoCompra,UseGlobal,MapaCarrito,ContenedorObjetoCarrito} from "../../index";
 import IconoWhatsapp from '../../Assets/whatsapp.png';
-const TempletedUnico = ({header,datos,footer,direcciones,encargar,recoger}) => {
-const {abrircarrito,openelemento1,openelemento2} = UseGlobal();
-console.log(datos);
+const TempletedUnico = ({header,datos,footer,direcciones,encargar,recoger,TipoPedido}) => {
+const {abrircarrito,openelemento1,openelemento2,view} = UseGlobal();
+const {tipo} = view;
   return (
     <Container>
     <div className="header">
@@ -21,7 +21,7 @@ console.log(datos);
     {
     abrircarrito ? 
     <ContenedorObjetoCarrito datos={datos} direcciones={direcciones} 
-                             encargar={encargar} recoger={recoger}/>
+                             encargar={encargar} recoger={recoger} TipoPedido={tipo}/>
     :
     <MapaCarrito/>
     }

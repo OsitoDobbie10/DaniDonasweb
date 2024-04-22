@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {ObjetoCarritoCompra} from "../../index"
 import { motion } from 'framer-motion';
-const ContenedorObjetoCarrito = ({datos,direcciones,recoger,encargar}) => {
+const ContenedorObjetoCarrito = ({datos,direcciones,recoger,encargar,TipoPedido}) => {
 const transition = {type:"spring",duration:4}
   return (
     <Container>
@@ -16,7 +16,8 @@ const transition = {type:"spring",duration:4}
       return <ObjetoCarritoCompra key={data.id} data={data} 
                                  direcciones={direcciones} 
                                  recoger={recoger}
-                                 encargar={encargar}/>
+                                 encargar={encargar}
+                                 TipoPedido={TipoPedido}/>
     })
     }
     </motion.div>

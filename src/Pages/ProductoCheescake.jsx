@@ -101,7 +101,8 @@ const ProductoCheescake = () => {
             FruEx:`${FruEx}-100`,
             MoreEx:`${MoreEx}-50`,
             Dedicatoria:`${Dedicatoria}-50`,
-            IdPedido:`#${generarIDUnico()}`
+            IdPedido:`#${generarIDUnico()}`,
+            TipoProducto:"Pastel"
           }
           subir(p);
         }

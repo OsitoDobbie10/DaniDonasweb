@@ -12,6 +12,7 @@ export { default as ItemList } from './Components/Moleculas/ItemList';
 export { default as ItemRestaurante } from './Components/Moleculas/ItemRestaurante';
 export { default as Recoger } from './Components/Moleculas/Recoger';
 export { default as Spinner2 } from './Components/Moleculas/Spinner2';
+export { default as ContenedorObjetoCarrito } from './Components/Organismos/ContenedorObjetoCarrito';
 export { default as ContenidoProducto } from './Components/Organismos/ContenidoProducto';
 export { default as DatosCheescake } from './Components/Organismos/DatosCheescake';
 export { default as DatosDonna } from './Components/Organismos/DatosDonna';
@@ -26,6 +27,7 @@ export { default as FormularioRecoger } from './Components/Organismos/Formulario
 export { default as HeaderDonna } from './Components/Organismos/HeaderDonna';
 export { default as Links } from './Components/Organismos/Links';
 export { default as Logico } from './Components/Organismos/Logico';
+export { default as MapaCarrito } from './Components/Organismos/MapaCarrito';
 export { default as Menu } from './Components/Organismos/Menu';
 export { default as MenuHambur2 } from './Components/Organismos/MenuHambur2';
 export { default as Modal } from './Components/Organismos/Modal';

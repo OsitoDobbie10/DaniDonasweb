@@ -180,7 +180,8 @@ function generarIDUnico() {
               G1:`${G1}-45`,
               MP:`${MP}-45`,
               S:`${S}-5`,
-              IdPedido:`#${generarIDUnico()}`
+              IdPedido:`#${generarIDUnico()}`,
+              TipoProducto: "Donnas"
             }
             subir(p);
           }

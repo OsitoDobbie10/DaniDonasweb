@@ -1,19 +1,30 @@
 import styled from 'styled-components'
-import {ObjetoCarritoCompra} from "../../index"
-const TempletedUnico = ({header,datos,footer,direcciones}) => {
-  const {ciudad,colonia,referencia,direccion,Latitude,Longitud} = direcciones;
+import {ObjetoCarritoCompra,UseGlobal,MapaCarrito,ContenedorObjetoCarrito} from "../../index";
+import IconoWhatsapp from '../../Assets/whatsapp.png';
+const TempletedUnico = ({header,datos,footer,direcciones,encargar,recoger}) => {
+const {abrircarrito,openelemento1,openelemento2} = UseGlobal();
+console.log(datos);
   return (
     <Container>
-     <div className="header">
+    <div className="header">
     {header}
     </div>
     <div className="contenido">
-    <div className="pedidos">
-    {datos.map((data)=>{
-      return <ObjetoCarritoCompra key={data.id} data={data}/>
-    })
-    }
+    <h2 className='TituloCarrito'>Detalles del pedido</h2>
+    <div className="submenucarrito">
+    <span className={`carritoname ${abrircarrito ? 'izquierda' : 'derecha'} `} onClick={openelemento1}>Detalles</span>
+    <span className={`carritoname1 ${abrircarrito ? 'izquierda': 'derecha'}`} onClick={openelemento2}>Ubicacion del pedido</span>
+    <div className="iconocontenedor">
+    <img src={IconoWhatsapp} alt="Whatsapp" className='whatsappicono'/>
     </div>
+    </div>
+    {
+    abrircarrito ? 
+    <ContenedorObjetoCarrito datos={datos} direcciones={direcciones} 
+                             encargar={encargar} recoger={recoger}/>
+    :
+    <MapaCarrito/>
+    }
     </div>
     <div className="footer">
     {footer}
@@ -33,10 +44,65 @@ grid-template: "header" 100px
 .header{grid-area: header;}
 .contenido{
     grid-area: contenido;
-    .pedidos{
-        width: 90%;
-        margin: auto;
+    .TituloCarrito{
+      text-align: center;
+      color: red;
+      margin-top: 10px;
     }
+    .submenucarrito{
+      display: flex;
+      gap:20px;
+      justify-content: center;
+      margin-top:15px;
+      position: relative;
+      .carritoname.izquierda{
+        font-size: 20px;
+        font-weight: 800;
+        color: black;
+        text-decoration-line: underline;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      .carritoname.derecha{
+        font-size: 20px;
+        font-weight: 800;
+        color: red;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      .carritoname1.izquierda{
+        font-size: 20px;
+        font-weight: 800;
+        color: red;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      .carritoname1.derecha{
+        font-size: 20px;
+        font-weight: 800;
+        color: black;
+        text-decoration-line: underline;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      .iconocontenedor{
+        position: absolute;
+        right:20px;
+        top:10px;
+        .whatsappicono{
+          width: 50px;
+          height: 50px;
+         &:hover{
+          cursor: pointer;
+         }
+        }
+      }
+    }
+  
 .footer{
     grid-area: footer; 
 }

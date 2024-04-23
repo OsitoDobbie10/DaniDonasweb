@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {UseGlobal,supabase} from '../../index';
+import Swal from "sweetalert2";
 const defaultTheme = createTheme();
 export default function SignUp() {
     const {setAnimandoModal3,
@@ -42,10 +43,15 @@ export default function SignUp() {
                   }
                 }
               )
+              Swal.fire({
+                title: "Gracias por Registrarte...",
+                text: "Revisa tu Email para poder ingresar..!",
+                icon: "success"
+              });
               setShow("Revisa tu Email para poder ingresar..")
               setTimeout(()=>{
                 setAnimandoModal3(false);
-              },3500)
+              },2500)
             } catch (error) {
               alert(error)
             }

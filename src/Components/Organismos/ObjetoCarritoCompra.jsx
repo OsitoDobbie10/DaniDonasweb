@@ -9,17 +9,25 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
   const imagenIcono = TipoProducto === "Donnas" ? true : false;
   const fechaformateada = fecha.split('T')[0]; 
   const {fecharecoger,horarecoger} = recoger;
-  const {nombre:personaencarga,dir,hora} = encargar;
+  const {nombre:personaencarga,dir,hora:horaencargo} = encargar;
   const TipoPedidoValor = (tipo)=>{
     switch(tipo){
       case "Domicilio":
-      return <DomicilioCarrito ciudad={ciudad} colonia={colonia}/>
+      return <DomicilioCarrito spanciudad="Ciudad" spancolonia="Colonia" ciudad={ciudad} colonia={colonia}/>
       break;
       case "Encargar":
-      return 
+      return <DomicilioCarrito Nombre="Nombre de la persona que encago" 
+                               direccion="Direccion del encargo"
+                               Hora1="Hora del encargo"
+                               personaencarga={personaencarga}
+                               dir={dir}
+                               horaencago={horaencargo}/>
       break;
       case "Recoger":
-      return 
+      return <DomicilioCarrito Fecha="Fecha a recoger pedido" 
+                               Hora2="Hora a recoger pedido"
+                               fecharecoger={fecharecoger}
+                               horarecoger={horarecoger}/> 
       break
     }
   }

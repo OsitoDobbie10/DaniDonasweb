@@ -6,31 +6,26 @@ const ProductosFavs = () => {
   const {favoritos,showfavs} = ViewRestaurantes();
   useQuery({queryKey:['favorito'],queryFn:()=>showfavs()});
   let longitud = favoritos.length;
-  let viewlong = longitud > 0 ? true: false;
+  let view = longitud > 0 ? true: false;
   return (
     <Container>
-    <div className="area1">
-    <HeaderDonna icono={<v.Atras/>} 
-                 texto="Mis productos favoritos"
-                 icono2={<v.compra/>}
-                 ruta="/" ruta2="/Carrito"/>
-    </div>
+    <HeaderDonna icono={<v.Atras/>} texto="Mis productos favoritos" icono2={<v.compra/>} ruta="/" ruta2="/Carrito"/>
     {
-      viewlong ? 
-      <div className="favoritositems">
+      view ? 
+      <div className="arregloPedidos">
       {
         favoritos.map((fav)=>{
           return <FavoritoIndivual data={fav} key={fav.id}/>
         })
       }
       </div> :
-       <div className="favoritositems">
+      <div className="arreglopedidos2">
        {
          favoritos.map((fav)=>{
            return <FavoritoIndivual data={fav} key={fav.id}/>
          })
        }
-       </div>
+      </div> 
     }
     <div className="footer">
     <NavbarMenu/> 
@@ -39,19 +34,33 @@ const ProductosFavs = () => {
   )
 }
 const Container = styled.div`
-min-height: 100vh;
 width: 100%;
-    .favoritositems{
-      width: 90%;
-      margin: 10px auto;
-      display: flex;
-      flex-direction: column;
-      gap:20px;
-    }
+min-height: 100vh;
+background-color: aliceblue;
+.arregloPedidos{
+  width: 90%;
+  margin:20px auto;
+  display: flex;
+  flex-direction: column;
+  gap:20px; 
+}
+
+.arreglopedidos2{
+  width: 90%;
+  margin:20px auto;
+  display: flex;
+  flex-direction: column;
+  gap:20px; 
+  height: 800px;
+}
 
 .footer{
- width:100%;
- height: 100px;
+  width: 100%;
+  height: 100px;
+position: fixed;
+bottom: 0;
 }
-`
+
+
+`;
 export default ProductosFavs

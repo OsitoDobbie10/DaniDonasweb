@@ -38,9 +38,9 @@ const Container = styled.div`
 width: 90%;
 margin:auto;
 display: grid;
-height: 100%;
+height: 6cap;
 grid-template: "header" 100px
-                "contenido" 1000px
+                "contenido" 600px
                 "footer" 100px;
 .header{grid-area: header;}
 .contenido{

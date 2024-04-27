@@ -4,6 +4,7 @@ import IconoWhatsapp from '../../Assets/whatsapp.png';
 const TempletedUnico = ({header,datos,footer,direcciones,encargar,recoger,TipoPedido}) => {
 const {abrircarrito,openelemento1,openelemento2,view} = UseGlobal();
 const {tipo} = view;
+const {Latitude,Longitud} = direcciones;
   return (
     <Container>
     <div className="header">
@@ -23,7 +24,7 @@ const {tipo} = view;
     <ContenedorObjetoCarrito datos={datos} direcciones={direcciones} 
                              encargar={encargar} recoger={recoger} TipoPedido={tipo}/>
     :
-    <MapaCarrito/>
+    <MapaCarrito Latitud={Latitude} Longitud={Longitud}/>
     }
     </div>
     <div className="footer">
@@ -91,7 +92,7 @@ grid-template: "header" 100px
       }
       .iconocontenedor{
         position: absolute;
-        right:20px;
+        right:10px;
         top:10px;
         .whatsappicono{
           width: 50px;

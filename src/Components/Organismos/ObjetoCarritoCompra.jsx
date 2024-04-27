@@ -1,8 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
-import {v,DomicilioCarrito} from "../../index"
+import React from 'react';
+import styled from 'styled-components';
+import {v,DomicilioCarrito} from "../../index";
 import Torta from "../../Assets/tarta-de-queso.png";
 import Donas from "../../Assets/donas.png";
+import Add from "../../Assets/agregar.png";
 const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => {
   const {ciudad,colonia,referencia,direccion,Latitude,Longitud} = direcciones;
   const {IdPedido,fecha,nombre,precio,descp,imagen,TipoProducto} = data;
@@ -58,6 +59,9 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
     </div>
     {TipoPedidoValor(TipoPedido)}
     <div className="columna3">
+    <span className='PrecioPedido'>L.{precio}.00</span>
+    <img className='Iconoagregarmas' src={Add} alt="AgregarImagen"/>
+    <span className='PrecioPedido'>L.{precio}.00</span>
     </div>
     </Container>
   )
@@ -68,6 +72,7 @@ height: 500px;
 display: flex;
 gap:20px;
 align-items: center;
+justify-content: space-evenly;
 .columna1{
       width: 30%;
       height: 100%;
@@ -127,6 +132,27 @@ align-items: center;
         }
       }
     }
+.columna3{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:40px;
+  .PrecioPedido{
+    font-size: 20px;
+    font-weight: 700;
+    color:orange;
+  }
+  .Iconoagregarmas{
+    width: 30px;
+    height: 30px;
+    &:hover{
+      cursor: pointer;
+    }
 
+  }
+
+}
 `;
 export default ObjetoCarritoCompra

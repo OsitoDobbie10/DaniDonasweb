@@ -29,6 +29,7 @@ export { default as HeaderDonna } from './Components/Organismos/HeaderDonna';
 export { default as Links } from './Components/Organismos/Links';
 export { default as Logico } from './Components/Organismos/Logico';
 export { default as MapaCarrito } from './Components/Organismos/MapaCarrito';
+export { default as MapaParaCarrito } from './Components/Organismos/MapaParaCarrito';
 export { default as Menu } from './Components/Organismos/Menu';
 export { default as MenuHambur2 } from './Components/Organismos/MenuHambur2';
 export { default as Modal } from './Components/Organismos/Modal';

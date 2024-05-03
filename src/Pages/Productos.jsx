@@ -24,15 +24,14 @@ const Productos = () => {
 const Container = styled.div`
   width: 90%;
   margin:auto;
-  height: 800px;
+  height: 900px;
   .header{
     width: 90%;
     margin: auto;
     height: 100px;
-    margin-bottom: 100px;
   }
   .contenido{
-    width: 90%;
+    width: 100%;
     height: 600px;
     margin: auto;
   }

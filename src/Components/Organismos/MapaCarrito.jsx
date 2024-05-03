@@ -20,7 +20,7 @@ const MapaCarrito = ({Latitud,Longitud}) => {
 }
 const Container = styled.div`
 width: 90%;
-height: 100%;
+height: 400px;
 margin: auto;
 `
 export default MapaCarrito

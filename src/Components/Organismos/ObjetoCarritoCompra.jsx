@@ -139,6 +139,7 @@ justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
   gap:40px;
+  margin-top: 40px;
   .PrecioPedido{
     font-size: 20px;
     font-weight: 700;

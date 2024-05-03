@@ -13,6 +13,7 @@ const SwierCarrito = ({data,direcciones,recoger,encargar,TipoPedido,
     <div className="iconocontenedor">
     <img src={IconoWhatsapp} alt="Whatsapp" className='whatsappicono'/>
     </div>
+    </div>
     {
     abrircarrito ? 
     <ObjetoCarritoCompra key={data.id} data={data} 
@@ -24,7 +25,7 @@ const SwierCarrito = ({data,direcciones,recoger,encargar,TipoPedido,
     :
     <MapaCarrito Latitud={Latitude} Longitud={Longitud}/>
     }
-    </div>
+   
     </div>
   )
 }

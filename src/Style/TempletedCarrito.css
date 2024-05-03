@@ -1,0 +1,66 @@
+.contenido{
+    display: flex;
+    flex-direction: column;
+    gap:10px;}
+
+.TituloCarrito{
+        text-align: center;
+        color: red;
+        margin-top: 10px;
+}
+.submenucarrito{
+    display: flex;
+    gap:20px;
+    justify-content: center;
+    margin-top:15px;
+    position: relative;}
+
+.carritoname.izquierda{
+        font-size: 20px;
+        font-weight: 800;
+        color: black;
+        text-decoration-line: underline;}
+
+.carritoname.izquierda:hover{
+    cursor: pointer;
+}
+
+.carritoname.derecha{
+    font-size: 20px;
+    font-weight: 800;
+    color: red;}
+
+.carritoname.derecha:hover{
+    cursor: pointer;
+}
+
+.carritoname1.izquierda{
+    font-size: 20px;
+    font-weight: 800;
+    color: red;}
+.carritoname1.izquierda:hover{
+    cursor: pointer;
+}
+
+.carritoname1.derecha{
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    text-decoration-line: underline;}
+
+.carritoname1.derecha:hover{
+    cursor: pointer;
+}
+
+.iconocontenedor{
+    position: absolute;
+    right:10px;
+    top:10px;}
+
+.whatsappicono{
+        width: 50px;
+        height: 50px;}
+
+.whatsappicono:hover{
+    cursor: pointer;
+}

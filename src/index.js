@@ -40,6 +40,7 @@ export { default as PedidoIndividual } from './Components/Organismos/PedidoIndiv
 export { default as SpinnerError } from './Components/Organismos/SpinnerError';
 export { default as SpinnerIntro } from './Components/Organismos/SpinnerIntro';
 export { default as Succes } from './Components/Organismos/Succes';
+export { default as SwierCarrito } from './Components/Organismos/SwierCarrito';
 export { default as SwipeLefthDataSimple } from './Components/Organismos/SwipeLefthDataSimple';
 export { default as SwipeRightDataSimple } from './Components/Organismos/SwipeRightDataSimple';
 export { default as Targeta } from './Components/Organismos/Targeta';

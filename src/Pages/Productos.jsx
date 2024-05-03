@@ -1,25 +1,46 @@
 import styled from "styled-components"
-import {HeaderDonna,NavbarMenu,TempletedUnico,v,ViewRestaurantes,UseGlobal} from "../index";
+import {HeaderDonna,NavbarMenu,v,ViewRestaurantes,UseGlobal, TempletedUnico} from "../index";
 import { useQuery } from '@tanstack/react-query';
 const Productos = () => {
   const {pedidosDonnas,showPedidoDonnas} = ViewRestaurantes();
   const {getdireccion,getRecoger,getencargar} = UseGlobal();
   return (
     <Container>
-    <TempletedUnico header={<HeaderDonna icono={<v.Atras/>} 
-                                         texto="Carrito de compras"
-                                          ruta="/"
-                                          ruta2="/Carrito"
-                                          icono2={<v.compra/>}/>}
-                    direcciones={getdireccion}
+    <div className="header">
+    <HeaderDonna icono={<v.Atras/>} texto="Carrito de compras" ruta="/" ruta2="/Carrito" icono2={<v.compra/>}/>
+    </div>
+    <div className="contenido">
+    <TempletedUnico datos={pedidosDonnas} 
+                    direcciones={getdireccion} 
                     encargar={getencargar}
-                    recoger={getRecoger}
-                    datos={pedidosDonnas}
-                    footer={<NavbarMenu/>}            
-                    />
+                    recoger={getRecoger}/>
+    </div>
+    <div className="footer">
+    <NavbarMenu/>
+    </div>
     </Container>
   )
 }
 const Container = styled.div`
+  width: 90%;
+  margin:auto;
+  height: 800px;
+  .header{
+    width: 90%;
+    margin: auto;
+    height: 100px;
+    margin-bottom: 100px;
+  }
+  .contenido{
+    width: 90%;
+    height: 600px;
+    margin: auto;
+  }
+  .footer{
+    width: 90%;
+    margin: auto;
+    height: 100px;
+
+  }
 `;
 export default Productos

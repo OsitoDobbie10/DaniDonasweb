@@ -16,6 +16,7 @@ button {
     place-items: center;
     opacity: 0;
     transition: 0.25s;
+    margin-top: 100px;
   }
   
   .swiper-slide-active {
@@ -30,6 +31,7 @@ button {
     font-weight: bold;
     width: 100%;
     color:red;
+    text-align: center;
   }
   
   .swiper-button-next,
@@ -57,7 +59,7 @@ button {
   }
   
   .burger,
-  .menu,
+  .inside,
   .cerrar{
     position: fixed;
   }
@@ -88,7 +90,7 @@ button {
     top:55px;
     left: 20px;
   }
-  .menu {
+  .inside {
     z-index: 2;
     top: 0;
     left: 0;
@@ -102,27 +104,27 @@ button {
     transition: 0.5s;
   }
   
-  .menu.open {
+  .inside.open {
     opacity: 1;
     visibility: visible;
   }
   
-  .menu nav {
+  .inside nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   
-  .menu nav:hover a {
+  .inside nav:hover a {
     opacity: 0.25;
   }
   
-  .menu nav a:hover {
+  .inside nav a:hover {
     opacity: 1;
   }
   
-  .menu a {
+  .inside a {
     position: relative;
     color: #f9f9f9;
     font-size: 32px;
@@ -133,7 +135,7 @@ button {
     transition: 0.4s;
   }
   
-  .menu a::after {
+  .inside a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -147,6 +149,6 @@ button {
     transition: 0.4s;
   }
   
-  .menu a:hover::after {
+  .inside a:hover::after {
     transform: scaleX(1);
   }

@@ -5,7 +5,7 @@ const SwierCarrito = ({data,direcciones,recoger,encargar,TipoPedido,
                        Latitude,Longitud,abrircarrito,openelemento2,
                        openelemento1}) => {
   return (
-    <div className="contenido">
+    <div className="contenidoswiercarrito">
     <h2 className='TituloCarrito'>Detalles del pedido</h2>
     <div className="submenucarrito">
     <span className={`carritoname ${abrircarrito ? 'izquierda' : 'derecha'} `} onClick={openelemento1}>Detalles</span>

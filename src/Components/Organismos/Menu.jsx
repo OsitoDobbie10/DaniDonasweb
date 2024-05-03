@@ -49,7 +49,7 @@ const Menu = ({boton}) => {
       <div className={`background ${openClass}`}></div>
       <button className={`burger ${openClass}`} onClick={toggleMenu}>{boton}</button>
       {isOpen ? <button className={`cerrar ${openClass}`} onClick={toggleMenu}>{<v.Cerrar/>}</button>:<div></div>}
-      <div className={`menu ${openClass}`}>
+      <div className={`inside ${openClass}`}>
         <Swiper speed={750} modules={[Navigation]} navigation>
           {navs.map((nav,index) => (
             <SwiperSlide key={index}>{nav}</SwiperSlide>

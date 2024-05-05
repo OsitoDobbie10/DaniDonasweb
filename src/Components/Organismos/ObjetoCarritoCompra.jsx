@@ -17,7 +17,7 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
       return <DomicilioCarrito spanciudad="Ciudad" spancolonia="Colonia" ciudad={ciudad} colonia={colonia}/>
       break;
       case "Encargar":
-      return <DomicilioCarrito Nombre="Nombre de la persona que encago" 
+      return <DomicilioCarrito Nombre="Encargo de:" 
                                direccion="Direccion del encargo"
                                Hora1="Hora del encargo"
                                personaencarga={personaencarga}
@@ -57,7 +57,7 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
     <span className='messuretxt'>--Total</span> 
     </div>
     </div>
-    <DomicilioCarrito spanciudad="Ciudad" spancolonia="Colonia" ciudad={ciudad} colonia={colonia}/>
+    {TipoPedidoValor(TipoPedido)}
     <div className="columna3">
     <span className='PrecioPedido'>L.{precio}.00</span>
     <img className='Iconoagregarmas' src={Add} alt="AgregarImagen"/>
@@ -67,10 +67,11 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
   )
 }
 const Container = styled.div`
-width: 100%;
+width: 90%;
 height: 500px;
+margin:auto;
 display: flex;
-gap:20px;
+gap:10px;
 align-items: center;
 justify-content: space-evenly;
 .columna1{

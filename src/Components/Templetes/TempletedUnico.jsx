@@ -1,5 +1,4 @@
-import {UseGlobal,SwierCarrito} from "../../index";
-import { motion } from 'framer-motion';
+import {UseGlobal,SwierCarrito,ContainerArrayCompras, ContenedorObjetoCarrito} from "../../index";
 import {Swiper, SwiperSlide} from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y,EffectCube} from 'swiper/modules';
 import "../../Style/TempletedCarrito.css"
@@ -12,8 +11,9 @@ import 'swiper/css/scrollbar';
 const TempletedUnico = ({datos,direcciones,encargar,recoger,TipoPedido}) => {
 const {abrircarrito,openelemento1,openelemento2} = UseGlobal();
 const {Latitude,Longitud} = direcciones;
-const transition = {type:"spring",duration:4}
+const longDeCompras = datos.length > 1 ? true : false;
   return (
+    longDeCompras ? 
     <Swiper
     modules={[Navigation, Pagination, Scrollbar, A11y,EffectCube]}
     spaceBetween={50}
@@ -47,6 +47,19 @@ const transition = {type:"spring",duration:4}
     })
     }
     </Swiper>
+    :
+    <ContenedorObjetoCarrito
+     datos={datos}
+     encargar={encargar}
+     abrircarrito={abrircarrito}
+     openelemento1={openelemento1}
+     openelemento2={openelemento2}
+     direcciones={direcciones}
+     recoger={recoger}
+     TipoPedido={TipoPedido}
+     Latitude={Latitude} 
+     Longitud={Longitud}
+    />
   )
 }
 

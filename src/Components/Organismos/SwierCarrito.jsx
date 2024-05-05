@@ -1,9 +1,10 @@
 import "../../Style/TempletedCarrito.css"
 import IconoWhatsapp from '../../Assets/whatsapp.png';
-import {ObjetoCarritoCompra,MapaCarrito} from "../../index"
+import {ObjetoCarritoCompra,MapaCarrito,MensajeMapa} from "../../index"
 const SwierCarrito = ({data,direcciones,recoger,encargar,TipoPedido,
                        Latitude,Longitud,abrircarrito,openelemento2,
                        openelemento1}) => {
+  const evaluarmapa = TipoPedido === "Encargar" || TipoPedido === "Recoger" ? true : false;
   return (
     <div className="contenidoswiercarrito">
     <h2 className='TituloCarrito'>Detalles del pedido</h2>
@@ -23,9 +24,11 @@ const SwierCarrito = ({data,direcciones,recoger,encargar,TipoPedido,
                                  TipoPedido={TipoPedido}/>
 
     :
+    evaluarmapa ? 
+    <MensajeMapa/>
+    : 
     <MapaCarrito Latitud={Latitude} Longitud={Longitud}/>
     }
-   
     </div>
   )
 }

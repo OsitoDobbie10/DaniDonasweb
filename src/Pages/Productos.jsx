@@ -3,7 +3,8 @@ import {HeaderDonna,NavbarMenu,v,ViewRestaurantes,UseGlobal, TempletedUnico} fro
 import { useQuery } from '@tanstack/react-query';
 const Productos = () => {
   const {pedidosDonnas,showPedidoDonnas} = ViewRestaurantes();
-  const {getdireccion,getRecoger,getencargar} = UseGlobal();
+  const {getdireccion,getRecoger,getencargar,view} = UseGlobal();
+  const {tipo} = view;
   return (
     <Container>
     <div className="header">
@@ -13,7 +14,8 @@ const Productos = () => {
     <TempletedUnico datos={pedidosDonnas} 
                     direcciones={getdireccion} 
                     encargar={getencargar}
-                    recoger={getRecoger}/>
+                    recoger={getRecoger}
+                    TipoPedido={tipo}/>
     </div>
     <div className="footer">
     <NavbarMenu/>

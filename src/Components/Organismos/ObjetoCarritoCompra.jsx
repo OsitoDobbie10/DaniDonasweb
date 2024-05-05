@@ -57,7 +57,7 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
     <span className='messuretxt'>--Total</span> 
     </div>
     </div>
-    {TipoPedidoValor(TipoPedido)}
+    <DomicilioCarrito spanciudad="Ciudad" spancolonia="Colonia" ciudad={ciudad} colonia={colonia}/>
     <div className="columna3">
     <span className='PrecioPedido'>L.{precio}.00</span>
     <img className='Iconoagregarmas' src={Add} alt="AgregarImagen"/>

@@ -10,8 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 const TempletedUnico = ({datos,direcciones,encargar,recoger,TipoPedido}) => {
-const {abrircarrito,openelemento1,openelemento2,view} = UseGlobal();
-const {tipo} = view;
+const {abrircarrito,openelemento1,openelemento2} = UseGlobal();
 const {Latitude,Longitud} = direcciones;
 const transition = {type:"spring",duration:4}
   return (

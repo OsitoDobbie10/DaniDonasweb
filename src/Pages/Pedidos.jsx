@@ -20,11 +20,7 @@ const Pedidos = () => {
       }
       </div>:
        <div className="arreglopedidos2">
-       {
-         pedidosDonnas.map((data)=>{
-           return  <PedidoIndividual data={data} key={data.id}/>
-         })
-       }
+      
        </div>
     }
     <div className="footer">
@@ -51,14 +47,13 @@ background-color: aliceblue;
   display: flex;
   flex-direction: column;
   gap:20px; 
-  height: 800px;
+  height: 600px;
 }
 
 .footer{
   width: 100%;
   height: 100px;
-position: fixed;
-bottom: 0;
+
 }
 
 

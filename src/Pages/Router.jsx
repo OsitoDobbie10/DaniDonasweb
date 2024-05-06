@@ -75,7 +75,7 @@ export const Router = () => {
          },
          {
           path:"/Configuracion",
-          element:token ? <Configuracion/> : <ErrorNoRegistro valor="Configuracion"/>
+          element:token ? <Configuracion datosgenerales={token}/> : <ErrorNoRegistro valor="Configuracion"/>
          },
          {
           path:"/Mapa",

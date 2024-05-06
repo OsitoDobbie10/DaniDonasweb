@@ -6,7 +6,13 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: right;
     padding: 4px;
+}
+
+.contentLeft>span{
+    font-weight: 800;
+    text-align: right;
 }
 
 .contentRight{

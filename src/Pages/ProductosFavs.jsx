@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {NavbarMenu,v,HeaderDonna,ViewRestaurantes,FavoritoIndivual} from "../index";
 import { useQuery } from '@tanstack/react-query';
 const ProductosFavs = () => {
-  const {favoritos,showfavs} = ViewRestaurantes();
+  const {favoritos,showfavs,} = ViewRestaurantes();
   useQuery({queryKey:['favorito'],queryFn:()=>showfavs()});
   let longitud = favoritos.length;
   let view = longitud > 0 ? true: false;

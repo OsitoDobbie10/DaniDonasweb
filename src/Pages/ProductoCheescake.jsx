@@ -1,7 +1,7 @@
 import React from 'react'
 import {v,TempletedProducto,ViewRestaurantes,HeaderDonna,
         ContenidoProducto,FormularioCheescake,arreglocake1,
-        BotonPedidoEnviar,UseGlobal,AgregarPedido,BotonMenuView,ViewProducto,AgregarFav,ViewRestaurantesList} from "../index";
+        BotonPedidoEnviar,UseGlobal,AgregarPedido,BotonMenuView,ViewProducto,AgregarFav} from "../index";
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Swal from "sweetalert2";
@@ -130,7 +130,9 @@ const ProductoCheescake = () => {
     precio:preciofav,
     descp:descp,
     adicional:`Ingredientes adicionales: ${dato} ${dato2} ${dato3} ${dato4}`,
-    imagen:imagenes
+    imagen:imagenes,
+    TipoPedido:"Pastel",
+    IdUnico:`#${generarIDUnico()}`
   };
   subir2(p);
   }

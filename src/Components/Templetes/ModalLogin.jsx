@@ -38,7 +38,7 @@ const ModalLogin = ({animacion,cerrar}) => {
   )
 }
 const Container = styled.div`
-position: absolute;
+position: fixed;
 background-color: rgb(0 0 0 / 0.92);
 top: 0;
 left: 0;
@@ -67,7 +67,7 @@ z-index: 1000;
     transition-duration: 300ms;
     transition-timing-function: ease-in;
     opacity: 0;
-    left: 30%;
+    left: 20%;
     top:10%;
     position: relative;
     background-color: #ddded6;
@@ -87,7 +87,7 @@ z-index: 1000;
 .formulario.animar {
     position: relative;
     opacity: 1;
-    left: 12%;
+    left: 10%;
     top:10%;
     display: flex;
     flex-direction: column;

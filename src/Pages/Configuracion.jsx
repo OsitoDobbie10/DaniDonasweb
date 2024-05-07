@@ -3,6 +3,9 @@ import {v,HeaderDonna} from "../index";
 import { useNavigate } from "react-router-dom";
 import Celular from "../Assets/AddNumber.png";
 const Configuracion = ({datosgenerales}) => {
+const {user} = datosgenerales;
+const {user_metadata} = user;
+const {first_name,email} = user;
   return (
     <Container>
     <HeaderDonna icono={<v.Atras/>} texto="Configuracion" ruta="/"/>
@@ -19,6 +22,18 @@ const Configuracion = ({datosgenerales}) => {
     <span className="IconoUser">{<v.User/>}</span>
     <span className="ConfigPerfil">Configuracion del perfil</span>
     <span className="EdicionUsuario">Editar</span>
+    </div>
+    <div className="InformaciongeneralUusuario">
+    <div className="columna1Datos">
+    <span className="itemcolumna1">Nombre</span>
+    <span className="itemcolumna1">Correo electronico</span>
+    <span className="itemcolumna1">Telefono</span>
+    </div>
+    <div className="columna1Datos">
+    <span className="itemscolumna2">{first_name}</span>
+    <span className="itemscolumna2">{email}</span>
+    <span className="itemscolumna2">{}</span>
+    </div>
     </div>
     </div>
     </Container>

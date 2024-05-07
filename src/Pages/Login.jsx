@@ -19,7 +19,7 @@ const Login = () => {
     <span className='back' onClick={()=>navegarback("/")}>
     Regresar 
     </span>
-    <h2>Bienvenido, ten en cuenta.</h2>
+    <h2>Bienvenido</h2>
     </div>
     <div className="heeader2">
     <span className='icono'>{<v.Mensage/>}</span>

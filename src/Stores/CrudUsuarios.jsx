@@ -41,3 +41,34 @@ export const editarClientes = async(p)=>{
     }
 }
 
+export const MostrarCuenta = async()=>{
+    try {
+        const idaouthsupabase = await ObtenerIdAuthSupabase();
+        const {error,data} = await supabase.from("cuenta").select().eq("idusuario",idusuario);
+        if(error){
+            alert("MostrarCuenta",error);
+        }
+        if(data){
+            return data[0];
+        }
+    } catch (error) {
+        alert(error.error_description || error.message + "MostrarCuenta")
+    } 
+}
+
+export const EditarCuenta = async(p)=>{
+    try {
+        const idaouthsupabase = await ObtenerIdAuthSupabase();
+        const {error,data} = await supabase.from("cuenta").update(p).eq("idusuario",idusuario);
+        if(error){
+            alert("MostrarCuenta",error);
+        }
+        Swal.fire({
+            icon: "success",
+            title: "Datos modificados",
+            showConfirmButton: false,
+            timer: 1500});
+    } catch (error) {
+        alert(error.error_description || error.message + "MostrarCuenta")
+    } 
+}

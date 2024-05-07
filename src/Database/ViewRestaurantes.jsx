@@ -14,6 +14,7 @@ import {MostrarRestaurantes,
         MostarFav,
         showrecoger,
         showencargo,
+        MostrarCuenta
         } from "../index";
 export const ViewRestaurantes = create((set,get)=>({
     pedidos:[],
@@ -28,6 +29,7 @@ export const ViewRestaurantes = create((set,get)=>({
     favoritos: [],
     encargo:[],
     recoger:[],
+    cuenta:[],
     idUsuario: 0,
     tipo: "Domicilio",
     cod: "D",

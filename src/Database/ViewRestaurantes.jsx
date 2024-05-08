@@ -129,6 +129,11 @@ export const ViewRestaurantes = create((set,get)=>({
       const response = await showencargo();
       set({encargo:response});
       return response
+    },
+    showCuentaPersonal: async(p)=>{
+      const reponse = await MostrarCuenta(p);
+      set({cuenta:reponse});
+      return reponse;
     }
 
 }));

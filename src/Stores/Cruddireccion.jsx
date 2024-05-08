@@ -27,7 +27,7 @@ export const Insertardireccion = async(p)=>{
        }
 };
 
-export const Mostrardireccion = async(p)=>{
+export const Mostrardireccion = async()=>{
    try {
     const {data,error} = await supabase.from("direccion").select();
     if(data){

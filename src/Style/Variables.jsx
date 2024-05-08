@@ -45,6 +45,8 @@ import { BiLogoShopify } from "react-icons/bi";
 import { BiFork } from "react-icons/bi";
 import Caminante from "../Assets/caminante.png";
 import { BiBookmarkHeart } from "react-icons/bi";
+import { BiCreditCard } from "react-icons/bi";
+import { BiQuestionMark } from "react-icons/bi";
 export const v = {
   sidebarWidth: `300px`,
   sidebarWidthInitial: `10vw`,
@@ -118,7 +120,9 @@ export const v = {
   Atras:BiArrowBack,
   compra:BiLogoShopify,
   caminante:Caminante,
-  favorito:BiBookmarkHeart
+  favorito:BiBookmarkHeart,
+  targetacredito:BiCreditCard,
+  Pregunta:BiQuestionMark
   };
 
   

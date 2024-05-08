@@ -1,11 +1,19 @@
 import styled from "styled-components";
-import {v,HeaderDonna} from "../index";
+import {v,HeaderDonna,ViewRestaurantes,EditarCuenta} from "../index";
 import { useNavigate } from "react-router-dom";
 import Celular from "../Assets/AddNumber.png";
+import { useQuery } from '@tanstack/react-query';
 const Configuracion = ({datosgenerales}) => {
+const {cuenta,idUsuario,showCuentaPersonal} = ViewRestaurantes();
+useQuery({queryKey:["MostrarInfoCliente"],queryFn:()=>showCuentaPersonal({idusuario:idUsuario})});
 const {user} = datosgenerales;
 const {user_metadata} = user;
-const {first_name,email} = user;
+const {email} = user;
+const {telefono,favorito} = cuenta;
+let navegarpreguntas = useNavigate();
+const preguntas = ()=>{
+  navegarpreguntas("/Preguntas")
+}
   return (
     <Container>
     <HeaderDonna icono={<v.Atras/>} texto="Configuracion" ruta="/"/>
@@ -29,10 +37,27 @@ const {first_name,email} = user;
     <span className="itemcolumna1">Correo electronico</span>
     <span className="itemcolumna1">Telefono</span>
     </div>
-    <div className="columna1Datos">
-    <span className="itemscolumna2">{first_name}</span>
+    <div className="columna2Datos">
+    <span className="itemscolumna2">{datosgenerales.user.user_metadata.first_name}</span>
     <span className="itemscolumna2">{email}</span>
-    <span className="itemscolumna2">{}</span>
+    <span className="itemscolumna2">{telefono}</span>
+    </div>
+    </div>
+    <div className="adicionalesCuenta">
+    <div className="columna1adiconales">
+    <span className="iconosadiconales">{<v.IconoMpa/>}</span>
+    <span className="iconosadiconales">{<v.targetacredito/>}</span>
+    <span className="iconosadiconales">{<v.Pregunta/>}</span>
+    </div>
+    <div className="columna2adiconales">
+    <span className="infoadiconalitem">Direcciones de entraga</span>
+    <span className="infoadiconalitem">Targetas de credito</span>
+    <span className="infoadiconalitem">Preguntas Frecuentas</span>
+    </div>
+    <div className="columna3adicional">
+    <span className="agregarinfo">{<v.agregar/>}</span>
+    <span className="agregarinfo">{<v.agregar/>}</span>
+    <span className="agregarinfo" onClick={preguntas}>{<v.agregar/>}</span>
     </div>
     </div>
     </div>
@@ -66,7 +91,6 @@ const Container = styled.div`
       text-align: center;
     }
   }
-
   .AddMyPhone{
     position: absolute;
     top:20px;
@@ -111,6 +135,80 @@ const Container = styled.div`
       }
     }
     }
+
+   .InformaciongeneralUusuario{
+    width: 90%;
+    height:300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+    background-color: aliceblue;
+    .columna1Datos{
+      display: flex;
+      flex-direction: column;
+      gap:15px;
+    .itemcolumna1{
+      color: gray;
+      font-weight: 700;
+      font-size:20px;
+    }
+    }
+
+    .columna2Datos{
+      display: flex;
+      flex-direction: column;
+      gap:15px;
+      .itemscolumna2{
+      color: gray;
+      font-weight: 400;
+      font-size:20px;
+    }
+    }
+   }
+   .adicionalesCuenta{
+    width: 90%;
+    height:300px;
+    display: flex;
+    gap:25px;
+    justify-content:center;
+    align-items: center;
+    margin: 10px auto;
+    background-color:aliceblue;
+    .columna1adiconales{
+      display: flex;
+      flex-direction: column;
+      gap:15px;
+      .iconosadiconales{
+      font-weight: 700;
+      font-size:20px;
+      }
+    }
+    .columna2adiconales{
+      display: flex;
+      flex-direction: column;
+      gap:15px;
+      .infoadiconalitem{
+      color: gray;
+      font-weight: 400;
+      font-size:20px;
+      }
+
+    }
+    .columna3adicional{
+      display: flex;
+      flex-direction: column;
+      gap:15px;
+      .agregarinfo{
+      font-weight: 400;
+      font-size:20px;
+      &:hover{
+        cursor: pointer;
+
+      }
+      }
+    }
+   }
 }
 `;
 export default Configuracion

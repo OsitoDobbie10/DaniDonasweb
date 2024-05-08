@@ -41,10 +41,10 @@ export const editarClientes = async(p)=>{
     }
 }
 
-export const MostrarCuenta = async()=>{
+export const MostrarCuenta = async(p)=>{
     try {
         const idaouthsupabase = await ObtenerIdAuthSupabase();
-        const {error,data} = await supabase.from("cuenta").select().eq("idusuario",idusuario);
+        const {error,data} = await supabase.from("cuenta").select().eq("idusuario",p.idusuario);
         if(error){
             alert("MostrarCuenta",error);
         }

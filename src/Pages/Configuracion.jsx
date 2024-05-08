@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {v,HeaderDonna,ViewRestaurantes,EditarCuenta} from "../index";
+import {v,HeaderDonna,ViewRestaurantes,EditarCuenta,UseGlobal} from "../index";
 import { useNavigate } from "react-router-dom";
 import Celular from "../Assets/AddNumber.png";
 import { useQuery } from '@tanstack/react-query';
@@ -14,6 +14,9 @@ let navegarpreguntas = useNavigate();
 const preguntas = ()=>{
   navegarpreguntas("/Preguntas")
 }
+const {openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig,
+      openconfig1,openconfig2,openconfig3,openconfig4} = UseGlobal();
+
   return (
     <Container>
     <HeaderDonna icono={<v.Atras/>} texto="Configuracion" ruta="/"/>
@@ -29,7 +32,7 @@ const preguntas = ()=>{
     <div className="encabezadoUsuario">
     <span className="IconoUser">{<v.User/>}</span>
     <span className="ConfigPerfil">Configuracion del perfil</span>
-    <span className="EdicionUsuario">Editar</span>
+    <span className="EdicionUsuario" onClick={openconfig1}>Editar</span>
     </div>
     <div className="InformaciongeneralUusuario">
     <div className="columna1Datos">
@@ -47,16 +50,19 @@ const preguntas = ()=>{
     <div className="columna1adiconales">
     <span className="iconosadiconales">{<v.IconoMpa/>}</span>
     <span className="iconosadiconales">{<v.targetacredito/>}</span>
+    <span className="iconosadiconales">{<v.targetacredito/>}</span>
     <span className="iconosadiconales">{<v.Pregunta/>}</span>
     </div>
     <div className="columna2adiconales">
     <span className="infoadiconalitem">Direcciones de entraga</span>
     <span className="infoadiconalitem">Targetas de credito</span>
+    <span className="infoadiconalitem">Deposito bancario</span>
     <span className="infoadiconalitem">Preguntas Frecuentas</span>
     </div>
     <div className="columna3adicional">
-    <span className="agregarinfo">{<v.agregar/>}</span>
-    <span className="agregarinfo">{<v.agregar/>}</span>
+    <span className="agregarinfo" onClick={openconfig2}>{<v.agregar/>}</span>
+    <span className="agregarinfo" onClick={openconfig3}>{<v.agregar/>}</span>
+    <span className="agregarinfo" onClick={openconfig4}>{<v.agregar/>}</span>
     <span className="agregarinfo" onClick={preguntas}>{<v.agregar/>}</span>
     </div>
     </div>

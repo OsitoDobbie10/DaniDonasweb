@@ -62,7 +62,7 @@ flex-direction: column;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
-  gap:30px;
+  gap:50px;
   .itemArrayQuestion{
     display: flex;
     flex-direction: column;
@@ -86,7 +86,7 @@ flex-direction: column;
       display: flex;
       align-items: center;
       .seconditemnsp{
-        font-size: 22px;
+        font-size: 18px;
       }
     }
 

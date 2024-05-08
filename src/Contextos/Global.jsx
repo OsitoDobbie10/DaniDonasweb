@@ -226,6 +226,22 @@ const Global = ({children}) => {
   const openelemento2 = ()=>{
     setaAbrirCarrito(false);
   }
+  const [openeditarconfig,setOpeneditarconfig] = useState(false);
+  const [opendireccionconfig,setOpendireccionconfig] = useState(false);
+  const [opentargetasconfig,setOpentargetaconfig] = useState(false);
+  const [opencuentasconfig,setOpencuentasconfig] = useState(false);
+  const openconfig1 = ()=>{
+    setOpeneditarconfig(!openeditarconfig);
+  };
+  const openconfig2 = ()=>{
+    setOpendireccionconfig(!opendireccionconfig);
+  };
+  const openconfig3 = ()=>{
+    setOpentargetaconfig(!opentargetasconfig);
+  }
+  const openconfig4 = ()=>{
+    setOpencuentasconfig(!opencuentasconfig);
+  };
    return (
     <Stade.Provider value={{
         openspinnerloading,
@@ -271,7 +287,9 @@ const Global = ({children}) => {
         datosform1,datosform2,datosform3,datosform4,obtenerForm1,obtenerForm2,obtenerForm3,obtenerForm4,
         datosform5,obtenerForm5,obtenerform6,datosform6,
         abrirvista,openabrirvista,
-        abrircarrito,openelemento1,openelemento2
+        abrircarrito,openelemento1,openelemento2,
+        openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig,
+        openconfig1,openconfig2,openconfig3,openconfig4
     }}> 
       {children} 
     </Stade.Provider>

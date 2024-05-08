@@ -15,6 +15,6 @@ export const ArrayQuestions = [
     },
     {id:5,
      question:"¿Que formas de pago tienen?",
-     answer:"Puedehacer tu pedido con targetas de credito o debito, depositos o puedes pagar por efectivo"
+     answer:"Puede hacer tu pedido con targetas de credito o debito, depositos o puedes pagar por efectivo"
     }
 ];

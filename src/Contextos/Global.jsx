@@ -230,18 +230,68 @@ const Global = ({children}) => {
   const [opendireccionconfig,setOpendireccionconfig] = useState(false);
   const [opentargetasconfig,setOpentargetaconfig] = useState(false);
   const [opencuentasconfig,setOpencuentasconfig] = useState(false);
+  const [animareditar,setAnimareditar] = useState(false);
+  const [animardireccion,setAnimardireccion] = useState(false);
+  const [animartargeta,setAnimartargeta] = useState(false);
+  const [animardeposto,setAnimardeposto] = useState(false);
   const openconfig1 = ()=>{
-    setOpeneditarconfig(!openeditarconfig);
+    setOpeneditarconfig(true);
+      setTimeout(()=>{
+        setAnimareditar(true);
+    },1000)
   };
   const openconfig2 = ()=>{
-    setOpendireccionconfig(!opendireccionconfig);
+    setOpendireccionconfig(true);
+      setTimeout(()=>{
+        setAnimardireccion(true);
+    },1000)
   };
   const openconfig3 = ()=>{
-    setOpentargetaconfig(!opentargetasconfig);
+    setOpentargetaconfig(true);
+    setTimeout(()=>{
+      setAnimartargeta(true);
+  },1000)
   }
   const openconfig4 = ()=>{
-    setOpencuentasconfig(!opencuentasconfig);
+    setOpencuentasconfig(true);
+    setTimeout(()=>{
+      setAnimardeposto(true);
+  },1000)
   };
+  const closeconfig1 =  ()=>{
+    setOpeneditarconfig(false);
+      setTimeout(()=>{
+        setAnimareditar(false);
+    },1000)
+  };
+  const closeconfig2 =  ()=>{
+    setOpendireccionconfig(false);
+      setTimeout(()=>{
+        setAnimardireccion(false);
+    },1000)
+  };
+  const closeconfig3 = ()=>{
+    setOpentargetaconfig(false);
+    setTimeout(()=>{
+      setAnimartargeta(false);
+  },1000)
+  };
+  const closeconfig4 = ()=>{
+    setOpencuentasconfig(false);
+    setTimeout(()=>{
+      setAnimardeposto(false);
+  },1000)
+  };
+  const [formeditar,setFormeditar] = useState({
+    textoNombreEditar: "",
+    textoTelefonoEditar:""
+  })
+  const obtenerformEditar = (e)=>{
+    setFormeditar({
+      ...formeditar,
+      [e.target.name]: e.target.value})
+  };
+
    return (
     <Stade.Provider value={{
         openspinnerloading,
@@ -289,11 +339,13 @@ const Global = ({children}) => {
         abrirvista,openabrirvista,
         abrircarrito,openelemento1,openelemento2,
         openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig,
-        openconfig1,openconfig2,openconfig3,openconfig4
+        animareditar,animardireccion,animartargeta,animardeposto,obtenerformEditar,formeditar,
+        openconfig1,openconfig2,openconfig3,openconfig4,
+        closeconfig1,closeconfig2,closeconfig3,closeconfig4
     }}> 
       {children} 
     </Stade.Provider>
-  )
-}
+  )}
+
 
 export default Global;

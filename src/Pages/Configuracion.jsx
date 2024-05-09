@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {v,HeaderDonna,ViewRestaurantes,EditarCuenta,UseGlobal} from "../index";
+import {v,HeaderDonna,ViewRestaurantes,EditarCuenta,UseGlobal,ModalDireccionesConfig} from "../index";
 import { useNavigate } from "react-router-dom";
 import Celular from "../Assets/AddNumber.png";
 import { useQuery } from '@tanstack/react-query';
@@ -15,8 +15,9 @@ const preguntas = ()=>{
   navegarpreguntas("/Preguntas")
 }
 const {openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig,
+      animareditar,animardireccion,animartargeta,animardeposto,obtenerformEditar,formeditar,
+      closeconfig1,closeconfig2,closeconfig3,closeconfig4,
       openconfig1,openconfig2,openconfig3,openconfig4} = UseGlobal();
-
   return (
     <Container>
     <HeaderDonna icono={<v.Atras/>} texto="Configuracion" ruta="/"/>
@@ -29,9 +30,14 @@ const {openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig
     <img src={Celular} alt="AddPhone" className="ImagenAddMyPhone"/>
     <span className="SimboloCel">+</span>
     </div>
+    {openeditarconfig && <ModalDireccionesConfig cerrar={closeconfig1} 
+                                            animacion={animareditar}
+                                            funcion={obtenerformEditar}
+                                            objeto={formeditar}
+                                            id={idUsuario}/>}
     <div className="encabezadoUsuario">
     <span className="IconoUser">{<v.User/>}</span>
-    <span className="ConfigPerfil">Configuracion del perfil</span>
+    <span className="ConfigPerfil">Configuracion del perfil</span> 
     <span className="EdicionUsuario" onClick={openconfig1}>Editar</span>
     </div>
     <div className="InformaciongeneralUusuario">

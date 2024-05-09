@@ -59,7 +59,7 @@ export const MostrarCuenta = async(p)=>{
 export const EditarCuenta = async(p)=>{
     try {
         const idaouthsupabase = await ObtenerIdAuthSupabase();
-        const {error,data} = await supabase.from("cuenta").update({telefono:p.telefono}).eq("idusuario",p.idusuario).select();
+        const {error,data} = await supabase.from("cuenta").update(p).eq("idusuario",p.idusuario).select();
         if(error){
             alert("MostrarCuenta",error);
         }

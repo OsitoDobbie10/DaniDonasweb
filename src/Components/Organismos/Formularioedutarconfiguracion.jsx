@@ -4,7 +4,11 @@ const Formularioedutarconfiguracion = ({editarConfiguracionPerfil,Subircampos,ob
   const submitedit = (e)=>{
     e.preventDefault();
     const {textoTelefonoEditar} = objeto;
-    editarConfiguracionPerfil({idusuario:idUsuario});
+    const p = {
+      idusuario:idUsuario,
+      telefono:textoTelefonoEditar
+    }
+    editarConfiguracionPerfil(p);
 
   }
   return (

@@ -1,20 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import BTNCerrar from '../../Assets/close.svg';
-import {v,Formularioedutarconfiguracion,EditarCuenta} from '../../index';
-const ModalDireccionesConfig = ({elemento,cerrar,animacion,funcion,objeto,id}) => {
-const edit = async(p)=>{
-    await EditarCuenta(p)
-};
+import styled from "styled-components"
+import {v} from "../../index"
+import BtNCerrar from "../../Assets/cerrar.svg";
+const ContainerTargetas = ({contenido,cerrar,animacion}) => {
   return (
     <Container>
-     <div className="cerrar-modal">
-    <img src={BTNCerrar}
-                 alt="CerrarBTN1"
+    <div className="cerrar-modal">
+    <img src={BtNCerrar}
+                 alt="CerrarBTN"
                  onClick={cerrar}/>
     </div>
     <div className={`formulario ${animacion ? 'animar': 'cerrar'}`}>
-    <Formularioedutarconfiguracion editarConfiguracionPerfil={edit}  Subircampos={funcion} objeto={objeto} idUsuario={id}/>
+    {contenido}
     </div>
     </Container>
   )
@@ -46,6 +42,7 @@ z-index: 1000;
 .formulario {
     max-width: 82rem;
     width: 45rem;
+    height: 500px;
     transition-property: all;
     transition-duration: 300ms;
     transition-timing-function: ease-in;
@@ -73,4 +70,4 @@ z-index: 1000;
     top:25%;
 }
 `;
-export default ModalDireccionesConfig
+export default ContainerTargetas;

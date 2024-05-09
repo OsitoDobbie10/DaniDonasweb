@@ -1,20 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import BTNCerrar from '../../Assets/close.svg';
-import {v,Formularioedutarconfiguracion,EditarCuenta} from '../../index';
-const ModalDireccionesConfig = ({elemento,cerrar,animacion,funcion,objeto,id}) => {
-const edit = async(p)=>{
-    await EditarCuenta(p)
-};
+import styled from "styled-components";
+import {v} from "../../index";
+import BTNCerrar from "../../Assets/cerrar.svg"
+const ContenedorModalCon = ({contenido,cerrar,animacion}) => {
   return (
     <Container>
-     <div className="cerrar-modal">
+    <div className="cerrar-modal">
     <img src={BTNCerrar}
                  alt="CerrarBTN1"
                  onClick={cerrar}/>
     </div>
     <div className={`formulario ${animacion ? 'animar': 'cerrar'}`}>
-    <Formularioedutarconfiguracion editarConfiguracionPerfil={edit}  Subircampos={funcion} objeto={objeto} idUsuario={id}/>
+    {contenido}
     </div>
     </Container>
   )
@@ -45,14 +41,14 @@ z-index: 1000;
 }
 .formulario {
     max-width: 82rem;
-    width: 45rem;
+    width: 40rem;
     transition-property: all;
     transition-duration: 300ms;
     transition-timing-function: ease-in;
     opacity: 0;
-    left:25%;
-    top:20%;
-    position: absolute;
+    left: 30%;
+    top:25%;
+    position: relative;
     background-color: white;
     border-radius: 15px;
     height: 420px;
@@ -61,16 +57,22 @@ z-index: 1000;
     border-radius:12px;
   }
 
-  .formulario.animar {
+.formulario.animar {
     position:absolute;
     opacity: 1;
     left: 27%;
-    top:20%;}
+    top:20%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:10px auto;
+}
 
-  .formulario.cerrar {
+.formulario.cerrar {
     opacity: 0;
     left: 30%;
     top:25%;
 }
+
 `;
-export default ModalDireccionesConfig
+export default ContenedorModalCon

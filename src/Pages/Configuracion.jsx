@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import {v,HeaderDonna,ViewRestaurantes,EditarCuenta,UseGlobal,ModalDireccionesConfig} from "../index";
+import {v,HeaderDonna,ViewRestaurantes,EditarCuenta,
+        UseGlobal,ModalDireccionesConfig,ContenedorModalCon,
+        FormularioEntragar,ContainerTargetas} from "../index";
 import { useNavigate } from "react-router-dom";
 import Celular from "../Assets/AddNumber.png";
 import { useQuery } from '@tanstack/react-query';
 const Configuracion = ({datosgenerales}) => {
-const {cuenta,idUsuario,showCuentaPersonal} = ViewRestaurantes();
+const {cuenta,idUsuario,showCuentaPersonal,direccion} = ViewRestaurantes();
 useQuery({queryKey:["MostrarInfoCliente"],queryFn:()=>showCuentaPersonal({idusuario:idUsuario})});
 const {user} = datosgenerales;
 const {user_metadata} = user;
@@ -31,10 +33,16 @@ const {openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig
     <span className="SimboloCel">+</span>
     </div>
     {openeditarconfig && <ModalDireccionesConfig cerrar={closeconfig1} 
-                                            animacion={animareditar}
-                                            funcion={obtenerformEditar}
-                                            objeto={formeditar}
-                                            id={idUsuario}/>}
+                                                 animacion={animareditar}
+                                                 funcion={obtenerformEditar}
+                                                objeto={formeditar}
+                                                 id={idUsuario}/>}
+    {opendireccionconfig && <ContenedorModalCon 
+                             contenido={<FormularioEntragar direcciones={direccion}/>}
+                             cerrar={closeconfig2}
+                             animacion={animardireccion}
+                             /> }
+    {opentargetasconfig && <ContainerTargetas cerrar={closeconfig3} animacion={animartargeta}/>}
     <div className="encabezadoUsuario">
     <span className="IconoUser">{<v.User/>}</span>
     <span className="ConfigPerfil">Configuracion del perfil</span> 

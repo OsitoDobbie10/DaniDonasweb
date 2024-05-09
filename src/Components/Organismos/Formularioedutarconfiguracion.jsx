@@ -13,6 +13,7 @@ const Formularioedutarconfiguracion = ({editarConfiguracionPerfil,Subircampos,ob
   }
   return (
     <Container onSubmit={submitedit}>
+    <span className="TextoDescpConfig">Cambiar numero.</span>
     <span className="TextoTelefonoEditar">Telefono</span>
     <input type="text" onChange={Subircampos} name="textoTelefonoEditar" className="in1"/>
     <input type="submit" className="sub1" value="Editar"/>
@@ -26,6 +27,12 @@ justify-content: center;
 width: 100%;
 height: 100%;
 gap:15px;
+.TextoDescpConfig{
+  font-size:28px;
+  font-weight: 700;
+  color: #d2170a;
+  text-align: center;
+}
 .TextoNombreEditar{
   font-size:25px;
   font-weight: 700;

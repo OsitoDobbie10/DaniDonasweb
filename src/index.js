@@ -13,6 +13,8 @@ export { default as ItemRestaurante } from './Components/Moleculas/ItemRestauran
 export { default as Recoger } from './Components/Moleculas/Recoger';
 export { default as Spinner2 } from './Components/Moleculas/Spinner2';
 export { default as ContainerArrayCompras } from './Components/Organismos/ContainerArrayCompras';
+export { default as ContainerTargetas } from './Components/Organismos/ContainerTargetas';
+export { default as ContenedorModalCon } from './Components/Organismos/ContenedorModalCon';
 export { default as ContenedorObjetoCarrito } from './Components/Organismos/ContenedorObjetoCarrito';
 export { default as ContenidoProducto } from './Components/Organismos/ContenidoProducto';
 export { default as DatosCheescake } from './Components/Organismos/DatosCheescake';

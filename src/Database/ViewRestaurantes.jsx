@@ -14,7 +14,8 @@ import {MostrarRestaurantes,
         MostarFav,
         showrecoger,
         showencargo,
-        MostrarCuenta
+        MostrarCuenta,
+        MostrarTargetas
         } from "../index";
 export const ViewRestaurantes = create((set,get)=>({
     pedidos:[],
@@ -30,6 +31,7 @@ export const ViewRestaurantes = create((set,get)=>({
     encargo:[],
     recoger:[],
     cuenta:[],
+    targetas:[],
     idUsuario: 0,
     tipo: "Domicilio",
     cod: "D",
@@ -134,6 +136,11 @@ export const ViewRestaurantes = create((set,get)=>({
       const reponse = await MostrarCuenta(p);
       set({cuenta:reponse});
       return reponse;
+    },
+    showTargetas: async()=>{
+      const response = await MostrarTargetas();
+      set({targetas:response})
+      return response;
     }
 
 }));

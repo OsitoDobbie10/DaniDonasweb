@@ -40,9 +40,8 @@ z-index: 1000;
     width: 100%;
 }
 .formulario {
-    max-width: 82rem;
-    width: 45rem;
-    height: 500px;
+    width: 55rem;
+    height: 1000px;
     transition-property: all;
     transition-duration: 300ms;
     transition-timing-function: ease-in;
@@ -61,8 +60,13 @@ z-index: 1000;
   .formulario.animar {
     position:absolute;
     opacity: 1;
-    left: 27%;
-    top:20%;}
+    width:55rem;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    left: 20%;
+    top:10%;}
 
   .formulario.cerrar {
     opacity: 0;

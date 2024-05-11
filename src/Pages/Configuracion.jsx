@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {v,HeaderDonna,ViewRestaurantes,EditarCuenta,
         UseGlobal,ModalDireccionesConfig,ContenedorModalCon,
-        FormularioEntragar,ContainerTargetas} from "../index";
+        FormularioEntragar,ContainerTargetas,VistaTargetasArray} from "../index";
 import { useNavigate } from "react-router-dom";
 import Celular from "../Assets/AddNumber.png";
 import { useQuery } from '@tanstack/react-query';
@@ -42,7 +42,7 @@ const {openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig
                              cerrar={closeconfig2}
                              animacion={animardireccion}
                              /> }
-    {opentargetasconfig && <ContainerTargetas cerrar={closeconfig3} animacion={animartargeta}/>}
+    {opentargetasconfig && <ContainerTargetas cerrar={closeconfig3} animacion={animartargeta} contenido={<VistaTargetasArray/>}/>}
     <div className="encabezadoUsuario">
     <span className="IconoUser">{<v.User/>}</span>
     <span className="ConfigPerfil">Configuracion del perfil</span> 

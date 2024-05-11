@@ -4,7 +4,7 @@ import {Home,DaniDonas,DV_Cheescake,
         Login,ErrosRegistes,Preguntas,
         ProductosFavs,Mapa,MisPedidos,Chats,
         Pedidos,Productos,AtencionCliente,Configuracion,
-        ErrorNoRegistro,UseGlobal,Direccion,ErrorSinup,ProductoCheescake,ProductoDonna,Test1,Test2} from "../index"
+        ErrorNoRegistro,UseGlobal,Direccion,ErrorSinup,ProductoCheescake,ProductoDonna,Test1,Targetas} from "../index"
 export const Router = () => {
     const {token} = UseGlobal();
     const router = createBrowserRouter([ 
@@ -84,6 +84,10 @@ export const Router = () => {
          {
           path:"/Direccion",
           element:token ? <Direccion/> : <ErrorNoRegistro valor="Direccion"/>
+         },
+         {
+          path:"/Targetas",
+          element:token ? <Targetas/> : <ErrorNoRegistro valor="Targetas"/>
          },
          {
           path:"/ErrorSinup",

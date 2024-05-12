@@ -4,7 +4,7 @@ const VistaTargetasArray = ({array}) => {
   return (
     <Container>
     <div className="mostrarHeader">
-    <HeaderDonna texto="Targetas de Credito o Debito" icono2={<v.agregar/>} ruta2="/Targetas"/>
+    <HeaderDonna texto="Targetas de Credito o Debito" icono3={<v.agregar/>} ruta2="/Targetas"/>
     </div>
     <div className="ContenedorParaVistaTargetas">
     {
@@ -25,12 +25,17 @@ display: flex;
 flex-direction: column;
 .mostrarHeader{
     width: 90%;
-    top:10px;
+    display: block;
+    margin:10px auto;
 }
 
 
 .ContenedorParaVistaTargetas{
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 `;

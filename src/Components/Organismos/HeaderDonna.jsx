@@ -1,15 +1,37 @@
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom";
-const HeaderDonna = ({icono,texto,icono2,funcion,ruta,ruta2}) => {
+import Swal from "sweetalert2";
+const HeaderDonna = ({icono,texto,icono2,icono3,funcion,ruta,ruta2}) => {
     const backhome = useNavigate();
     const getpedidos = useNavigate();
+    const knowGet = ()=>{
+        Swal.fire({
+            title: "Quieres agregar una nueva targeta nueva?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Continuar",
+            denyButtonText: `No continuar`
+            }).then((result) => {
+          if (result.isConfirmed) {
+            getpedidos(ruta2)
+          } else if (result.isDenied) {
+            Swal.fire("No se agrego una targeta", "", "Intenta de nuevo");
+          }
+        });
+    }
+    const vista = texto === "Targetas de Credito o Debito" ? true : false;
+
   return (
     <Container>
     <span className="back" 
     onClick={()=>{backhome(ruta)}}>{icono}</span>
     <span className="textocenter">{texto}</span>
-    <span  className="carrito"
-     onClick={()=>{getpedidos(ruta2)}}>{icono2}</span> 
+    {
+        vista ? <span className="carrito"
+                  onClick={knowGet}>{icono3}</span> :
+                <span className="carrito"
+                  onClick={()=>{getpedidos(ruta2)}}>{icono2}</span> 
+    }
     </Container>
   )
 }

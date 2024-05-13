@@ -1,21 +1,24 @@
-import {v,UseGlobal,InsertaTargeta} from "../../index"
+import {v,UseGlobal,InsertaTargeta,ViewRestaurantes} from "../../index"
 import styled from "styled-components";
 import Cards from "react-credit-cards-2";
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
-
 const PaymentForm = () => {
   const {state,obtenerformtargeta,handlefocusChange} = UseGlobal();
+  const {idUsuario} = ViewRestaurantes();
   const {number,name,cvc,expiry,focus} = state;
-  const dataserver = async(p)=>{
-    await InsertaTargeta(process)
-  }
-  const SubirBaseDatos = (e)=>{
+  const SubirBaseDatos = async(e)=>{
     e.preventDefault();
+    const {number,name,cvc,expiry,focus} = state;
     let p = {
         Numero:number,
-        
-    }
-  }
+        Nombre:name,
+        Vencimiento:expiry,
+        CVC:cvc,
+        idusuario:idUsuario
+    };
+    console.log(p);
+    await InsertaTargeta(p);
+  };
   return (
     <Container>
     <div className="card">
@@ -28,7 +31,7 @@ const PaymentForm = () => {
     focused={focus}
     />
     </div>
-    <form className="formulariotargeta">
+    <form className="formulariotargeta" onSubmit={SubirBaseDatos}>
     <div className="form-group">
     <span className="in1">Número de la tarjeta</span>
     <input type="text"

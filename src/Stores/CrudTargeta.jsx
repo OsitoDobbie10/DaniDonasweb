@@ -10,7 +10,7 @@ export const InsertaTargeta = async(p)=>{
               title: "Fallo...",
               text:"Ya existe un registro con la base de datos" + p.Targetas,
               timer: 5500,
-              footer:`<a href="">Agrega una nueva descripcion..<a/>`
+              footer:`<a href="">Listo<a/>`
             });
         }
         if(data){
@@ -23,7 +23,7 @@ export const InsertaTargeta = async(p)=>{
               });
           }
        } catch (error) {
-        alert(error.error_description || error.message + "insertar categorias")
+        alert(error.error_description || error.message + "insertar Targetas")
        }
 };
 

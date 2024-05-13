@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import {HeaderDonna,v} from "../index"
+import {HeaderDonna,v,PaymentForm} from "../index"
 const Targetas = () => {
   return (
     <Container>
     <HeaderDonna icono={<v.Atras/>} texto="Formulario de Targeta" icono2={<v.HOME/>} ruta="/Configuracion"/>
     <div className="layout">
+    <PaymentForm/>
     </div>
-
+    
     </Container>
   )
 }
@@ -18,9 +19,9 @@ display: flex;
 flex-direction: column;
 .layout{
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 500px;
+  margin: 30px 0 20px 0;
 }
 
 `;

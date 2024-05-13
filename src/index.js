@@ -42,6 +42,7 @@ export { default as ModalDireccionesConfig } from './Components/Organismos/Modal
 export { default as ModalMenu } from './Components/Organismos/ModalMenu';
 export { default as NavbarMenu } from './Components/Organismos/NavbarMenu';
 export { default as ObjetoCarritoCompra } from './Components/Organismos/ObjetoCarritoCompra';
+export { default as PaymentForm } from './Components/Organismos/PaymentForm';
 export { default as PedidoIndividual } from './Components/Organismos/PedidoIndividual';
 export { default as SpinnerError } from './Components/Organismos/SpinnerError';
 export { default as SpinnerIntro } from './Components/Organismos/SpinnerIntro';

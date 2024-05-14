@@ -6,8 +6,9 @@ import { useNavigate } from "react-router-dom";
 import Celular from "../Assets/AddNumber.png";
 import { useQuery } from '@tanstack/react-query';
 const Configuracion = ({datosgenerales}) => {
-const {cuenta,idUsuario,showCuentaPersonal,direccion} = ViewRestaurantes();
+const {cuenta,idUsuario,showCuentaPersonal,direccion,targetas,showTargetas} = ViewRestaurantes();
 useQuery({queryKey:["MostrarInfoCliente"],queryFn:()=>showCuentaPersonal({idusuario:idUsuario})});
+useQuery({queryKey:["ArregloTargetasUsuario"],queryFn:()=>showTargetas()});
 const {user} = datosgenerales;
 const {user_metadata} = user;
 const {email} = user;
@@ -42,7 +43,10 @@ const {openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig
                              cerrar={closeconfig2}
                              animacion={animardireccion}
                              /> }
-    {opentargetasconfig && <ContainerTargetas cerrar={closeconfig3} animacion={animartargeta} contenido={<VistaTargetasArray/>}/>}
+    {opentargetasconfig && <ContainerTargetas cerrar={closeconfig3} animacion={animartargeta} 
+                             contenido={<VistaTargetasArray 
+                                         array={targetas}
+                                         IdUsuario={idUsuario}/>}/>}
     <div className="encabezadoUsuario">
     <span className="IconoUser">{<v.User/>}</span>
     <span className="ConfigPerfil">Configuracion del perfil</span> 

@@ -52,3 +52,24 @@ export const EditarTargeta = async(p)=>{
         alert(error.error_description || error.message + "MostrarTargetas")
     } 
 }
+
+export const BorrarTargeta = async(p)=>{
+    try {
+        const {error} = await supabase.from("Targetas").delete().eq("idusuario",p.idusuario).eq("id",p.id);
+        if(error){
+            alert("error al eliminar",error);
+        }
+        else{
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Direccion Borrado",
+                showConfirmButton: false,
+                timer: 2000
+              });
+        }
+
+    } catch (error) {
+        alert(error.error_description || error.message + "eliminar direccion")   
+    }
+}

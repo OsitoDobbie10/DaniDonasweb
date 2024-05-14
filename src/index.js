@@ -30,6 +30,7 @@ export { default as FormularioProducto } from './Components/Organismos/Formulari
 export { default as FormularioRecoger } from './Components/Organismos/FormularioRecoger';
 export { default as Formularioedutarconfiguracion } from './Components/Organismos/Formularioedutarconfiguracion';
 export { default as HeaderDonna } from './Components/Organismos/HeaderDonna';
+export { default as ItemdeTargeta } from './Components/Organismos/ItemdeTargeta';
 export { default as Links } from './Components/Organismos/Links';
 export { default as Logico } from './Components/Organismos/Logico';
 export { default as MapaCarrito } from './Components/Organismos/MapaCarrito';

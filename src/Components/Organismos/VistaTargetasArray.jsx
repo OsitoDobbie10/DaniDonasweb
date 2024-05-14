@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import {HeaderDonna,v} from "../../index"
-const VistaTargetasArray = ({array}) => {
+import {HeaderDonna,v,ItemdeTargeta} from "../../index"
+const VistaTargetasArray = ({array,IdUsuario}) => {
   return (
     <Container>
     <div className="mostrarHeader">
@@ -9,9 +9,7 @@ const VistaTargetasArray = ({array}) => {
     <div className="ContenedorParaVistaTargetas">
     {
         array?.map((dat)=>{
-            return <div className="ItemTaregta">
-
-                   </div>
+            return <ItemdeTargeta data={dat} key={dat.id} IdUsuario={IdUsuario}/>
         })
     }
     </div>
@@ -35,6 +33,10 @@ flex-direction: column;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap:10px;
+    &:hover{
+      cursor: pointer;
+    }
 
 }
 

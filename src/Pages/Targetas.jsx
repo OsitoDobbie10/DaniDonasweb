@@ -3,11 +3,11 @@ import {HeaderDonna,v,PaymentForm} from "../index"
 const Targetas = () => {
   return (
     <Container>
-    <HeaderDonna icono={<v.Atras/>} texto="Formulario de Targeta" icono2={<v.HOME/>} ruta="/Configuracion"/>
+    <HeaderDonna icono={<v.Atras/>} 
+                 texto="Formulario de Targeta" icono2={<v.HOME/>} ruta="/Configuracion"/>
     <div className="layout">
     <PaymentForm/>
     </div>
-    
     </Container>
   )
 }

@@ -71,6 +71,7 @@ export { default as ModalDireccion } from './Components/Templetes/ModalDireccion
 export { default as ModalLogin } from './Components/Templetes/ModalLogin';
 export { default as SignUp } from './Components/Templetes/SignUp';
 export { default as Slidebar } from './Components/Templetes/Slidebar';
+export { default as TargetaEdit } from './Components/Templetes/TargetaEdit';
 export { default as Templeted } from './Components/Templetes/Templeted';
 export { default as TempletedProducto } from './Components/Templetes/TempletedProducto';
 export { default as TempletedUnico } from './Components/Templetes/TempletedUnico';

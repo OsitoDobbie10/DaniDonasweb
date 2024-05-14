@@ -16,7 +16,6 @@ const PaymentForm = () => {
         CVC:cvc,
         idusuario:idUsuario
     };
-    console.log(p);
     await InsertaTargeta(p);
   };
   return (

@@ -39,7 +39,7 @@ export const MostrarTargetas = async()=>{
 
 export const EditarTargeta = async(p)=>{
     try {
-        const {error,data} = await supabase.from("Targetas").update(p).eq("idusuario",p.idusuario).select();
+        const {error,data} = await supabase.from("Targetas").update(p).eq("idusuario",p.idusuario).eq("id",p.id).select();
         if(error){
             alert("MostrarTargetas",error);
         }

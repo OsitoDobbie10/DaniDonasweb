@@ -310,8 +310,13 @@ const Global = ({children}) => {
         ...state,
        focus: e.target.name})
     }
-
-
+    const [estadoEditarTargetas,setEstadoEditarTargetas] = useState({id:"",
+                                                                     Numero:"",
+                                                                     Nombre:"",
+                                                                     Vencimiento:"",
+                                                                     CVC:"",
+                                                                     idusuario:""
+                                                                     });
    return (
     <Stade.Provider value={{
         openspinnerloading,
@@ -361,7 +366,8 @@ const Global = ({children}) => {
         openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig,
         animareditar,animardireccion,animartargeta,animardeposto,obtenerformEditar,formeditar,
         openconfig1,openconfig2,openconfig3,openconfig4,
-        closeconfig1,closeconfig2,closeconfig3,closeconfig4,state,obtenerformtargeta,handlefocusChange
+        closeconfig1,closeconfig2,closeconfig3,closeconfig4,state,obtenerformtargeta,handlefocusChange,
+        estadoEditarTargetas,setEstadoEditarTargetas
     }}> 
       {children} 
     </Stade.Provider>

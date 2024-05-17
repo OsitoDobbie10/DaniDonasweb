@@ -69,6 +69,7 @@ export { default as Map } from './Components/Templetes/Map';
 export { default as Menucomidastempleted } from './Components/Templetes/Menucomidastempleted';
 export { default as ModalDireccion } from './Components/Templetes/ModalDireccion';
 export { default as ModalLogin } from './Components/Templetes/ModalLogin';
+export { default as PaymentForm2 } from './Components/Templetes/PaymentForm2';
 export { default as SignUp } from './Components/Templetes/SignUp';
 export { default as Slidebar } from './Components/Templetes/Slidebar';
 export { default as TargetaEdit } from './Components/Templetes/TargetaEdit';

@@ -1,12 +1,15 @@
 import styled from "styled-components"
 import { SwipeableList, SwipeableListItem,} from '@sandstreamdev/react-swipeable-list';
-import {BorrarTargeta} from "../../index";
+import {BorrarTargeta,UseGlobal} from "../../index";
 import '@sandstreamdev/react-swipeable-list/dist/styles.css';
 import "./Targeta.css";
 import Visa from "../../Assets/visa.png";
 import MasterCard from "../../Assets/MasterCard.png";
+import { useNavigate } from "react-router-dom";
 const ItemdeTargeta = ({data,IdUsuario}) => {
-    const {Numero,Nombre,id} = data;
+    const {Numero,Nombre,id,Vencimiento,CVC} = data;
+    const {estadoEditarTargetas,setEstadoEditarTargetas} = UseGlobal();
+    const Go = useNavigate();
     const verificarPrimerNumero = (cadena)=> {
         let primerCaracter = cadena.charAt(0);
         if (primerCaracter === '4') {
@@ -19,13 +22,28 @@ const ItemdeTargeta = ({data,IdUsuario}) => {
     const EliminarTargeta = async(p)=>{
         await BorrarTargeta(p);
     };
+    const llevar = ()=>{
+    Go(`/Editar`);
+    }
+    const editarLLevar = ()=>{
+    llevar();
+    setEstadoEditarTargetas({
+    ...estadoEditarTargetas,
+    id:id,
+    Numero:Numero,
+    Nombre:Nombre,
+    Vencimiento:Vencimiento,
+    CVC:CVC,
+    idusuario:IdUsuario
+    })
+    }
     const swipeLeftDataSimple = ()=>({
       content: (
         <div className="contentLeft">
         <span>Editar</span>
         </div>
       ),
-      action: () => console.log("Editar")
+      action: () => editarLLevar()
     });
     const swipeRigthDataSimple = ()=>({
       content: (

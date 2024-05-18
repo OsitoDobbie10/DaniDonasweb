@@ -24,7 +24,7 @@ useQuery({queryKey:["mostrar direccion"],queryFn:()=>showdireccion()});
 const {modal,animandoModal,openPedido,
        cerrarPedido,setModal,setAnimandoModal,
        modal3,openDireccion,closeDireccion,animandoModal4} = FuncionesModal();
-const {view,setView} = UseGlobal();
+const {view,setView,estadoEditarTargetas} = UseGlobal();
 const objeto = {tipo:tipo,cod:cod,descp:descp};
 const GetValue = ()=>{
   setAnimandoModal(false);
@@ -36,6 +36,7 @@ const GetValue = ()=>{
 const value = (p)=>{
   setPedido(p);
 }
+
   return (
     <Container>
      <div className="header">

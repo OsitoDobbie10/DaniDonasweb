@@ -89,12 +89,10 @@ export const Router = () => {
          {
           path:"/Targetas",
           element:token ? <Targetas/> : <ErrorNoRegistro valor="Targetas"/>,
-          children:[
-          {
-            path:"/Targetas/:TargetaId/editar",
-            element:<TargetaEdit/>
-          }
-          ]
+         },
+         {
+          path:"/Editar",
+          element:<TargetaEdit/>
          },
          {
           path:"/ErrorSinup",

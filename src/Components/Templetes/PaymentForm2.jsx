@@ -2,19 +2,19 @@ import styled from "styled-components";
 import {v,UseGlobal,EditarTargeta,ViewRestaurantes} from "../../index";
 import Cards from "react-credit-cards-2";
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
-const PaymentForm2 = ({objeto}) => {
-  const {state,obtenerformtargeta} = UseGlobal();
+const PaymentForm2 = () => {
+  const {ObtenerestadoEditarTargetas,estadoEditarTargetas,FocusestadoEditarTargetas} = UseGlobal();
   const {idUsuario} = ViewRestaurantes();
-  const {number,name,cvc,expiry,focus} = state;
+  const {Numero,Nombre,Vencimiento,CVC,idusuario,focus,id} = estadoEditarTargetas;
   const EditarBaseDatos = async(e)=>{
     e.preventDefault();
-    const {number,name,cvc,expiry,focus} = state;
+    const {Numero,Nombre,Vencimiento,CVC,idusuario,focus,id} = estadoEditarTargetas;
     let p = {
-        Numero:number,
-        Nombre:name,
-        Vencimiento:expiry,
-        CVC:cvc,
-        idusuario:idUsuario
+        Numero:Numero,
+        Nombre:Nombre,
+        Vencimiento:Vencimiento,
+        CVC:CVC,
+        idusuario:idusuario
     };
     await EditarTargeta(p);
   };
@@ -23,33 +23,34 @@ const PaymentForm2 = ({objeto}) => {
     <div className="card">
     <div className="card-body">
     <Cards
-    number={number}
-    name={name}
-    expiry={expiry}
-    cvc={cvc}
+    number={Numero}
+    name={Nombre}
+    expiry={Vencimiento}
+    cvc={CVC}
     focused={focus}
     />
     </div>
-    <form className="formulariotargeta" onSubmit={SubirBaseDatos}>
+    <form className="formulariotargeta" onSubmit={EditarBaseDatos}>
     <div className="form-group">
     <span className="in1">Número de la tarjeta</span>
     <input type="text"
            className="form-control"
-          name="number"
+          name="Numero"
           maxLength="16"
-          onChange={obtenerformtargeta}
-          onFocus={handlefocusChange}
-          placeholder="Número de tarjeta"/>
-
+          value={Numero}
+          onChange={ObtenerestadoEditarTargetas}
+          onFocus={FocusestadoEditarTargetas}
+          placeholder={Numero}/>
     </div>
     <div className="form-group">
     <label htmlFor="Nombre">Nombre</label>
     <input type="text"
             className="form-control"
-            name="name"
+            name="Nombre"
             maxLength="30"
-            onChange={obtenerformtargeta}
-            onFocus={handlefocusChange}
+            value={Nombre}
+            onChange={ObtenerestadoEditarTargetas}
+            onFocus={FocusestadoEditarTargetas}
             placeholder="Nombre"/>
     </div>
     <div className="filas-formulario">
@@ -57,10 +58,11 @@ const PaymentForm2 = ({objeto}) => {
     <label htmlFor="expiry">Vencimiento</label>
     <input type="text"
            className="form-control"
-           name="expiry"
+           name="Vencimiento"
+           value={Vencimiento}
            maxLength="4"
-           onFocus={handlefocusChange}
-           onChange={obtenerformtargeta}
+           onFocus={FocusestadoEditarTargetas}
+           onChange={ObtenerestadoEditarTargetas}
            placeholder="Expiración"
                             />
     </div>
@@ -69,10 +71,11 @@ const PaymentForm2 = ({objeto}) => {
     <input
     type="text"
     className="form-control"
-    name="cvc"
+    name="CVC"
     maxLength="4"
-    onFocus={handlefocusChange}
-    onChange={obtenerformtargeta}
+    value={CVC}
+    onFocus={FocusestadoEditarTargetas}
+    onChange={ObtenerestadoEditarTargetas}
     placeholder="CVC"/>
     </div>
     </div>
@@ -83,5 +86,29 @@ const PaymentForm2 = ({objeto}) => {
     </Container>
   )
 }
-const Container = styled.div``;
+const Container = styled.div`
+display: inline-block;
+border-radius: 10px;
+box-shadow: 0 0 10px #dadada;
+.card{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: center;
+ .card-body{
+    margin:auto;
+ }
+ .formulariotargeta{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    .in1{
+        text-align: center;
+    }
+    .filas-formulario{
+        display: flex;
+    }
+ }
+}
+`;
 export default PaymentForm2

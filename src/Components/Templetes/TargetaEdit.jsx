@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {v,HeaderDonna,PaymentForm2} from "../../index";
-
+import {v,HeaderDonna,PaymentForm2,UseGlobal} from "../../index";
 const TargetaEdit = () => {
+  const {estadoEditarTargetas} = UseGlobal();
   return (
     <Container>
     <HeaderDonna icono={<v.Atras/>} 

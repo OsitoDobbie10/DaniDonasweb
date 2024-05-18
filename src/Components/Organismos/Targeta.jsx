@@ -26,7 +26,7 @@ const Targeta = ({data}) => {
         timer: 1500
       });
     }
-   }
+   };
   const swipeRigthDataSimple = ()=>({
     content: (
       <div className="contentRight">

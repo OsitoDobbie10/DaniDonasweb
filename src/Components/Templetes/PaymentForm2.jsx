@@ -2,21 +2,30 @@ import styled from "styled-components";
 import {v,UseGlobal,EditarTargeta,ViewRestaurantes} from "../../index";
 import Cards from "react-credit-cards-2";
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
+import { useNavigate } from "react-router-dom";
 const PaymentForm2 = () => {
+  let Regresar = useNavigate();
+  const BackConfig = ()=>{
+    Regresar("/Configuracion");
+  }
   const {ObtenerestadoEditarTargetas,estadoEditarTargetas,FocusestadoEditarTargetas} = UseGlobal();
   const {idUsuario} = ViewRestaurantes();
   const {Numero,Nombre,Vencimiento,CVC,idusuario,focus,id} = estadoEditarTargetas;
+  console.log(id);
+  console.log(idusuario);
   const EditarBaseDatos = async(e)=>{
     e.preventDefault();
     const {Numero,Nombre,Vencimiento,CVC,idusuario,focus,id} = estadoEditarTargetas;
     let p = {
+        idusuario:idusuario,
+        id:id,
         Numero:Numero,
         Nombre:Nombre,
         Vencimiento:Vencimiento,
-        CVC:CVC,
-        idusuario:idusuario
+        CVC:CVC
     };
     await EditarTargeta(p);
+    BackConfig();
   };
   return (
     <Container>
@@ -80,7 +89,7 @@ const PaymentForm2 = () => {
     </div>
     </div>
     <button type="submit"
-            className="btn btn-success btn-block btn-lg mt-1">Pagar</button>
+            className="btn btn-success btn-block btn-lg mt-1">Editar</button>
     </form>
     </div>
     </Container>

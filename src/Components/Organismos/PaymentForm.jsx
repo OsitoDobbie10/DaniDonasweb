@@ -2,9 +2,14 @@ import {v,UseGlobal,InsertaTargeta,ViewRestaurantes} from "../../index"
 import styled from "styled-components";
 import Cards from "react-credit-cards-2";
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
+import { useNavigate } from "react-router-dom";
 const PaymentForm = () => {
   const {state,obtenerformtargeta,handlefocusChange} = UseGlobal();
   const {idUsuario} = ViewRestaurantes();
+  let GetBack = useNavigate();
+  const BackCon = ()=>{
+    GetBack("/Configuracion");
+  }
   const {number,name,cvc,expiry,focus} = state;
   const SubirBaseDatos = async(e)=>{
     e.preventDefault();
@@ -17,6 +22,7 @@ const PaymentForm = () => {
         idusuario:idUsuario
     };
     await InsertaTargeta(p);
+    BackCon();
   };
   return (
     <Container>

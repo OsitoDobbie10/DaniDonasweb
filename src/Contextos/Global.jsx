@@ -328,7 +328,8 @@ const Global = ({children}) => {
       setEstadoEditarTargetas({
         ...estadoEditarTargetas,
        focus: e.target.name})
-    }
+    };
+    const [ObjectPayment,setObjectPayment] = useState({})
    return (
     <Stade.Provider value={{
         openspinnerloading,

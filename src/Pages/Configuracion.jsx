@@ -52,7 +52,7 @@ const {openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig
 
     {
       opencuentasconfig && <ContainerTargetas
-                            cerrar={closeconfig4} animartargeta={animardeposto}
+                            cerrar={closeconfig4} animacion={animardeposto}
                             contenido={<VistaCuentaArray array={Depositos}/>}
                             />
     }

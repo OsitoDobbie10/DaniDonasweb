@@ -26,12 +26,13 @@ flex-direction: column;
     display: block;
     margin:10px auto;
 }
-.ContenedorParaVistaTargetas{
+.ContenedorParaCuentas{
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap:10px;
+    align-items: center;
+    gap:20px;
     &:hover{
       cursor: pointer;
     }

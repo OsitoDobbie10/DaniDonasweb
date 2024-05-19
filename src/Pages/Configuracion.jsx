@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import {v,HeaderDonna,ViewRestaurantes,EditarCuenta,
         UseGlobal,ModalDireccionesConfig,ContenedorModalCon,
-        FormularioEntragar,ContainerTargetas,VistaTargetasArray} from "../index";
+        FormularioEntragar,ContainerTargetas,VistaTargetasArray,VistaCuentaArray} from "../index";
 import { useNavigate } from "react-router-dom";
 import Celular from "../Assets/AddNumber.png";
 import { useQuery } from '@tanstack/react-query';
 const Configuracion = ({datosgenerales}) => {
-const {cuenta,idUsuario,showCuentaPersonal,direccion,targetas,showTargetas} = ViewRestaurantes();
+const {cuenta,idUsuario,showCuentaPersonal,direccion,
+      targetas,showTargetas,showDepositos,Depositos} = ViewRestaurantes();
 useQuery({queryKey:["MostrarInfoCliente"],queryFn:()=>showCuentaPersonal({idusuario:idUsuario})});
 useQuery({queryKey:["ArregloTargetasUsuario"],queryFn:()=>showTargetas()});
+useQuery({queryKey:["ArregloDepositos"],queryFn:()=>showDepositos()});
 const {user} = datosgenerales;
 const {user_metadata} = user;
 const {email} = user;
@@ -47,6 +49,13 @@ const {openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig
                              contenido={<VistaTargetasArray 
                                          array={targetas}
                                          IdUsuario={idUsuario}/>}/>}
+
+    {
+      opencuentasconfig && <ContainerTargetas
+                            cerrar={closeconfig4} animartargeta={animardeposto}
+                            contenido={<VistaCuentaArray array={Depositos}/>}
+                            />
+    }
     <div className="encabezadoUsuario">
     <span className="IconoUser">{<v.User/>}</span>
     <span className="ConfigPerfil">Configuracion del perfil</span> 

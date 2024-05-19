@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import {HeaderDonna,v,ItemdeTargeta} from "../../index";
-const VistaTargetasArray = ({array,IdUsuario}) => {
+import {HeaderDonna,v,ItemDeposito} from "../../index";
+const VistaCuentaArray = ({array}) => {
   return (
     <Container>
     <div className="mostrarHeader">
-    <HeaderDonna texto="Targetas de Credito o Debito" icono3={<v.agregar/>} ruta2="/Targetas"/>
+    <HeaderDonna texto="Cuentas para deposito" icono3={<v.agregar/>} ruta2="/Configuracion"/>
     </div>
-    <div className="ContenedorParaVistaTargetas">
+    <div className="ContenedorParaCuentas">
     {
         array?.map((dat)=>{
-            return <ItemdeTargeta data={dat} key={dat.id} IdUsuario={IdUsuario}/>
+            return <ItemDeposito data={dat} key={dat.id}/>
         })
     }
     </div>
@@ -35,8 +35,6 @@ flex-direction: column;
     &:hover{
       cursor: pointer;
     }
-
 }
-
 `;
-export default VistaTargetasArray
+export default VistaCuentaArray

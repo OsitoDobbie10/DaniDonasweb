@@ -1,6 +1,5 @@
 import {supabase} from '../index';
 import Swal from "sweetalert2";
-import { useQuery } from '@tanstack/react-query';
 export const InsertaTargeta = async(p)=>{
     try {
         const {data,error} =  await supabase.from("Targetas").insert(p).select();

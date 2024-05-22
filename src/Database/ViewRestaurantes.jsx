@@ -17,7 +17,8 @@ import {MostrarRestaurantes,
         MostrarCuenta,
         MostrarTargetas,
         MostrarCuentaDeposito,
-        FiltrarFav
+        FiltrarFav,
+        FiltrarPedido
         } from "../index";
 export const ViewRestaurantes = create((set,get)=>({
     pedidos:[],
@@ -154,6 +155,10 @@ export const ViewRestaurantes = create((set,get)=>({
       const res = await FiltrarFav(p);
       set({favoritos:res});
       return res;
+    },
+    showFilterPedido: async(p)=>{
+      const res = await FiltrarPedido(p);
+      set({pedidosDonnas:res});
+      return res;
     }
-
 }));

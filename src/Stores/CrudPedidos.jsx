@@ -45,3 +45,14 @@ export const BorrarPedido = async(p)=>{
         alert(error.error_description || error.message + "eliminar pedido")   
     }
 }
+
+export const FiltrarPedido = async(p)=>{
+    try {
+        const {data,error} = await supabase.from("pedido").select().eq("Idusuario",p.Idusuario);
+        if(data){
+            return data
+        }
+    } catch (error) {
+        alert(error.error_description || error.message + "MostrarPedidofiltros");
+    }
+};

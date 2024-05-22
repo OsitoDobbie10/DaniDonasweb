@@ -1,10 +1,10 @@
-import {ViewRestaurantes,PedidoIndividual} from "../index";
+import {ViewRestaurantes,PedidoIndividual, Pedido} from "../index";
 import styled from "styled-components";
 import {v,HeaderDonna,NavbarMenu} from "../index"
 import { useQuery } from '@tanstack/react-query';
 const Pedidos = () => {
-  const {pedidosDonnas,showPedidoDonnas} = ViewRestaurantes();
-  useQuery({queryKey:['Pedido'],queryFn:()=>showPedidoDonnas()});
+  const {pedidosDonnas,showFilterPedido,idUsuario,showPedidoDonnas} = ViewRestaurantes();
+  useQuery({queryKey:['Pedido'],queryFn:()=>showFilterPedido({Idusuario:idUsuario})});
   let long = pedidosDonnas.length;
   let view = long > 0 ? true : false;
   return (

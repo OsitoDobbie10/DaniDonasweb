@@ -3,10 +3,11 @@ import styled from 'styled-components'
 import {NavbarMenu,v,HeaderDonna,ViewRestaurantes,FavoritoIndivual} from "../index";
 import { useQuery } from '@tanstack/react-query';
 const ProductosFavs = () => {
-  const {favoritos,showfavs,} = ViewRestaurantes();
-  useQuery({queryKey:['favorito'],queryFn:()=>showfavs()});
+  const {favoritos,showFilterFavs,idUsuario} = ViewRestaurantes();
+  useQuery({queryKey:['favorito'],queryFn:()=>showFilterFavs({Idusuario:idUsuario})});
   let longitud = favoritos.length;
   let view = longitud > 0 ? true: false;
+  console.log(favoritos);
   return (
     <Container>
     <HeaderDonna icono={<v.Atras/>} texto="Mis productos favoritos" icono2={<v.compra/>} ruta="/" ruta2="/Carrito"/>

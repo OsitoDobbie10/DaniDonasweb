@@ -27,6 +27,7 @@ const Targeta = ({data}) => {
       });
     }
    };
+   
   const swipeRigthDataSimple = ()=>({
     content: (
       <div className="contentRight">

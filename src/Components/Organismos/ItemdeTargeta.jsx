@@ -6,9 +6,10 @@ import "./Targeta.css";
 import Visa from "../../Assets/visa.png";
 import MasterCard from "../../Assets/MasterCard.png";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 const ItemdeTargeta = ({data,IdUsuario}) => {
     const {Numero,Nombre,id,Vencimiento,CVC} = data;
-    const {estadoEditarTargetas,setEstadoEditarTargetas} = UseGlobal();
+    const {estadoEditarTargetas,setEstadoEditarTargetas,TargetaUtilizar,setTargetaUtilizar} = UseGlobal();
     const Go = useNavigate();
     const verificarPrimerNumero = (cadena)=> {
         let primerCaracter = cadena.charAt(0);
@@ -53,12 +54,28 @@ const ItemdeTargeta = ({data,IdUsuario}) => {
       ),
       action: () => EliminarTargeta({idusuario:IdUsuario,id:id})
     });
+    const GetTarget = ()=>{
+      setTargetaUtilizar({
+      ...TargetaUtilizar,
+      id:id,
+      Numero:Numero,
+      Nombre:Nombre,
+      Vencimiento:Vencimiento,
+      CVC:CVC});
+      if(Object.values(TargetaUtilizar)){
+        Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "Elemento seleccionado",
+        showConfirmButton: false,
+        timer: 1500});}
+    }
   return (
     <SwipeableList>
     <SwipeableListItem 
     swipeRight={swipeRigthDataSimple()}
     swipeLeft={swipeLeftDataSimple()}>
-    <Container>
+    <Container onClick={GetTarget}>
     {
         evaluarTipoTargeta ? <div className="ImagenParaLogoTrageta">
                              <img src={Visa} alt="Visa"/>

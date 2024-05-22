@@ -1,9 +1,25 @@
 import styled from "styled-components";
+import {UseGlobal} from "../../index";
+import Swal from "sweetalert2";
 const ItemDeposito = ({data}) => {
-  const {N_cuenta,Nombre,Imagen} = data;
+  const {N_cuenta,Nombre,Imagen,id} = data;
+  const {ObjectPayment,setObjectPayment} = UseGlobal();
+  const funcion2 = ()=>{
+    setObjectPayment({...ObjectPayment,id:id,N_cuenta:N_cuenta,
+      Nombre:Nombre,Imagen:Imagen});
+if(Object.values(ObjectPayment)){
+Swal.fire({
+position: "top-center",
+icon: "success",
+title: "Elemento seleccionado",
+showConfirmButton: false,
+timer: 1500
+});
+};
+  }
   return (
-    <Container>
-    <div className="imagenbanco">
+    <Container onClick={funcion2}>
+    <div className="imagenbanco" >
     <img src={Imagen} alt={Nombre} />
     </div>
     <div className="DatosCuenta">

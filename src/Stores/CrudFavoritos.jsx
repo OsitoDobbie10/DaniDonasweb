@@ -47,3 +47,14 @@ export const BorrarFav = async(p)=>{
         alert(error.error_description || error.message + "eliminar Favoritos")   
     }
 }
+
+export const FiltrarFav = async(p)=>{
+    try {
+        const {data,error} = await supabase.from("favoritos").select().eq("Idusuario",p.Idusuario);
+        if(data){
+            return data
+        }
+    } catch (error) {
+        alert(error.error_description || error.message + "MostrarFavsfiltros");
+    }
+}

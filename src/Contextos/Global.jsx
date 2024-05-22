@@ -329,7 +329,17 @@ const Global = ({children}) => {
         ...estadoEditarTargetas,
        focus: e.target.name})
     };
-    const [ObjectPayment,setObjectPayment] = useState({})
+    const [ObjectPayment,setObjectPayment] = useState({id:"",
+                                                       N_cuenta:"",
+                                                       Nombre:"",
+                                                       Imagen:""});
+
+    const [TargetaUtilizar,setTargetaUtilizar] = useState({id:"",
+                                                           Numero:"",
+                                                           Nombre:"",
+                                                           Vencimiento:"",
+                                                           CVC:"",
+                                                           idusuario:""});
    return (
     <Stade.Provider value={{
         openspinnerloading,
@@ -380,11 +390,10 @@ const Global = ({children}) => {
         animareditar,animardireccion,animartargeta,animardeposto,obtenerformEditar,formeditar,
         openconfig1,openconfig2,openconfig3,openconfig4,
         closeconfig1,closeconfig2,closeconfig3,closeconfig4,state,obtenerformtargeta,handlefocusChange,
-        estadoEditarTargetas,setEstadoEditarTargetas,ObtenerestadoEditarTargetas,FocusestadoEditarTargetas
+        estadoEditarTargetas,setEstadoEditarTargetas,ObtenerestadoEditarTargetas,FocusestadoEditarTargetas,
+        ObjectPayment,setObjectPayment,TargetaUtilizar,setTargetaUtilizar
     }}> 
       {children} 
     </Stade.Provider>
   )}
-
-
 export default Global;

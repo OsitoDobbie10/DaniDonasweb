@@ -5,7 +5,7 @@ import {Home,DaniDonas,DV_Cheescake,
         ProductosFavs,Mapa,MisPedidos,Chats,
         Pedidos,Productos,AtencionCliente,Configuracion,
         ErrorNoRegistro,UseGlobal,Direccion,ErrorSinup,ProductoCheescake,ProductoDonna,Test1,Targetas,
-        TargetaEdit} from "../index";
+        TargetaEdit,ConfirmarPedido} from "../index";
 export const Router = () => {
     const {token} = UseGlobal();
     const router = createBrowserRouter([ 
@@ -68,7 +68,17 @@ export const Router = () => {
          element:<Chats/>},
          {
           path:"/Carrito",
-          element:token ? <Productos/> : <ErrorNoRegistro valor="Carrito"/>
+          element:<Test1/>,
+          children:[
+            {
+              index:true,
+              element:token ? <Productos/> : <ErrorNoRegistro valor="Carrito"/>
+            },
+            {
+              path:"/Carrito/:id/Confirmar",
+              element:<ConfirmarPedido/>
+            }
+          ]
          },
          {
           path:"/AtencionCliente",

@@ -1,23 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
-import {v,DomicilioCarrito,editarPedido,ViewRestaurantes,FuncionesModal} from "../../index";
+import {v,DomicilioCarrito,editarPedido,ViewRestaurantes,FuncionesModal,UseGlobal} from "../../index";
 import Torta from "../../Assets/tarta-de-queso.png";
 import Donas from "../../Assets/donas.png";
 import Add from "../../Assets/agregar.png";
 import Less from "../../Assets/menos.png";
+import { useNavigate } from 'react-router-dom';
 const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => {
+  const {valuePedido,setValuePedido} = UseGlobal();
   const {ciudad,colonia,referencia,direccion,Latitude,Longitud} = direcciones;
-  const {IdPedido,fecha,nombre,precio,descp,imagen,TipoProducto,Cantidad} = data;
+  const {IdPedido,fecha,nombre,precio,descp,imagen,TipoProducto,Cantidad,id} = data;
   const {numero,Incremnto,Decremento} = FuncionesModal();
   const {idUsuario} = ViewRestaurantes();
   const imagenIcono = TipoProducto === "Donnas" ? true : false;
   const fechaformateada = fecha.split('T')[0]; 
   const {fecharecoger,horarecoger} = recoger;
   const {nombre:personaencarga,dir,hora:horaencargo} = encargar;
+  let enviarpedido = useNavigate();
+  const funcionEnviarPedido = ()=>{
+    enviarpedido(`/Carrito/${id}/Confirmar`);
+  }
   const TipoPedidoValor = (tipo)=>{
     switch(tipo){
       case "Domicilio":
-      return <DomicilioCarrito spanciudad="Ciudad" spancolonia="Colonia" ciudad={ciudad} colonia={colonia}/>
+      return <DomicilioCarrito spanciudad="Ciudad" 
+                               spancolonia="Colonia" 
+                               ciudad={ciudad} 
+                               colonia={colonia}
+                               funcionEnvio={funcionEnviarPedido}/>
       break;
       case "Encargar":
       return <DomicilioCarrito Nombre="Encargo de:" 
@@ -25,13 +35,15 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
                                Hora1="Hora del encargo"
                                personaencarga={personaencarga}
                                dir={dir}
-                               horaencago={horaencargo}/>
+                               horaencago={horaencargo}
+                               funcionEnvio={funcionEnviarPedido}/>
       break;
       case "Recoger":
       return <DomicilioCarrito Fecha="Fecha a recoger pedido" 
                                Hora2="Hora a recoger pedido"
                                fecharecoger={fecharecoger}
-                               horarecoger={horarecoger}/> 
+                               horarecoger={horarecoger}
+                               funcionEnvio={funcionEnviarPedido}/> 
       break
     }
   }
@@ -58,6 +70,7 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
   }
   return (
     <Container>
+    <div className="totalContainer">
     <div className="columna1">
     <div className="texto1">
     <div className="textoindice1">
@@ -90,10 +103,12 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
     </div>
     <span className='PrecioPedido'>Ordenes:{numero}</span>
     </div>
+    </div>
     </Container>
   )
 }
 const Container = styled.div`
+.totalContainer{
 width: 90%;
 height: 500px;
 margin:auto;
@@ -187,6 +202,7 @@ justify-content: space-evenly;
   }
  
 
+}
 }
 `;
 export default ObjetoCarritoCompra

@@ -1,10 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 const DomicilioCarrito = ({spanciudad,spancolonia,ciudad,colonia,
-                          Nombre,direccion,Hora1,personaencarga,dir,horaencago,Fecha,Hora2,fecharecoger,horarecoger}) => {
+                          Nombre,direccion,Hora1,
+                          personaencarga,dir,horaencago,
+                          Fecha,Hora2,fecharecoger,horarecoger,
+                          funcionEnvio}) => {
   return (
     <Container>
-    <button type="button" className="btn btn-success">Recibido</button> 
+    <button type="button" className="btn btn-success" onClick={funcionEnvio}>Pedir</button> 
+    <button type="button" className="btn btn-primary">Seleccionar</button>
     <span className='TipoPago' >Pago con: </span>
     {
       ciudad && <>

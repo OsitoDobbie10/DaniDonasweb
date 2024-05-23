@@ -341,6 +341,44 @@ const Global = ({children}) => {
                                                            CVC:"",
                                                            idusuario:""});
     const [numero,setNumero] = useState(1);
+    const [IntroEnvio,setIntroEnvio] = useState(true);
+    const [valuePedido,setValuePedido] = useState({
+      nombre:"",
+      precio:"",
+      descp:"",
+      imagen:"",
+      promo:"",
+      N:"",
+      L:"",
+      J:"",
+      CN:"",
+      CB:"",
+      FM:"",
+      LB:"",
+      Cc:"",
+      CC:"",
+      MM:"",
+      G:"",
+      GO:"",
+      CCO:"",
+      FT:"",
+      Kt:"",
+      AP:"",
+      Aven:"",
+      JL:"",
+      P1:"",
+      Cantidad:"",
+      G1:"",
+      MP:"",
+      S:"",
+      ReEx:"",
+      FruEx:"",
+      MoreEx:"",
+      Dedicatoria:"",
+      fecha:"",
+      Tipoproducto:"",
+      TipoProducto:""
+    });
    return (
     <Stade.Provider value={{
         openspinnerloading,
@@ -392,7 +430,8 @@ const Global = ({children}) => {
         openconfig1,openconfig2,openconfig3,openconfig4,
         closeconfig1,closeconfig2,closeconfig3,closeconfig4,state,obtenerformtargeta,handlefocusChange,
         estadoEditarTargetas,setEstadoEditarTargetas,ObtenerestadoEditarTargetas,FocusestadoEditarTargetas,
-        ObjectPayment,setObjectPayment,TargetaUtilizar,setTargetaUtilizar,numero,setNumero
+        ObjectPayment,setObjectPayment,TargetaUtilizar,setTargetaUtilizar,numero,setNumero,
+        IntroEnvio,setIntroEnvio,valuePedido,setValuePedido
     }}> 
       {children} 
     </Stade.Provider>

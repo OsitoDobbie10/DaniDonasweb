@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import {UseGlobal,SpinnerEnvio} from '../index';
+import {UseGlobal,Loading} from '../index';
 const ConfirmarPedido = () => {
   const {IntroEnvio,setIntroEnvio} = UseGlobal();
   setTimeout(()=>{
   setIntroEnvio(false);
   },2000)
-  if(IntroEnvio) return <SpinnerEnvio/>;
+  if(IntroEnvio) return <Loading/>;
   return (
     <Container>
     

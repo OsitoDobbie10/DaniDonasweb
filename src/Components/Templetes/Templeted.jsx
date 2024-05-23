@@ -36,7 +36,6 @@ const GetValue = ()=>{
 const value = (p)=>{
   setPedido(p);
 }
-
   return (
     <Container>
      <div className="header">

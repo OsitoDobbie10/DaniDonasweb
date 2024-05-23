@@ -4,11 +4,11 @@ const DomicilioCarrito = ({spanciudad,spancolonia,ciudad,colonia,
                           Nombre,direccion,Hora1,
                           personaencarga,dir,horaencago,
                           Fecha,Hora2,fecharecoger,horarecoger,
-                          funcionEnvio}) => {
+                          funcionEnvio,funcionseleccion}) => {
   return (
     <Container>
     <button type="button" className="btn btn-success" onClick={funcionEnvio}>Pedir</button> 
-    <button type="button" className="btn btn-primary">Seleccionar</button>
+    <button type="button" className="btn btn-primary" onClick={funcionseleccion}>Seleccionar</button>
     <span className='TipoPago' >Pago con: </span>
     {
       ciudad && <>

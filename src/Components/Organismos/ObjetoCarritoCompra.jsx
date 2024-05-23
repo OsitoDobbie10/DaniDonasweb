@@ -6,10 +6,15 @@ import Donas from "../../Assets/donas.png";
 import Add from "../../Assets/agregar.png";
 import Less from "../../Assets/menos.png";
 import { useNavigate } from 'react-router-dom';
+import Swal from "sweetalert2";
 const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => {
   const {valuePedido,setValuePedido} = UseGlobal();
   const {ciudad,colonia,referencia,direccion,Latitude,Longitud} = direcciones;
-  const {IdPedido,fecha,nombre,precio,descp,imagen,TipoProducto,Cantidad,id} = data;
+  const {IdPedido,fecha,nombre,precio,descp,
+         imagen,TipoProducto,Cantidad,id,
+         promo,N,L,J,CN,CB,FM,LB,Cc,CC,MM,
+         G,GO,CCO,FT,Kt,AP,Aven,JL,P1,G1,MP,S,ReEx,
+         FruEx,MoreEx,Dedicatoria,Tipoproducto} = data;
   const {numero,Incremnto,Decremento} = FuncionesModal();
   const {idUsuario} = ViewRestaurantes();
   const imagenIcono = TipoProducto === "Donnas" ? true : false;
@@ -20,6 +25,56 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
   const funcionEnviarPedido = ()=>{
     enviarpedido(`/Carrito/${id}/Confirmar`);
   }
+  let precioformateado = precio*numero;
+  const SeleccionarProducto = ()=>{
+    setValuePedido({
+      ...valuePedido,
+      nombre:nombre,
+      precio:precioformateado,
+      descp:descp,
+      imagen:imagen,
+      promo:promo,
+      N:N,
+      L:L,
+      J:J,
+      CN:CN,
+      CB:CB,
+      FM:FM,
+      LB:LB,
+      Cc:Cc,
+      CC:CC,
+      MM:MM,
+      G:G,
+      GO:GO,
+      CCO:CCO,
+      FT:FT,
+      Kt:Kt,
+      AP:AP,
+      Aven:Aven,
+      JL:JL,
+      P1:P1,
+      Cantidad:numero,
+      G1:G1,
+      MP:MP,
+      S:S,
+      ReEx:ReEx,
+      FruEx:FruEx,
+      MoreEx:MoreEx,
+      Dedicatoria:Dedicatoria,
+      fecha:fechaformateada,
+      Tipoproducto:Tipoproducto,
+      TipoProducto:TipoProducto
+    })
+    if(Object.values(valuePedido)){
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "Pedido Tomado",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+  }
   const TipoPedidoValor = (tipo)=>{
     switch(tipo){
       case "Domicilio":
@@ -27,7 +82,8 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
                                spancolonia="Colonia" 
                                ciudad={ciudad} 
                                colonia={colonia}
-                               funcionEnvio={funcionEnviarPedido}/>
+                               funcionEnvio={funcionEnviarPedido}
+                               funcionseleccion={SeleccionarProducto}/>
       break;
       case "Encargar":
       return <DomicilioCarrito Nombre="Encargo de:" 
@@ -36,14 +92,16 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
                                personaencarga={personaencarga}
                                dir={dir}
                                horaencago={horaencargo}
-                               funcionEnvio={funcionEnviarPedido}/>
+                               funcionEnvio={funcionEnviarPedido}
+                               funcionseleccion={SeleccionarProducto}/>
       break;
       case "Recoger":
       return <DomicilioCarrito Fecha="Fecha a recoger pedido" 
                                Hora2="Hora a recoger pedido"
                                fecharecoger={fecharecoger}
                                horarecoger={horarecoger}
-                               funcionEnvio={funcionEnviarPedido}/> 
+                               funcionEnvio={funcionEnviarPedido}
+                               funcionseleccion={SeleccionarProducto}/> 
       break
     }
   }
@@ -68,6 +126,7 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
     };
     Aplicar(p);
   }
+ 
   return (
     <Container>
     <div className="totalContainer">

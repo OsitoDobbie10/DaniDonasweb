@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import {v,DomicilioCarrito} from "../../index";
+import {v,DomicilioCarrito,editarPedido,ViewRestaurantes,FuncionesModal} from "../../index";
 import Torta from "../../Assets/tarta-de-queso.png";
 import Donas from "../../Assets/donas.png";
 import Add from "../../Assets/agregar.png";
+import Less from "../../Assets/menos.png";
 const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => {
   const {ciudad,colonia,referencia,direccion,Latitude,Longitud} = direcciones;
-  const {IdPedido,fecha,nombre,precio,descp,imagen,TipoProducto} = data;
+  const {IdPedido,fecha,nombre,precio,descp,imagen,TipoProducto,Cantidad} = data;
+  const {numero,Incremnto,Decremento} = FuncionesModal();
+  const {idUsuario} = ViewRestaurantes();
   const imagenIcono = TipoProducto === "Donnas" ? true : false;
   const fechaformateada = fecha.split('T')[0]; 
   const {fecharecoger,horarecoger} = recoger;
@@ -31,6 +34,27 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
                                horarecoger={horarecoger}/> 
       break
     }
+  }
+  const Aplicar = async(p)=>{
+    await editarPedido(p);
+  }
+  const AumentarPedido = ()=>{
+    Incremnto();
+    let {id,Cantidad} = data;
+    const p = {
+      id:id,
+      Cantidad:numero
+    };
+    Aplicar(p);
+  }
+  const DismunirPedido = ()=>{
+    Decremento();
+    let {id,Cantidad} = data;
+    const p = {
+      id:id,
+      Cantidad:numero
+    };
+    Aplicar(p);
   }
   return (
     <Container>
@@ -59,9 +83,12 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
     </div>
     {TipoPedidoValor(TipoPedido)}
     <div className="columna3">
-    <span className='PrecioPedido'>L.{precio}.00</span>
-    <img className='Iconoagregarmas' src={Add} alt="AgregarImagen"/>
-    <span className='PrecioPedido'>L.{precio}.00</span>
+    <span className='PrecioPedido'>L.{precio*numero}.00</span>
+    <div className="botonesFila">
+    <img onClick={AumentarPedido} className='Iconoagregarmas' src={Add} alt="AgregarImagen"/>
+    <img onClick={DismunirPedido} className='Iconoagregarmas' src={Less} alt="DisminuirImagen"/>
+    </div>
+    <span className='PrecioPedido'>Ordenes:{numero}</span>
     </div>
     </Container>
   )
@@ -146,7 +173,10 @@ justify-content: space-evenly;
     font-weight: 700;
     color:orange;
   }
-  .Iconoagregarmas{
+  .botonesFila{
+     display: flex;
+     gap:18px;
+    .Iconoagregarmas{
     width: 30px;
     height: 30px;
     &:hover{
@@ -154,6 +184,8 @@ justify-content: space-evenly;
     }
 
   }
+  }
+ 
 
 }
 `;

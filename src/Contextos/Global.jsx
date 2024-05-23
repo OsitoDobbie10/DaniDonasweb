@@ -340,6 +340,7 @@ const Global = ({children}) => {
                                                            Vencimiento:"",
                                                            CVC:"",
                                                            idusuario:""});
+    const [numero,setNumero] = useState(1);
    return (
     <Stade.Provider value={{
         openspinnerloading,
@@ -391,9 +392,9 @@ const Global = ({children}) => {
         openconfig1,openconfig2,openconfig3,openconfig4,
         closeconfig1,closeconfig2,closeconfig3,closeconfig4,state,obtenerformtargeta,handlefocusChange,
         estadoEditarTargetas,setEstadoEditarTargetas,ObtenerestadoEditarTargetas,FocusestadoEditarTargetas,
-        ObjectPayment,setObjectPayment,TargetaUtilizar,setTargetaUtilizar
+        ObjectPayment,setObjectPayment,TargetaUtilizar,setTargetaUtilizar,numero,setNumero
     }}> 
       {children} 
     </Stade.Provider>
   )}
-export default Global;
+export default Global; 

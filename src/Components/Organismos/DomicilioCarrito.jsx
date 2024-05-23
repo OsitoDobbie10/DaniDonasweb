@@ -4,7 +4,7 @@ const DomicilioCarrito = ({spanciudad,spancolonia,ciudad,colonia,
                           Nombre,direccion,Hora1,personaencarga,dir,horaencago,Fecha,Hora2,fecharecoger,horarecoger}) => {
   return (
     <Container>
-    <button type="button" class="btn btn-success">Recibido</button> 
+    <button type="button" className="btn btn-success">Recibido</button> 
     <span className='TipoPago' >Pago con: </span>
     {
       ciudad && <>

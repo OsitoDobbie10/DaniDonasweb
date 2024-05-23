@@ -12,7 +12,7 @@ const FuncionesModal = () => {
             modal6,setModal6,
             animandoModal6,setAnimandoModal6,
             animandoModal7,setAnimandoModal7,
-            modal7,setModal7,datosform1,datosform2,datosform3,datosform4} = UseGlobal();
+            modal7,setModal7,datosform1,datosform2,datosform3,datosform4,numero,setNumero} = UseGlobal(); 
     const Navegar = useNavigate();
     const openPedido = ()=>{
     setModal(true);
@@ -114,6 +114,7 @@ const FuncionesModal = () => {
       setAnimandoModal7(false); 
     },1000)
     }
+   
     const PedirPedido = (nombre,precio,descp,imagen,promo)=>{
       const {N,L,J,CN,CB} = datosform1;
       const {FM,LB,Cc,CC} = datosform2;
@@ -127,6 +128,12 @@ const FuncionesModal = () => {
         N,L,J,CN,CB,FM,LB,Cc,CC,MP,MM,G,GO,CCO,FT,Kt,S,AP,Aven,JL,G1,P1
       };
     }
+    const Incremnto = ()=>{
+      setNumero(numero + 1);
+    }
+    const Decremento = ()=>{
+      setNumero(numero - 1);
+    }
   return{modal,animandoModal,openPedido,
          cerrarPedido,setModal,
          setAnimandoModal,OpenLogin,CloseLogin,
@@ -135,6 +142,6 @@ const FuncionesModal = () => {
          closeFormulario,abrirFormulario,modal5,animandoModal5,
          openmodaldonnas,closemodaldonnas,modal6,animandoModal6,setAnimandoModal6,
          openmodalDW,closemodalDW,modal7,animandoModal7,setAnimandoModal7,setModal7,PedirPedido,
-         datosform1,datosform2,datosform3,datosform4}} 
+         datosform1,datosform2,datosform3,datosform4,numero,Incremnto,Decremento}} 
 
 export default FuncionesModal;

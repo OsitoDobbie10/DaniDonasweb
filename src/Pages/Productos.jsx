@@ -2,7 +2,7 @@ import styled from "styled-components"
 import {HeaderDonna,NavbarMenu,v,ViewRestaurantes,UseGlobal, TempletedUnico} from "../index";
 import { useQuery } from '@tanstack/react-query';
 const Productos = () => {
-  const {pedidosDonnas,showPedidoDonnas} = ViewRestaurantes();
+  const {pedidosDonnas} = ViewRestaurantes();
   const {getdireccion,getRecoger,getencargar,view} = UseGlobal();
   const {tipo} = view;
   return (

@@ -5,6 +5,7 @@ import {v,HeaderDonna,ViewRestaurantes,EditarCuenta,
 import { useNavigate } from "react-router-dom";
 import Celular from "../Assets/AddNumber.png";
 import { useQuery } from '@tanstack/react-query';
+import Swal from "sweetalert2";
 const Configuracion = ({datosgenerales}) => {
 const {cuenta,idUsuario,showCuentaPersonal,direccion,
       targetas,showTargetas,showDepositos,Depositos} = ViewRestaurantes();
@@ -22,7 +23,23 @@ const preguntas = ()=>{
 const {openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig,
       animareditar,animardireccion,animartargeta,animardeposto,obtenerformEditar,formeditar,
       closeconfig1,closeconfig2,closeconfig3,closeconfig4,
-      openconfig1,openconfig2,openconfig3,openconfig4} = UseGlobal();
+      openconfig1,openconfig2,openconfig3,openconfig4,
+      NumeroTelefono,setNumeroTelefono} = UseGlobal();
+const GetMyPhone = ()=>{
+  setNumeroTelefono({
+    ...NumeroTelefono,
+    Numero:telefono
+  });
+  if(Object.values(NumeroTelefono)){
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: "Dato Obtenido",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
+}
   return (
     <Container>
     <HeaderDonna icono={<v.Atras/>} texto="Configuracion" ruta="/"/>
@@ -33,7 +50,7 @@ const {openeditarconfig,opendireccionconfig,opentargetasconfig,opencuentasconfig
     </div>
     <div className="AddMyPhone">
     <img src={Celular} alt="AddPhone" className="ImagenAddMyPhone"/>
-    <span className="SimboloCel">+</span>
+    <span className="SimboloCel" onClick={GetMyPhone}>+</span>
     </div>
     {openeditarconfig && <ModalDireccionesConfig cerrar={closeconfig1} 
                                                  animacion={animareditar}

@@ -379,6 +379,9 @@ const Global = ({children}) => {
       Tipoproducto:"",
       TipoProducto:""
     });
+    const [NumeroTelefono,setNumeroTelefono] = useState({
+      Numero:""
+    });
    return (
     <Stade.Provider value={{
         openspinnerloading,
@@ -431,7 +434,7 @@ const Global = ({children}) => {
         closeconfig1,closeconfig2,closeconfig3,closeconfig4,state,obtenerformtargeta,handlefocusChange,
         estadoEditarTargetas,setEstadoEditarTargetas,ObtenerestadoEditarTargetas,FocusestadoEditarTargetas,
         ObjectPayment,setObjectPayment,TargetaUtilizar,setTargetaUtilizar,numero,setNumero,
-        IntroEnvio,setIntroEnvio,valuePedido,setValuePedido
+        IntroEnvio,setIntroEnvio,valuePedido,setValuePedido,NumeroTelefono,setNumeroTelefono
     }}> 
       {children} 
     </Stade.Provider>

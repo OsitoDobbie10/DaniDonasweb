@@ -63,6 +63,8 @@ export { default as ViewRestaurantesList } from './Components/Organismos/ViewRes
 export { default as VistaCuentaArray } from './Components/Organismos/VistaCuentaArray';
 export { default as VistaTargetasArray } from './Components/Organismos/VistaTargetasArray';
 export { default as ContainerModal } from './Components/Templetes/ContainerModal';
+export { default as DomicioData } from './Components/Templetes/DomicioData';
+export { default as EncargarData } from './Components/Templetes/EncargarData';
 export { default as FilterDWCheescake } from './Components/Templetes/FilterDWCheescake';
 export { default as Header } from './Components/Templetes/Header';
 export { default as Ingresar } from './Components/Templetes/Ingresar';
@@ -73,6 +75,7 @@ export { default as Menucomidastempleted } from './Components/Templetes/Menucomi
 export { default as ModalDireccion } from './Components/Templetes/ModalDireccion';
 export { default as ModalLogin } from './Components/Templetes/ModalLogin';
 export { default as PaymentForm2 } from './Components/Templetes/PaymentForm2';
+export { default as RecogerData } from './Components/Templetes/RecogerData';
 export { default as SignUp } from './Components/Templetes/SignUp';
 export { default as Slidebar } from './Components/Templetes/Slidebar';
 export { default as TargetaEdit } from './Components/Templetes/TargetaEdit';

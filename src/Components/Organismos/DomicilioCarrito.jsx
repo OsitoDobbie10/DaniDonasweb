@@ -18,9 +18,9 @@ const DomicilioCarrito = ({spanciudad,spancolonia,ciudad,colonia,
     }
     {
       Nombre &&  <>
-                  <span className='TextoNombreEncargo'>{Nombre}: {personaencarga}</span>
+                  <span className='TextoNombreEncargo'>{Nombre} {personaencarga}</span>
                   <span className='TextoDireccionRecoger'>{direccion}: {dir}</span>
-                  <span className='TextoHoraRecoger'>{Hora1}:{horaencago}</span>
+                  <span className='TextoHoraRecoger'>{Hora1}:{horaencago}</span> 
                   </>
     }
     {

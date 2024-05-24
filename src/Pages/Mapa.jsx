@@ -5,7 +5,7 @@ const Mapa = () => {
   return (
     <Container>
      <div className="mapa">
-     <iframe width="100%" height="600" src="https://sit22e88300f6941.maps.arcgis.com/apps/webappviewer/index.html?id=0c3bc5096fbd46fba1bc6ef8f2f443f1" frameborder="0"></iframe>
+     <iframe width="100%" height="600" src="https://indi6fde96800c20.maps.arcgis.com/apps/instant/attachmentviewer/index.html?appid=f13e3e72bc0b4e959631cafda0c16555" frameborder="0"></iframe>
      </div>
      <div className="footer">
      <NavbarMenu/>

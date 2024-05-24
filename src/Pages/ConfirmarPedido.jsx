@@ -36,7 +36,7 @@ const ConfirmarPedido = () => {
   if(IntroEnvio) return <Loading/>;
   return (
     <Container>
-    <HeaderDonna icono={<v.Atras/>} texto="Confirmar Datos" funcion="/Carrito"/>
+    <HeaderDonna icono={<v.Atras/>} texto="Confirmar Datos" ruta="/Carrito"/>
     <div className="Contenido1Pago">
     <div className="EncabezadoPago1">
     <img src={IconoPago} alt="PagoImagen"/>

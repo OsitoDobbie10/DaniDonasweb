@@ -157,6 +157,9 @@ const Container = styled.div`
     .SimboloCel{
       font-size: 25px;
       font-weight: bold;
+      &:hover{
+        cursor: pointer;
+      }
     }
 
   }

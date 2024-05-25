@@ -14,7 +14,7 @@ const DomicioData = ({ciudad,colonia,
 }
 const Container = styled.div`
 width: 400px;
-height: 300px;
+height: 150px;
 display: flex;
 flex-direction: column;
 gap:5px;

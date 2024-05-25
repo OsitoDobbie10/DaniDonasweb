@@ -13,7 +13,7 @@ const DomicioData = ({nombre,dir,hora}) => {
 }
 const Container = styled.div`
 width: 400px;
-height: 300px;
+height: 100px;
 display: flex;
 flex-direction: column;
 gap:5px;

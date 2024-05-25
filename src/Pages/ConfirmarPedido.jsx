@@ -43,10 +43,10 @@ const ConfirmarPedido = () => {
     <span className='PagoComo'>¿Como nos comunicamos contigo?</span>
     </div>
     <div className="Contenido2Pago">
-    <img src={Telefono} alt="TelefonoUsado"/>
+    <img src={Telefono} alt="TelefonoUsado" className='Imagencelular'/>
     <div className="InfoTelefono">
-    <span>Telefono Principal</span>
-    <span>{Numero}</span>
+    <span className='Tel1'>Telefono Principal</span>
+    <span className='Tel2'>{Numero}</span>
     </div>
     </div>
     <div className="Contenido3Pago">
@@ -59,7 +59,9 @@ const ConfirmarPedido = () => {
     }
     </div>
     <div className="InformacionGeneralPedido">
-    <img src={Tienda} alt="Tienda"/>
+    <>
+    <img src={Tienda} alt="Tienda" className='ImagenTienda11'/>
+    </>
     <div className="resumenDatos">
     {ElementoResumen(tipo)}
     </div>
@@ -89,5 +91,84 @@ const ConfirmarPedido = () => {
     </Container>
   )
 }
-const Container = styled.div``;
+const Container = styled.div`
+width: 90%;
+margin:auto;
+.Contenido1Pago{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+.EncabezadoPago1{
+  display: flex;
+  gap:10px;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  img{
+    width: 80px;
+    height: 80px;
+  }
+  .PagoComo{
+    font-size: 22px;
+    color: blue;
+    font-weight: 700;
+  }
+}
+.Contenido2Pago{
+  display: flex;
+  gap:10px;
+  justify-content: center;
+  align-items: center;
+ .Imagencelular{
+  width: 50px;
+  height: 50px;
+ }
+ .InfoTelefono{
+  display: flex;
+  flex-direction: column;
+  gap:4px;
+ .Tel1{
+  color: gray;
+  font-weight: 600;
+  font-size: 18px;
+}
+.Tel2{
+  color: blue;
+  font-weight: 400;
+  font-size: 16px;
+}
+ }
+
+
+}
+.Contenido3Pago{
+  width: 100%;
+  margin-top: 25px;
+  gap:20px;
+  display: flex;
+  flex-direction: column;
+  .Elem1{
+    display: flex;
+    justify-content: center;
+    gap:10px;
+    align-items: center;
+  }
+
+.InformacionGeneralPedido{
+width: 100%;
+display: flex;
+justify-content: center;
+gap:35px;
+.ImagenTienda11{
+  width: 100px;
+  height: 100px;
+}
+}
+}
+
+
+}
+
+`;
 export default ConfirmarPedido

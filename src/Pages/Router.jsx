@@ -77,6 +77,10 @@ export const Router = () => {
             {
               path:"/Carrito/:id/Confirmar",
               element:<ConfirmarPedido/>
+            },
+            {
+              path:"/Carrito/:id/FormaPago",
+              
             }
           ]
          },

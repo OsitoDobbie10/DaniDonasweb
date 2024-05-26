@@ -68,23 +68,25 @@ const ConfirmarPedido = () => {
     </div>
     </div>
     <div className="ContenidoPago4">
-    <span>Disponble cualquier tipo de pedido desde las 10:00 a.m hasta 7:00 p.m</span>
+    <span>"Disponble cualquier tipo de pedido desde las 10:00 a.m hasta 7:00 p.m"</span>
     </div>
+    <div className='ContenedorMenuPago'>
     <div className='ContenidoPago5'>
     <div className="leftPay">
     <span className='ProductsPay'>Total de productos</span>
     <span className='ProductsPay'>Gastos de envio</span>
     </div>
     <div className="rigthpay">
-    <span className='rigthpay'>L.{precio}.00</span>
+    <span className='rigthpay'>L {precio}.00</span>
     {
-      tipo === "Domicilio" ? <span className='ProductsPay'>{gastoenvio}</span> : <></>
+      tipo === "Domicilio" ? <span className='ProductsPay'>{gastoenvio}.00</span> : <></>
     }
     </div>
     </div>
-    <div className='ContenidoPago5'>
+    <div className='ContenidoPagoBoton'>
     <span className='Textopago'>Continuar</span>
     <span className='Textopago'>L.{precio + evaluargastoenvio}.00</span>
+    </div>
     </div>
     </div>
 
@@ -98,6 +100,7 @@ margin:auto;
   display: flex;
   flex-direction: column;
   gap:10px;
+  justify-content: center;
 .EncabezadoPago1{
   display: flex;
   gap:10px;
@@ -166,7 +169,76 @@ gap:35px;
 }
 }
 }
+.ContenidoPago4{
+display: flex;
+justify-content: center;
+span{
+  font-size: 18px;
+  color: green;
+  font-weight:700;
+  text-align: center;
+}
+}
+.ContenedorMenuPago{
+  width: 800px;
+  background-color: aliceblue;
+  margin:10px auto ;
+  border-top-color: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  justify-content: center;
+  border-radius: 20px;
+  .ContenidoPago5{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    .leftPay{
+      display: flex;
+      flex-direction: column;
+      gap:40px;
+      .ProductsPay{
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+    .rigthpay{
+      display: flex;
+      flex-direction: column;
+      gap:30px;
+      .rigthpay{
+        font-weight: 700;
+        font-size: 25px;
+        color: red;
+      }
+      .ProductsPay{
+        font-weight: 700;
+        font-size: 18px;
+        color: gray;
+      }
+      
+    }
+  }
 
+  .ContenidoPagoBoton{
+    display: flex;
+    gap:30px;
+    margin: 30px auto;
+    background-color: red;
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+      cursor: pointer;
+    }
+    .Textopago{
+      color:white;
+      font-weight: bold;
+    }
+  }
+}
 
 }
 

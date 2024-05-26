@@ -382,6 +382,20 @@ const Global = ({children}) => {
     const [NumeroTelefono,setNumeroTelefono] = useState({
       Numero:""
     });
+    const [OpenRTN,setOpenRTN] = useState(false);
+    const [ValueRTN,setValueRTN] = useState({
+      RTN:"",
+      Negocio:""
+    });
+    const GetRTN = (e)=>{
+      setValueRTN({
+        ...ValueRTN,
+        [e.target.name]: e.target.value
+      })
+    };
+    const [OpenEfectivo,setOpenEfectivo] = useState(false);
+    const [OpenTargeta,setOpenTargeta] = useState(false);
+    const [OpenCuenta,setOpenCuenta] = useState(false);
    return (
     <Stade.Provider value={{
         openspinnerloading,
@@ -434,7 +448,11 @@ const Global = ({children}) => {
         closeconfig1,closeconfig2,closeconfig3,closeconfig4,state,obtenerformtargeta,handlefocusChange,
         estadoEditarTargetas,setEstadoEditarTargetas,ObtenerestadoEditarTargetas,FocusestadoEditarTargetas,
         ObjectPayment,setObjectPayment,TargetaUtilizar,setTargetaUtilizar,numero,setNumero,
-        IntroEnvio,setIntroEnvio,valuePedido,setValuePedido,NumeroTelefono,setNumeroTelefono
+        IntroEnvio,setIntroEnvio,valuePedido,setValuePedido,NumeroTelefono,setNumeroTelefono,
+        OpenRTN,setOpenRTN,ValueRTN,setValueRTN,GetRTN,OpenEfectivo,setOpenEfectivo,
+        OpenTargeta,setOpenTargeta,OpenCuenta,setOpenCuenta
+
+
     }}> 
       {children} 
     </Stade.Provider>

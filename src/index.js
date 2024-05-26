@@ -66,6 +66,7 @@ export { default as ContainerModal } from './Components/Templetes/ContainerModal
 export { default as DomicioData } from './Components/Templetes/DomicioData';
 export { default as EncargarData } from './Components/Templetes/EncargarData';
 export { default as FilterDWCheescake } from './Components/Templetes/FilterDWCheescake';
+export { default as FormaPago } from './Components/Templetes/FormaPago';
 export { default as Header } from './Components/Templetes/Header';
 export { default as Ingresar } from './Components/Templetes/Ingresar';
 export { default as Ingresar2 } from './Components/Templetes/Ingresar2';

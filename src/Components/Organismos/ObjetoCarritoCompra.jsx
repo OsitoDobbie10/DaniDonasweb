@@ -63,7 +63,8 @@ const ObjetoCarritoCompra = ({data,direcciones,recoger,encargar,TipoPedido}) => 
       Dedicatoria:Dedicatoria,
       fecha:fechaformateada,
       Tipoproducto:Tipoproducto,
-      TipoProducto:TipoProducto
+      TipoProducto:TipoProducto,
+      IdPedido:IdPedido
     })
     if(Object.values(valuePedido)){
       Swal.fire({

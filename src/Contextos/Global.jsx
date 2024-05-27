@@ -377,7 +377,8 @@ const Global = ({children}) => {
       Dedicatoria:"",
       fecha:"",
       Tipoproducto:"",
-      TipoProducto:""
+      TipoProducto:"",
+      IdPedido:""
     });
     const [NumeroTelefono,setNumeroTelefono] = useState({
       Numero:""
@@ -396,6 +397,25 @@ const Global = ({children}) => {
     const [OpenEfectivo,setOpenEfectivo] = useState(false);
     const [OpenTargeta,setOpenTargeta] = useState(false);
     const [OpenCuenta,setOpenCuenta] = useState(false);
+    const [ModalOpenEfectivo,setModalOpenEfectivo] = useState(false);
+    const [ModalOpenTargeta,setModalOpenTargeta] = useState(false);
+    const [ValueInputRTN,setValueInputRTN] = useState({
+      InputRTN:""
+    }); 
+    const GetValueInputRTN = (e)=>{
+      if(e.target.checked){
+        setValueInputRTN({
+          ...ValueInputRTN,
+          [e.target.name]: e.target.value
+        })
+      }
+      else{
+        setValueInputRTN({
+          ...ValueInputRTN,
+          [e.target.name]: ""
+        })
+      }
+    };
    return (
     <Stade.Provider value={{
         openspinnerloading,
@@ -450,9 +470,8 @@ const Global = ({children}) => {
         ObjectPayment,setObjectPayment,TargetaUtilizar,setTargetaUtilizar,numero,setNumero,
         IntroEnvio,setIntroEnvio,valuePedido,setValuePedido,NumeroTelefono,setNumeroTelefono,
         OpenRTN,setOpenRTN,ValueRTN,setValueRTN,GetRTN,OpenEfectivo,setOpenEfectivo,
-        OpenTargeta,setOpenTargeta,OpenCuenta,setOpenCuenta
-
-
+        OpenTargeta,setOpenTargeta,OpenCuenta,setOpenCuenta,ValueInputRTN,setValueInputRTN,GetValueInputRTN,
+        ModalOpenEfectivo,setModalOpenEfectivo,ModalOpenTargeta,setModalOpenTargeta
     }}> 
       {children} 
     </Stade.Provider>

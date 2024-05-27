@@ -10,13 +10,17 @@ const ConfirmarPedido = () => {
   const {IntroEnvio,setIntroEnvio,SeleccionarProducto,
          getdireccion,getRecoger,getencargar,NumeroTelefono,view,valuePedido} = UseGlobal();
   const {tipo} = view;
-  const {precio} = valuePedido;
+  const {precio,IdPedido} = valuePedido;
   const {Numero} = NumeroTelefono;
   const {ciudad,colonia,referencia,direccion,Latitude,Longitud} = getdireccion;
   const {fecharecoger,horarecoger} = getRecoger;
   const {nombre,dir,hora} = getencargar;
   let gastoenvio = 25;
   let evaluargastoenvio = tipo === "Domicilio" ? gastoenvio : 0;
+  let GoToPay = useNavigate();
+  const getGoToPay = ()=>{
+    GoToPay(`/FormaPago`);
+  };
   const ElementoResumen = (texto)=>{
     switch (texto) {
       case "Domicilio":
@@ -83,7 +87,7 @@ const ConfirmarPedido = () => {
     }
     </div>
     </div>
-    <div className='ContenidoPagoBoton'>
+    <div className='ContenidoPagoBoton' onClick={getGoToPay}>
     <span className='Textopago'>Continuar</span>
     <span className='Textopago'>L.{precio + evaluargastoenvio}.00</span>
     </div>

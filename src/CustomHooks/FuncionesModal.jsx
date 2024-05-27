@@ -12,7 +12,11 @@ const FuncionesModal = () => {
             modal6,setModal6,
             animandoModal6,setAnimandoModal6,
             animandoModal7,setAnimandoModal7,
-            modal7,setModal7,datosform1,datosform2,datosform3,datosform4,numero,setNumero} = UseGlobal(); 
+            modal7,setModal7,datosform1,datosform2,datosform3,
+            datosform4,numero,setNumero,
+            ModalOpenEfectivo,setModalOpenEfectivo,
+            ModalOpenTargeta,setModalOpenTargeta,setOpenEfectivo,
+            setOpenTargeta} = UseGlobal(); 
     const Navegar = useNavigate();
     const openPedido = ()=>{
     setModal(true);

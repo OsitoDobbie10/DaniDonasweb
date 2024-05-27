@@ -5,7 +5,7 @@ import {Home,DaniDonas,DV_Cheescake,
         ProductosFavs,Mapa,MisPedidos,Chats,
         Pedidos,Productos,AtencionCliente,Configuracion,
         ErrorNoRegistro,UseGlobal,Direccion,ErrorSinup,ProductoCheescake,ProductoDonna,Test1,Targetas,
-        TargetaEdit,ConfirmarPedido} from "../index";
+        TargetaEdit,ConfirmarPedido,FormaPago} from "../index";
 export const Router = () => {
     const {token} = UseGlobal();
     const router = createBrowserRouter([ 
@@ -77,12 +77,13 @@ export const Router = () => {
             {
               path:"/Carrito/:id/Confirmar",
               element:<ConfirmarPedido/>
-            },
-            {
-              path:"/Carrito/:id/FormaPago",
-              
             }
           ]
+         },
+         {
+          path:"/FormaPago",
+          element:<FormaPago/>
+
          },
          {
           path:"/AtencionCliente",

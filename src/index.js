@@ -30,6 +30,7 @@ export { default as FormularioProducto } from './Components/Organismos/Formulari
 export { default as FormularioRecoger } from './Components/Organismos/FormularioRecoger';
 export { default as Formularioedutarconfiguracion } from './Components/Organismos/Formularioedutarconfiguracion';
 export { default as HeaderDonna } from './Components/Organismos/HeaderDonna';
+export { default as InputsParaRTN } from './Components/Organismos/InputsParaRTN';
 export { default as ItemDeposito } from './Components/Organismos/ItemDeposito';
 export { default as ItemdeTargeta } from './Components/Organismos/ItemdeTargeta';
 export { default as Links } from './Components/Organismos/Links';
@@ -40,6 +41,7 @@ export { default as MapaParaCarrito } from './Components/Organismos/MapaParaCarr
 export { default as MensajeMapa } from './Components/Organismos/MensajeMapa';
 export { default as Menu } from './Components/Organismos/Menu';
 export { default as MenuHambur2 } from './Components/Organismos/MenuHambur2';
+export { default as MetodoPagoEleme } from './Components/Organismos/MetodoPagoEleme';
 export { default as Modal } from './Components/Organismos/Modal';
 export { default as ModalDireccionesConfig } from './Components/Organismos/ModalDireccionesConfig';
 export { default as ModalMenu } from './Components/Organismos/ModalMenu';

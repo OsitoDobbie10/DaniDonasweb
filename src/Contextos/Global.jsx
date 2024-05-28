@@ -416,6 +416,34 @@ const Global = ({children}) => {
         })
       }
     };
+    const [ValueInputRTN2,setValueInputRTN2] = useState({
+      InputRTN1:""
+    }); 
+    const GetValueInputRTN2 = (e)=>{
+      if(e.target.checked){
+        setValueInputRTN2({
+          ...ValueInputRTN2,
+          [e.target.name]: e.target.value
+        })
+      }
+      else{
+        setValueInputRTN2({
+          ...ValueInputRTN2,
+          [e.target.name]: ""
+        })
+      }
+    };
+    const [ValueInputRTN3,setValueInputRTN3] = useState({
+      InputRTN3:""
+    });
+    const GetText = (e)=>{
+      setValueInputRTN3({
+        ...ValueInputRTN3,
+        [e.target.name]: e.target.value
+      })
+    };
+    const [SiEfectivo,setSiEfectivo] = useState(false);
+
    return (
     <Stade.Provider value={{
         openspinnerloading,
@@ -471,7 +499,8 @@ const Global = ({children}) => {
         IntroEnvio,setIntroEnvio,valuePedido,setValuePedido,NumeroTelefono,setNumeroTelefono,
         OpenRTN,setOpenRTN,ValueRTN,setValueRTN,GetRTN,OpenEfectivo,setOpenEfectivo,
         OpenTargeta,setOpenTargeta,OpenCuenta,setOpenCuenta,ValueInputRTN,setValueInputRTN,GetValueInputRTN,
-        ModalOpenEfectivo,setModalOpenEfectivo,ModalOpenTargeta,setModalOpenTargeta
+        ModalOpenEfectivo,setModalOpenEfectivo,ModalOpenTargeta,setModalOpenTargeta,ValueInputRTN2,
+        GetValueInputRTN2,GetText,SiEfectivo,setSiEfectivo
     }}> 
       {children} 
     </Stade.Provider>

@@ -47,6 +47,7 @@ import Caminante from "../Assets/caminante.png";
 import { BiBookmarkHeart } from "react-icons/bi";
 import { BiCreditCard } from "react-icons/bi";
 import { BiQuestionMark } from "react-icons/bi";
+import { BiArrowToRight } from "react-icons/bi";
 export const v = {
   sidebarWidth: `300px`,
   sidebarWidthInitial: `10vw`,
@@ -122,7 +123,8 @@ export const v = {
   caminante:Caminante,
   favorito:BiBookmarkHeart,
   targetacredito:BiCreditCard,
-  Pregunta:BiQuestionMark
+  Pregunta:BiQuestionMark,
+  LineaDerecha:BiArrowToRight
   };
 
   

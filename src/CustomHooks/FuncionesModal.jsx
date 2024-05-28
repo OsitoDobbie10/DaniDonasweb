@@ -14,9 +14,10 @@ const FuncionesModal = () => {
             animandoModal7,setAnimandoModal7,
             modal7,setModal7,datosform1,datosform2,datosform3,
             datosform4,numero,setNumero,
+            OpenEfectivo,setOpenEfectivo,
+            OpenTargeta,setOpenTargeta,
             ModalOpenEfectivo,setModalOpenEfectivo,
-            ModalOpenTargeta,setModalOpenTargeta,setOpenEfectivo,
-            setOpenTargeta} = UseGlobal(); 
+            ModalOpenTargeta,setModalOpenTargeta} = UseGlobal(); 
     const Navegar = useNavigate();
     const openPedido = ()=>{
     setModal(true);
@@ -118,6 +119,32 @@ const FuncionesModal = () => {
       setAnimandoModal7(false); 
     },1000)
     }
+    const OpenModalEfectivo = ()=>{
+      setOpenEfectivo(true);
+      setTimeout(()=>{
+        setModalOpenEfectivo(true);
+      },1000)
+    }
+    const CloseModalEfectivo = ()=>{
+      setOpenEfectivo(false);
+      setTimeout(()=>{
+        setModalOpenEfectivo(false);
+      },1000)
+    }
+
+    const OpenModalTargeta = ()=>{
+      setOpenTargeta(true);
+      setTimeout(()=>{
+        setModalOpenTargeta(true);
+      },1000)
+    }
+
+    const CloseModalTargeta = ()=>{
+      setOpenTargeta(false);
+      setTimeout(()=>{
+        setModalOpenTargeta(false);
+      },1000)
+    }
    
     const PedirPedido = (nombre,precio,descp,imagen,promo)=>{
       const {N,L,J,CN,CB} = datosform1;
@@ -146,6 +173,8 @@ const FuncionesModal = () => {
          closeFormulario,abrirFormulario,modal5,animandoModal5,
          openmodaldonnas,closemodaldonnas,modal6,animandoModal6,setAnimandoModal6,
          openmodalDW,closemodalDW,modal7,animandoModal7,setAnimandoModal7,setModal7,PedirPedido,
-         datosform1,datosform2,datosform3,datosform4,numero,Incremnto,Decremento}} 
+         datosform1,datosform2,datosform3,datosform4,numero,Incremnto,Decremento,
+         OpenModalEfectivo,CloseModalEfectivo,OpenModalTargeta,CloseModalTargeta,
+         OpenEfectivo,OpenTargeta,ModalOpenEfectivo,ModalOpenTargeta}} 
 
 export default FuncionesModal;

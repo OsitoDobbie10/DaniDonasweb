@@ -9,9 +9,11 @@ const InputsParaRTN = ({funcion,RTN,Negocio}) => {
 }
 const Container = styled.div`
 width: 700px;
+height: 90px;
 display: flex;
 gap:10px;
 align-items: center;
+justify-content: center;
 .I1{
     display: block;
     width: 200px;

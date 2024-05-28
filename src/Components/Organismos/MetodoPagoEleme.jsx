@@ -14,7 +14,7 @@ const MetodoPagoEleme = ({icono1,texto,info,icono2,funcion}) => {
   )
 }
 const Container = styled.div`
-width: 800px;
+width: 700px;
 height: 300px;
 display: flex;
 align-items:center;
@@ -28,13 +28,14 @@ gap:10px;
     height: 100%;
     display: flex;
     align-items: center;
-    gap:19px;
+    justify-content: center;
+    gap:10px;
     .L1{
         display: flex;
         flex-direction: column;
         gap:10px;
     .L1-1{
-        font-size: 30px;
+        font-size: 18px;
         font-weight: 700;
         color: gray; 
     }

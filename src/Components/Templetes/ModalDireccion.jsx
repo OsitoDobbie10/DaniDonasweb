@@ -73,7 +73,5 @@ z-index: 1000;
     left: 30%;
     top:25%;
 }
-
-
 `;
 export default ModalDireccion;

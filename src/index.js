@@ -78,6 +78,7 @@ export { default as Menucomidastempleted } from './Components/Templetes/Menucomi
 export { default as ModalDireccion } from './Components/Templetes/ModalDireccion';
 export { default as ModalEfectivo } from './Components/Templetes/ModalEfectivo';
 export { default as ModalLogin } from './Components/Templetes/ModalLogin';
+export { default as ModalTargeta } from './Components/Templetes/ModalTargeta';
 export { default as PaymentForm2 } from './Components/Templetes/PaymentForm2';
 export { default as RecogerData } from './Components/Templetes/RecogerData';
 export { default as SignUp } from './Components/Templetes/SignUp';

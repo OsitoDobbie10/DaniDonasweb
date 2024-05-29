@@ -1,13 +1,15 @@
 import styled from "styled-components"
-import {HeaderDonna,UseGlobal,v,InputsParaRTN,MetodoPagoEleme,ModalEfectivo,FuncionesModal} from "../../index";
+import {HeaderDonna,UseGlobal,v,InputsParaRTN,
+        MetodoPagoEleme,ModalEfectivo,FuncionesModal,ModalTargeta} from "../../index";
 import SimboloMoney from "../../Assets/Money.png";
 import Efectivo from "../../Assets/dar-dinero.png";
 import Targeta from "../../Assets/tarjeta.png";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 const FormaPago = () => {
   const {ValueInputRTN,GetValueInputRTN,
          GetRTN,ValueRTN,ValueInputRTN2,
-         GetValueInputRTN2,GetText,setSiEfectivo} = UseGlobal();
+         GetValueInputRTN2,GetText,setSiEfectivo,setSiTargeta} = UseGlobal();
   const {OpenModalEfectivo,CloseModalEfectivo,OpenModalTargeta,CloseModalTargeta,
         OpenEfectivo,OpenTargeta,ModalOpenEfectivo,ModalOpenTargeta} = FuncionesModal();
   const {InputRTN} = ValueInputRTN;
@@ -15,6 +17,23 @@ const FormaPago = () => {
   const {InputRTN1} = ValueInputRTN2;
   let ChangedRTN = InputRTN === "InputRTN" ?  true : false;
   let ChangePay = InputRTN1 === "InputRTN1" ? true : false;
+  let pay = useNavigate();
+  let CAAM = ()=>{
+    Swal.fire({
+      title: "Quieres agregar Targeta nueva?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Continuar",
+      denyButtonText: `No continuar`
+      }).then((result) => {
+    if (result.isConfirmed) {
+      pay('/Targetas')
+      setSiTargeta(true);
+    } else if (result.isDenied) {
+      Swal.fire("No se agrego una Targeta nueva", "", "Intenta de nuevo");
+    }
+  });
+  };
   let FuncionDatos = ()=>{
     CloseModalEfectivo();
     setSiEfectivo(true);
@@ -52,7 +71,8 @@ const FormaPago = () => {
     <MetodoPagoEleme icono1={Targeta}
                      texto="PAGO CON TARGETA DE CREDITO/DEBITO"
                      info="El cliente ingresa y autoriza el pago con su targeta"
-                     icono2={<v.LineaDerecha/>}/>
+                     icono2={<v.LineaDerecha/>}
+                     funcion={OpenModalTargeta}/>
  
     </div>
     {
@@ -62,6 +82,11 @@ const FormaPago = () => {
                                     Visualizar={ChangePay}
                                     FunctionText={GetText}
                                     FuncionEfectivo={FuncionDatos}/> : <></>
+    }
+    {
+      OpenTargeta ? <ModalTargeta cerrar={CloseModalTargeta} 
+                                  animacion={ModalOpenTargeta}
+                                  FunctionAdd={CAAM}/> : <></>
     }
     </div>
     </Container>

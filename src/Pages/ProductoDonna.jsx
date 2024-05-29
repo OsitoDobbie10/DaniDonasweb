@@ -244,7 +244,7 @@ function generarIDUnico() {
         adicional:`Ingredientes adicionales: ${dato} ${dato2} ${dato3} ${dato4} ${dato5} ${dato6} ${dato7} ${dato8} ${dato9} ${dato10} ${dato11} ${dato12} ${dato13} ${dato14} ${dato15} ${dato16}`,
         imagen:imagen,
         TipoPedido:"Donnas",
-        IdUnico:`#${generarIDUnico}`
+        IdPedido:`#${generarIDUnico}`
       };
       subir2(p);
       };

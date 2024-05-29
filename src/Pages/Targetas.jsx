@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import {HeaderDonna,v,PaymentForm} from "../index"
+import {HeaderDonna,v,PaymentForm,UseGlobal} from "../index";
 const Targetas = () => {
+  const {SiTargeta} = UseGlobal();
+  let Efectivo = SiTargeta ? "/FormaPago" : "/Configuracion";
   return (
     <Container>
     <HeaderDonna icono={<v.Atras/>} 
-                 texto="Formulario de Targeta" icono2={<v.HOME/>} ruta="/Configuracion"/>
+                 texto="Formulario de Targeta" icono2={<v.HOME/>} ruta={Efectivo}/>
     <div className="layout">
     <PaymentForm/>
     </div>

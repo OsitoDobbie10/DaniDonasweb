@@ -443,7 +443,7 @@ const Global = ({children}) => {
       })
     };
     const [SiEfectivo,setSiEfectivo] = useState(false);
-
+    const [SiTargeta,setSiTargeta] = useState(false);
    return (
     <Stade.Provider value={{
         openspinnerloading,
@@ -500,7 +500,7 @@ const Global = ({children}) => {
         OpenRTN,setOpenRTN,ValueRTN,setValueRTN,GetRTN,OpenEfectivo,setOpenEfectivo,
         OpenTargeta,setOpenTargeta,OpenCuenta,setOpenCuenta,ValueInputRTN,setValueInputRTN,GetValueInputRTN,
         ModalOpenEfectivo,setModalOpenEfectivo,ModalOpenTargeta,setModalOpenTargeta,ValueInputRTN2,
-        GetValueInputRTN2,GetText,SiEfectivo,setSiEfectivo
+        GetValueInputRTN2,GetText,SiEfectivo,setSiEfectivo,SiTargeta,setSiTargeta 
     }}> 
       {children} 
     </Stade.Provider>

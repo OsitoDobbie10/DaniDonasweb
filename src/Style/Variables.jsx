@@ -48,6 +48,7 @@ import { BiBookmarkHeart } from "react-icons/bi";
 import { BiCreditCard } from "react-icons/bi";
 import { BiQuestionMark } from "react-icons/bi";
 import { BiArrowToRight } from "react-icons/bi";
+import { BiAlarmAdd } from "react-icons/bi";
 export const v = {
   sidebarWidth: `300px`,
   sidebarWidthInitial: `10vw`,
@@ -124,7 +125,8 @@ export const v = {
   favorito:BiBookmarkHeart,
   targetacredito:BiCreditCard,
   Pregunta:BiQuestionMark,
-  LineaDerecha:BiArrowToRight
+  LineaDerecha:BiArrowToRight,
+  Agregar:BiAlarmAdd
   };
 
   

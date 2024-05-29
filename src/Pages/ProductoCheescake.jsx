@@ -132,7 +132,7 @@ const ProductoCheescake = () => {
     adicional:`Ingredientes adicionales: ${dato} ${dato2} ${dato3} ${dato4}`,
     imagen:imagenes,
     TipoPedido:"Pastel",
-    IdUnico:`#${generarIDUnico()}`
+    IdPedido:`#${generarIDUnico()}`
   };
   subir2(p);
   }

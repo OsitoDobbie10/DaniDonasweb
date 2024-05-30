@@ -1,17 +1,21 @@
 import styled from "styled-components"
 import {HeaderDonna,UseGlobal,v,InputsParaRTN,
-        MetodoPagoEleme,ModalEfectivo,FuncionesModal,ModalTargeta} from "../../index";
+        MetodoPagoEleme,ModalEfectivo,FuncionesModal,
+        ModalTargeta,ViewRestaurantes,ModalCuenta} from "../../index";
 import SimboloMoney from "../../Assets/Money.png";
 import Efectivo from "../../Assets/dar-dinero.png";
 import Targeta from "../../Assets/tarjeta.png";
+import BancoPay from "../../Assets/smartphone.png"
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 const FormaPago = () => {
+  const {Depositos} = ViewRestaurantes();
   const {ValueInputRTN,GetValueInputRTN,
          GetRTN,ValueRTN,ValueInputRTN2,
          GetValueInputRTN2,GetText,setSiEfectivo,setSiTargeta} = UseGlobal();
   const {OpenModalEfectivo,CloseModalEfectivo,OpenModalTargeta,CloseModalTargeta,
-        OpenEfectivo,OpenTargeta,ModalOpenEfectivo,ModalOpenTargeta} = FuncionesModal();
+        OpenEfectivo,OpenTargeta,ModalOpenEfectivo,ModalOpenTargeta,
+        OpenCuenta,ModalOpenCuenta,OpenModalCuenta,CloseModaCuenta} = FuncionesModal();
   const {InputRTN} = ValueInputRTN;
   const {RTN,Negocio} = ValueRTN;
   const {InputRTN1} = ValueInputRTN2;
@@ -68,12 +72,16 @@ const FormaPago = () => {
                      info="Pagas tu pedido en efectivo, cuando lo recibas"
                      icono2={<v.LineaDerecha/>}
                      funcion={OpenModalEfectivo}/>
+     <MetodoPagoEleme icono1={BancoPay}
+                     texto="PAGO CON Deposito"
+                     info="El cliente Hace el pago a la cuenta correspondiente"
+                     icono2={<v.LineaDerecha/>}
+                     funcion={OpenModalCuenta}/>
     <MetodoPagoEleme icono1={Targeta}
                      texto="PAGO CON TARGETA DE CREDITO/DEBITO"
                      info="El cliente ingresa y autoriza el pago con su targeta"
                      icono2={<v.LineaDerecha/>}
                      funcion={OpenModalTargeta}/>
- 
     </div>
     {
       OpenEfectivo ? <ModalEfectivo cerrar={CloseModalEfectivo} 
@@ -87,6 +95,11 @@ const FormaPago = () => {
       OpenTargeta ? <ModalTargeta cerrar={CloseModalTargeta} 
                                   animacion={ModalOpenTargeta}
                                   FunctionAdd={CAAM}/> : <></>
+    }
+    {
+      OpenCuenta ? <ModalCuenta cerrar={CloseModaCuenta}
+                                animacion={ModalOpenCuenta}
+                                />: <></>
     }
     </div>
     </Container>

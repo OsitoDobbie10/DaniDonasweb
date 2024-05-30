@@ -16,8 +16,10 @@ const FuncionesModal = () => {
             datosform4,numero,setNumero,
             OpenEfectivo,setOpenEfectivo,
             OpenTargeta,setOpenTargeta,
+            OpenCuenta,setOpenCuenta,
             ModalOpenEfectivo,setModalOpenEfectivo,
-            ModalOpenTargeta,setModalOpenTargeta} = UseGlobal(); 
+            ModalOpenTargeta,setModalOpenTargeta,
+            ModalOpenCuenta,setModalOpenCuenta} = UseGlobal(); 
     const Navegar = useNavigate();
     const openPedido = ()=>{
     setModal(true);
@@ -145,7 +147,18 @@ const FuncionesModal = () => {
         setModalOpenTargeta(false);
       },1000)
     }
-   
+    const OpenModalCuenta = ()=>{
+      setOpenCuenta(true);
+      setTimeout(()=>{
+        setModalOpenCuenta(true);
+      },1000)
+    }
+    const CloseModaCuenta = ()=>{
+      setOpenCuenta(false);
+      setTimeout(()=>{
+        setModalOpenCuenta(false);
+      },1000)
+    }
     const PedirPedido = (nombre,precio,descp,imagen,promo)=>{
       const {N,L,J,CN,CB} = datosform1;
       const {FM,LB,Cc,CC} = datosform2;
@@ -175,6 +188,7 @@ const FuncionesModal = () => {
          openmodalDW,closemodalDW,modal7,animandoModal7,setAnimandoModal7,setModal7,PedirPedido,
          datosform1,datosform2,datosform3,datosform4,numero,Incremnto,Decremento,
          OpenModalEfectivo,CloseModalEfectivo,OpenModalTargeta,CloseModalTargeta,
-         OpenEfectivo,OpenTargeta,ModalOpenEfectivo,ModalOpenTargeta}} 
+         OpenEfectivo,OpenTargeta,ModalOpenEfectivo,ModalOpenTargeta,
+         OpenCuenta,ModalOpenCuenta,OpenModalCuenta,CloseModaCuenta}} 
 
 export default FuncionesModal;

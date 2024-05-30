@@ -49,6 +49,7 @@ import { BiCreditCard } from "react-icons/bi";
 import { BiQuestionMark } from "react-icons/bi";
 import { BiArrowToRight } from "react-icons/bi";
 import { BiAlarmAdd } from "react-icons/bi";
+import { BiSolidBank } from "react-icons/bi";
 export const v = {
   sidebarWidth: `300px`,
   sidebarWidthInitial: `10vw`,
@@ -126,7 +127,8 @@ export const v = {
   targetacredito:BiCreditCard,
   Pregunta:BiQuestionMark,
   LineaDerecha:BiArrowToRight,
-  Agregar:BiAlarmAdd
+  Agregar:BiAlarmAdd,
+  Banco:BiSolidBank
   };
 
   

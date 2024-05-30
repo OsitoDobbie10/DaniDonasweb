@@ -399,6 +399,7 @@ const Global = ({children}) => {
     const [OpenCuenta,setOpenCuenta] = useState(false);
     const [ModalOpenEfectivo,setModalOpenEfectivo] = useState(false);
     const [ModalOpenTargeta,setModalOpenTargeta] = useState(false);
+    const [ModalOpenCuenta,setModalOpenCuenta] = useState(false);
     const [ValueInputRTN,setValueInputRTN] = useState({
       InputRTN:""
     }); 
@@ -500,7 +501,8 @@ const Global = ({children}) => {
         OpenRTN,setOpenRTN,ValueRTN,setValueRTN,GetRTN,OpenEfectivo,setOpenEfectivo,
         OpenTargeta,setOpenTargeta,OpenCuenta,setOpenCuenta,ValueInputRTN,setValueInputRTN,GetValueInputRTN,
         ModalOpenEfectivo,setModalOpenEfectivo,ModalOpenTargeta,setModalOpenTargeta,ValueInputRTN2,
-        GetValueInputRTN2,GetText,SiEfectivo,setSiEfectivo,SiTargeta,setSiTargeta 
+        GetValueInputRTN2,GetText,SiEfectivo,setSiEfectivo,SiTargeta,setSiTargeta,
+        ModalOpenCuenta,setModalOpenCuenta
     }}> 
       {children} 
     </Stade.Provider>

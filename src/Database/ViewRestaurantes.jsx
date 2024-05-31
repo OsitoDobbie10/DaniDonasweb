@@ -18,7 +18,8 @@ import {MostrarRestaurantes,
         MostrarTargetas,
         MostrarCuentaDeposito,
         FiltrarFav,
-        FiltrarPedido
+        FiltrarPedido,
+        FiltrarOrdenFinal
         } from "../index";
 export const ViewRestaurantes = create((set,get)=>({
     pedidos:[],
@@ -37,6 +38,7 @@ export const ViewRestaurantes = create((set,get)=>({
     targetas:[],
     Depositos:[],
     idUsuario: 0,
+    OrdenFinal:[],
     tipo: "Domicilio",
     cod: "D",
     descp: "Que desea pedir hoy",
@@ -160,5 +162,11 @@ export const ViewRestaurantes = create((set,get)=>({
       const res = await FiltrarPedido(p);
       set({pedidosDonnas:res});
       return res;
+    },
+    showOrdenPedido: async(p)=>{
+      const res = await FiltrarOrdenFinal(p);
+      set({OrdenFinal:res});
+      return res;
     }
+
 }));

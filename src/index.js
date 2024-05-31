@@ -132,6 +132,7 @@ export * from './Stores/CrudDeposito';
 export * from './Stores/CrudDonnas';
 export * from './Stores/CrudEncargar';
 export * from './Stores/CrudFavoritos';
+export * from './Stores/CrudOrdenFinal';
 export * from './Stores/CrudPedidos';
 export * from './Stores/CrudRecoger';
 export * from './Stores/CrudTargeta';

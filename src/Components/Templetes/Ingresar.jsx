@@ -38,7 +38,8 @@ export default function Ingresar() {
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
         email: p.email,
-        password: p.password});
+        password: p.password
+      });
       if (error) throw error;
       setToken(data); 
       nav("/")

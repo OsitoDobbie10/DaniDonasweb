@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {ViewRestaurantes,UseGlobal} from "../index"
+import {ViewRestaurantes,UseGlobal,supabase} from "../index"
 const OrdenFinal = () => {
   const {getdireccion,getRecoger,getencargar,formeditar,valuePedido} = UseGlobal();
   const {showOrdenPedido,OrdenFinal} = ViewRestaurantes();

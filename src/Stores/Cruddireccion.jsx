@@ -26,7 +26,6 @@ export const Insertardireccion = async(p)=>{
         alert(error.error_description || error.message + "insertar categorias")
        }
 };
-
 export const Mostrardireccion = async()=>{
    try {
     const {data,error} = await supabase.from("direccion").select();
@@ -91,3 +90,4 @@ export const EliminarTodasDireccion = async(p)=>{
         alert(error.error_description || error.message + "eliminar categorias")   
     }
 }
+

@@ -51,7 +51,7 @@ z-index: 1000;
 
 .formulario {
     max-width: 82rem;
-    width: 40rem;
+    width: 50rem;
     transition-property: all;
     transition-duration: 300ms;
     transition-timing-function: ease-in;
@@ -70,8 +70,8 @@ z-index: 1000;
   .formulario.animar {
     position: relative;
     opacity: 1;
-    left: 30%;
-    top:25%;
+    left: 24%;
+    top:20%;
 }
 `;
 export default ModalDireccion;

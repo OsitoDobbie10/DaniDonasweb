@@ -9,7 +9,7 @@ const Botondireccion = ({funcion}) => {
   )
 }
 const Container = styled.div`
-width: 40px;
+width: 30px;
 height: 30px;
 border-radius:50%;
 background-color: orange;

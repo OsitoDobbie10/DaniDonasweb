@@ -18,21 +18,20 @@ const Header = ({funciongis,texto1,texto2,funciongis2}) => {
   )
 }
 const Encabezado = styled.header`
-display: grid;
-grid-template-columns: repeat(16 , 1fr);
+width: 100%;
+display: flex;
+justify-content: space-around;
 .left{
 display:flex;
-justify-content: space-around;
 margin-left: 15px;
 align-items: center;
-grid-column: 1/4;
-gap:40px;
+gap:20px;
+width:50%;
 }
 .right{
 display: flex;
 margin-left: 15px;
 align-items: center;
-grid-column: 15/17;
 }
 `;
 export default Header

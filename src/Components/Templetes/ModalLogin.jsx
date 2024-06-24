@@ -16,24 +16,24 @@ const ModalLogin = ({animacion,cerrar}) => {
                  alt="CerrarBTN"
                  onClick={cerrar}/>
         </div>
-        <div className={`formulario ${animacion ? 'animar': 'cerrar'}`}>
-        <div className="botones">
-        <button type="button" className="btn btn-danger" onClick={abrir1}>Crear Cuenta</button>
-        <button type="button" className="btn btn-secondary" onClick={abrir2}>Registrarse</button> 
-        </div> 
-        
-        {
-            abrir ? <SignUp/> : <Ingresar/>
-        }
-        {
-            error ? <span className='showmessaner'>{logic}</span> : <div></div>
-        }
-        {
-            animandoModal3 ? <span className='showmessaner2'>
-            {show}
-            </span>: <div></div>
-        }
-        </div>
+            <div className={`formulario ${animacion ? 'animar': 'cerrar'}`}>
+              <div className="botones">
+              <button type="button" className="btn btn-danger" onClick={abrir1}>Crear Cuenta</button>
+              <button type="button" className="btn btn-secondary" onClick={abrir2}>Registrarse</button> 
+              </div> 
+              
+              {
+                  abrir ? <SignUp/> : <Ingresar/>
+              }
+              {
+                  error ? <span className='showmessaner'>{logic}</span> : <div></div>
+              }
+              {
+                  animandoModal3 ? <span className='showmessaner2'>
+                  {show}
+                  </span>: <div></div>
+              }
+            </div>
     </Container>
   )
 }
@@ -60,6 +60,7 @@ z-index: 1000;
 .cerrar-modal img {
     width: 100%;
 }
+
 .formulario {
     max-width: 82rem;
     width: 75rem;
@@ -118,8 +119,6 @@ z-index: 1000;
     width: 320px;
     margin: 20px auto 0 auto;
 }
-
-
 
 `
 export default ModalLogin
